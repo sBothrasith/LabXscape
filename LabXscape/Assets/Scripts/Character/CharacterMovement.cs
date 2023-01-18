@@ -7,17 +7,21 @@ public class CharacterMovement : MonoBehaviour
     public Rigidbody2D rigidBody { get; private set; }
     public float runMaxSpeed = 9.5f;
     public float runAccelRate = 9.5f;
-    public float jumpForce = 10.0f;
+    public float jumpForce = 12.0f;
 
     public Transform groundCheck;
     [SerializeField ] public LayerMask ground;
     private bool isOnGround;
+
     private Vector2 moveInput;
 
     private void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
+    public void Start() {
+        SetGravityScale(1.0f);      
+    }
 
     private void Update() {
         CheckGround();
@@ -49,11 +53,22 @@ public class CharacterMovement : MonoBehaviour
                 force -= rigidBody.velocity.y;
             }
             rigidBody.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-           
+        }
+        if (Input.GetKey(KeyCode.Space) ) {            
+            SetGravityScale(2.0f);
+        }
+        else {
+            SetGravityScale(5.0f);
         }
     }
-
+    
     private void CheckGround() {
         isOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.3f, ground);
+        SetGravityScale(2.0f);
     }
+
+    private void SetGravityScale(float gravityScale) {
+        rigidBody.gravityScale = gravityScale;
+    }
+
 }
