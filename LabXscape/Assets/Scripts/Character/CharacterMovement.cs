@@ -35,7 +35,7 @@ public class CharacterMovement : MonoBehaviour
     private void PlayerMovement() {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
-        
+        CheckFacing();
         float targetSpeed = moveInput.x * runMaxSpeed;
         targetSpeed = Mathf.Lerp(rigidBody.velocity.x, targetSpeed, 1);
 
@@ -65,6 +65,15 @@ public class CharacterMovement : MonoBehaviour
     private void CheckGround() {
         isOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.3f, ground);
         SetGravityScale(2.0f);
+    }
+
+    private void CheckFacing() {
+        if(moveInput.x < 0) {
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        }
+        else if(moveInput.x > 0) {
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     private void SetGravityScale(float gravityScale) {
