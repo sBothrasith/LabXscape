@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2859650093
+    locked: 0
+  - name: BrickBG
+    uniqueID: 913516869
+    locked: 0
+  - name: Ground
+    uniqueID: 152231355
+    locked: 0
