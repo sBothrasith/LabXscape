@@ -1,0 +1,48 @@
+	
+--------------Doctors 2D----------------------------
+
+2D Animation Spritesheet's of Doctors
+
+Technical Details:-
+		
+		- Total Spritesheets : 21
+		- Character Variations : 3
+		- Animations for each characters : 7 (Idle,Run,Walk, Interacting, Hit, Death, Jump)
+		- Character : Doctor(Male)
+		- Sheet Resolution and Frames count: 
+			Idle - 3200 x 2932 (16)
+			Walk - 3200 x 3665 (20)
+			Run - 3200 x 3665 (20)
+			Interaction - 3200 x 2199 (12)
+			Hit - 2400 x 2932 (12)
+			Death - 2400 x 2932 (12)
+			Jump - 3200 x 2932 (16)
+Features:-
+	- Three character variations
+	- Vector/Abstract style design
+	- Smooth animations(Including frame by frame Hand-drawen animations)
+	- Prefabs included
+	- Easy to change colors
+	- Unique Animations
+	- High quality images
+	- Mobile supported
+	- Demo scenes included
+	
+How to use:-
+	
+	Simply drag and drop any Spritesheet animation from the Prefab (Doctor_Pack02 > Prefabs) folder
+	to your scene.
+
+FAQ:
+
+1.Can i use this animations in my game and sell it on google play or other app stores?
+
+ :- Yes, you can.But reselling of this project to any Unity asset store alternative sites is strictly prohibited.
+
+..................................................................................
+
+About Us : We are "SR Studios Kerala", Game developing company located in Alappuzha, Kerala, India
+
+Contact : srstudioskerala@gmail.com
+
+................Thanks for downloading this package................................
