@@ -15453,22 +15453,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 8808336559893133108, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
-      propertyPath: m_Size.x
-      value: 0.49313986
-      objectReference: {fileID: 0}
-    - target: {fileID: 8808336559893133108, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
-      propertyPath: m_Size.y
-      value: 0.48481244
-      objectReference: {fileID: 0}
-    - target: {fileID: 8808336559893133108, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.00000017136335
-      objectReference: {fileID: 0}
-    - target: {fileID: 8808336559893133108, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0028942525
-      objectReference: {fileID: 0}
     - target: {fileID: 8808336559893133109, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -15512,10 +15496,6 @@ PrefabInstance:
     - target: {fileID: 8808336559893133109, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8808336559893133111, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
-      propertyPath: jumpForce
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8808336559893133131, guid: 0284feb0432303c4fa4f87cdc8b6c6f5, type: 3}
       propertyPath: m_Name
@@ -16886,6 +16866,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 92117683}
     m_Modifications:
+    - target: {fileID: 4185994792281783195, guid: efe43da004106de49a9f45dfa09ff147, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0168
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185994792281783195, guid: efe43da004106de49a9f45dfa09ff147, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10160017
+      objectReference: {fileID: 0}
     - target: {fileID: 4918627908995562591, guid: efe43da004106de49a9f45dfa09ff147, type: 3}
       propertyPath: m_Name
       value: Elevator

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4185994792281783195}
   - component: {fileID: 7946495220478339268}
   - component: {fileID: 7743909186190428267}
+  - component: {fileID: 848508394315437972}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.096203566}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.14, y: 2.22}
+  m_Size: {x: 1.14, y: 2.0275931}
   m_EdgeRadius: 0
 --- !u!95 &7946495220478339268
 Animator:
@@ -145,3 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac79d7a7fc632749a05b07114b019b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &848508394315437972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918627908995562591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68bf4e92035acf48a45e8f94269bc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBuildIndex: 2
