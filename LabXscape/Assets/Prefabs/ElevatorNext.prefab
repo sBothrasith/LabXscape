@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8216723564898211427}
     m_Modifications:
+    - target: {fileID: 848508394315437972, guid: efe43da004106de49a9f45dfa09ff147, type: 3}
+      propertyPath: sceneBuildIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4185994792281783195, guid: efe43da004106de49a9f45dfa09ff147, type: 3}
       propertyPath: m_Size.y
       value: 2.0168
