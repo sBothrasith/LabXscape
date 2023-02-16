@@ -9860,7 +9860,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.056480408, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9871,7 +9871,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1129608, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &824799519
 SpriteRenderer:
@@ -16196,7 +16196,7 @@ GameObject:
   - component: {fileID: 1731900328}
   - component: {fileID: 1731900327}
   m_Layer: 0
-  m_Name: StageDesign
+  m_Name: Stage1 Design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16322,8 +16322,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &1749325196
-PolygonCollider2D:
+--- !u!68 &1749325196
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16331,31 +16331,19 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1749325192}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 5b782d8ea5db08347b2be449765b5363, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_EdgeRadius: 0
   m_Points:
-    m_Paths:
-    - - {x: 0.007537842, y: 0.14001822}
-      - {x: -0.03558212, y: 0.09333441}
-      - {x: -0.26774597, y: -0.1333108}
-      - {x: -0.6346531, y: -0.49970445}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
-      - {x: 0.39273193, y: 0.5}
-      - {x: 0.2332341, y: 0.3490841}
+  - {x: -0.77440643, y: -0.6356466}
+  - {x: 0.38014984, y: 0.5001291}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1759971881
 GameObject:
   m_ObjectHideFlags: 0
@@ -18196,6 +18184,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5641476883850376309, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.231
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641476885065896504, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: slopeCheckDistance
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5641476885065896506, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -18239,6 +18235,26 @@ PrefabInstance:
     - target: {fileID: 5641476885065896506, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641476885065896507, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.47729257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641476885065896507, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4782858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641476885065896507, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641476885065896507, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0006336123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641476885065896507, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.00036907196
       objectReference: {fileID: 0}
     - target: {fileID: 5641476885065896516, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
       propertyPath: m_Name

@@ -20,15 +20,13 @@ public class CharacterMovement : MonoBehaviour
     }
 
     public void Start() {
-        SetGravityScale(1.0f);      
+        SetGravityScale(1.0f);
     }
 
     private void Update() {
         CheckGround();
         PlayerMovement();
         PlayerJump();
-
-        
     }
 
 
@@ -44,6 +42,7 @@ public class CharacterMovement : MonoBehaviour
         float movement = speedDiff* runAccelRate;
 
         rigidBody.AddForce(movement * Vector2.right, ForceMode2D.Force);
+
     }
 
     private void PlayerJump() {
