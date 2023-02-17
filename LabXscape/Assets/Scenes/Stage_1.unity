@@ -18103,6 +18103,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.231
       objectReference: {fileID: 0}
+    - target: {fileID: 5641476883850376310, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5641476885065896504, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
       propertyPath: slopeCheckDistance
       value: 0.3
