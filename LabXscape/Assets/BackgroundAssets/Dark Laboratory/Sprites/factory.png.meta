@@ -1026,9 +1026,9 @@ TextureImporter:
       name: factory_32
       rect:
         serializedVersion: 2
-        x: 705
+        x: 722
         y: 1150
-        width: 67
+        width: 50
         height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2031,8 +2031,8 @@ TextureImporter:
       factory_59: 2733843788801843353
       factory_76: -4331858950688175137
       factory_5: 1977407276723838878
-      factory_40: -7597109351577499142
       factory_58: -193643889635125926
+      factory_40: -7597109351577499142
       factory_2: 3749763927257998176
       factory_41: 5951417545607891195
       factory_63: -664204744938856872
