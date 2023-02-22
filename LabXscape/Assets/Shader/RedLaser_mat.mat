@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: laser_mat
+  m_Name: RedLaser_mat
   m_Shader: {fileID: -6465566751694194690, guid: 6a637769cac099a41aae0062f6ff606b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -35,12 +35,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _LaserEdgeSmoothness: 10
-    - _LaserScale: 6
-    - _LaserThickness: 1
+    - _LaserScale: 5
+    - _LaserThickness: 0.8
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0, g: 1, b: 0, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _LaserSpeed: {r: -1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5517926482743537910
