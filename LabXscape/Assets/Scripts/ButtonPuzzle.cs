@@ -4,76 +4,64 @@ using UnityEngine;
 
 public class ButtonPuzzle : MonoBehaviour
 {
+    [SerializeField] private float buttonSpeed = 0.5f;
+    [SerializeField] private float laserSpeed = 0.5f;
+
     public Transform[] spinLaser;
-
-
 
     private Vector3 startPos;
     private Vector3 endPos;
-    private float movingButtonDuration = 1.5f;
-    private float buttonElapsedTime;
-    private bool startMovingButton = false;
 
     private Vector3[] startRotatePos;
-    private float rotatingLaserDuration = 1.5f;
-    private float laserElapsedTime;
-    private bool[] startRotatingLaser;
+    private Vector3[] endRotatePos;
+
+    private float buttonCurrent, buttonTarget;
+    private float laserCurrent, laserTarget;
+
+    private bool triggerLaser = true;
     // Start is called before the first frame update
     void Start()
     {
-        startRotatingLaser = new bool[spinLaser.Length];
         startRotatePos = new Vector3[spinLaser.Length];
+        endRotatePos = new Vector3[spinLaser.Length];
 
         startPos = transform.position;
-        endPos = new Vector3(transform.position.x, 0.35f, transform.position.z);
+        endPos = new Vector3(transform.position.x, 0.25f, transform.position.z);
 
         for(int i = 0; i < spinLaser.Length; i++) {
             startRotatePos[i] = spinLaser[i].transform.eulerAngles;
-            startRotatingLaser[i] = false;
+            endRotatePos[i] = new Vector3(startRotatePos[i].x, startRotatePos[i].y, startRotatePos[i].z+90);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(startMovingButton) {
-            MovingButton();
+        buttonCurrent = Mathf.MoveTowards(buttonCurrent, buttonTarget, buttonSpeed * Time.deltaTime);
+        laserCurrent = Mathf.MoveTowards(laserCurrent, laserTarget, laserSpeed * Time.deltaTime);
+        if (transform.position == endPos) {
+            buttonTarget = 0;
+            triggerLaser = true;
         }
-        for(int i = 0; i < startRotatingLaser.Length; i++) {
-            if (startRotatingLaser[i]) {
-                RotateLaser();
-            }
+        transform.position = Vector3.Lerp(startPos, endPos, buttonCurrent);
+
+        for(int i = 0; i < spinLaser.Length; i++) {
+            spinLaser[i].rotation = Quaternion.Lerp(Quaternion.Euler(startRotatePos[i]), Quaternion.Euler(endRotatePos[i]),laserCurrent);
         }
         
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            startMovingButton = true;
-            for (int i = 0; i < startRotatingLaser.Length; i++) {
-                startRotatingLaser[i] = true;
+            buttonTarget = 1;
+            if(laserTarget == 1 && triggerLaser) {
+                laserTarget = 0;
+                triggerLaser = false;
+            }else if(laserTarget == 0) {
+                laserTarget = 1;
+                triggerLaser= false;
             }
         }
     }
 
-    private void MovingButton() {
-        buttonElapsedTime += Time.deltaTime;
-
-        transform.position = Vector3.Lerp(startPos, endPos, buttonElapsedTime/movingButtonDuration);
-        if(transform.position.y == endPos.y) {
-            startMovingButton = false;
-        }
-    }
-
-    private void RotateLaser() {
-        laserElapsedTime += Time.deltaTime;
-
-        for(int i = 0; i < spinLaser.Length; i++) {
-            spinLaser[i].transform.rotation = Quaternion.Lerp(Quaternion.Euler(0.0f,0.0f,startRotatePos[i].z), Quaternion.Euler(0.0f, 0.0f, startRotatePos[i].z + 90.0f), laserElapsedTime/ rotatingLaserDuration);
-            if (spinLaser[i].transform.eulerAngles.z == startRotatePos[i].z + 90.0f) {
-                startRotatePos[i] = spinLaser[i].transform.eulerAngles;
-                startRotatingLaser[i] = false;
-            }
-        }
-    }
 }
