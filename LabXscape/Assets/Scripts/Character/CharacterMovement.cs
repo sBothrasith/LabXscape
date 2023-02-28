@@ -33,10 +33,11 @@ public class CharacterMovement : MonoBehaviour
     private void PlayerMovement() {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
+
         CheckFacing();
         float targetSpeed = moveInput.x * runMaxSpeed;
         targetSpeed = Mathf.Lerp(rigidBody.velocity.x, targetSpeed, 1);
-
+        
 
         float speedDiff = targetSpeed - rigidBody.velocity.x;
         float movement = speedDiff* runAccelRate;

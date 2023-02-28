@@ -18,8 +18,6 @@ public class RotateLaser : MonoBehaviour
     {
         startRotatePos = transform.rotation.eulerAngles;
         endRotatePos = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 90);
-        Debug.Log(startRotatePos);
-        Debug.Log(endRotatePos);
     }
 
     // Update is called once per frame

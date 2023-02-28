@@ -12,10 +12,12 @@ public class Laser : MonoBehaviour
 
     private void Awake() {
         laserTransform = GetComponent<Transform>();
+        GenerateCollider();
     }
     void Update()
     {
         ShootLaser();
+
     }
 
     void ShootLaser() {
@@ -30,5 +32,15 @@ public class Laser : MonoBehaviour
     void DrawRay(Vector2 startPos, Vector2 endPos) {
         lineRenderer.SetPosition(0, startPos);
         lineRenderer.SetPosition(1, endPos);
+    }
+    private void GenerateCollider() {
+        MeshCollider collider = GetComponent<MeshCollider>();
+        if(collider == null) {
+            collider = gameObject.AddComponent<MeshCollider>();
+        }
+
+        Mesh mesh = new Mesh();
+        lineRenderer.BakeMesh(mesh);
+        collider.sharedMesh = mesh;
     }
 }
