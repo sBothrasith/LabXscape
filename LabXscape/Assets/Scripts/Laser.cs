@@ -12,7 +12,7 @@ public class Laser : MonoBehaviour
 
     private void Awake() {
         laserTransform = GetComponent<Transform>();
-        GenerateCollider();
+
     }
     void Update()
     {
@@ -22,7 +22,9 @@ public class Laser : MonoBehaviour
 
     void ShootLaser() {
         if(Physics2D.Raycast(laserTransform.position, transform.right)) {
+            
             RaycastHit2D hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
+            
             DrawRay(laserFirePoint.position, hit.point);
         }
         else {
@@ -33,14 +35,5 @@ public class Laser : MonoBehaviour
         lineRenderer.SetPosition(0, startPos);
         lineRenderer.SetPosition(1, endPos);
     }
-    private void GenerateCollider() {
-        MeshCollider collider = GetComponent<MeshCollider>();
-        if(collider == null) {
-            collider = gameObject.AddComponent<MeshCollider>();
-        }
 
-        Mesh mesh = new Mesh();
-        lineRenderer.BakeMesh(mesh);
-        collider.sharedMesh = mesh;
-    }
 }
