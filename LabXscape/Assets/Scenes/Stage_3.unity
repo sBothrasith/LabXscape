@@ -1258,7 +1258,7 @@ GameObject:
   - component: {fileID: 459691667}
   m_Layer: 0
   m_Name: factory_19
-  m_TagString: Untagged
+  m_TagString: ButtonLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1365,11 +1365,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 459691662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f52da1065ca387418498d0094f73ab6, type: 3}
+  m_Script: {fileID: 11500000, guid: 522b43b79cb39af4eaeced70b46426e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonSpeed: 0.5
-  laserScript: {fileID: 1034060104}
+  laserScript:
+  - {fileID: 1034060104}
 --- !u!1001 &482520577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1535,6 +1536,17 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 74989937}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!114 &491180992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4742281298534741904, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
+  m_PrefabInstance: {fileID: 1728462220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491180987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &504833232
 GameObject:
   m_ObjectHideFlags: 0
@@ -8435,7 +8447,7 @@ GameObject:
   - component: {fileID: 1527483574}
   m_Layer: 0
   m_Name: factory_19 (1)
-  m_TagString: Untagged
+  m_TagString: ButtonLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8727,7 +8739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -15.272095, y: -7.8465576}
+  m_AnchoredPosition: {x: -15.271973, y: -7.8465576}
   m_SizeDelta: {x: 225.03, y: 119.89}
   m_Pivot: {x: -0.00000009748544, y: -0.000000074505806}
 --- !u!114 &1610793795
@@ -9154,7 +9166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.34
+      value: 7.3399997
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9210,11 +9222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5987797
+      value: 3.5733218
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4715996
+      value: 3.4591997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
@@ -9499,6 +9511,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b1fc81fd3a5f64a8bffeb29a094895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1804164718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804164710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ee99e5269e35d46885788cdc3ed194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 491180992}
+  startZoomSize: 5
+  targetZoomSize: 8.1
+  zoomSpeed: 0.5
+  laser:
+  - {fileID: 1684393640}
+  - {fileID: 1034060104}
 --- !u!1 &1853515709
 GameObject:
   m_ObjectHideFlags: 0
@@ -9759,7 +9790,7 @@ GameObject:
   - component: {fileID: 1990571260}
   m_Layer: 0
   m_Name: factory_19 (2)
-  m_TagString: Untagged
+  m_TagString: ButtonLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
