@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 459691662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522b43b79cb39af4eaeced70b46426e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 53891be850afcc04b9e83e364f890292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonSpeed: 0.5
@@ -8554,7 +8554,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1527483569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522b43b79cb39af4eaeced70b46426e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 53891be850afcc04b9e83e364f890292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonSpeed: 0.5
@@ -9525,7 +9525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 491180992}
   startZoomSize: 5
-  targetZoomSize: 8.1
+  targetZoomSize: 8.5
   zoomSpeed: 0.5
   laser:
   - {fileID: 1684393640}
@@ -9788,6 +9788,7 @@ GameObject:
   - component: {fileID: 1990571262}
   - component: {fileID: 1990571261}
   - component: {fileID: 1990571260}
+  - component: {fileID: 1990571264}
   m_Layer: 0
   m_Name: factory_19 (2)
   m_TagString: ButtonLaser
@@ -9904,6 +9905,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990571264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990571259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53891be850afcc04b9e83e364f890292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSpeed: 0.5
+  laserScript:
+  - {fileID: 1684393640}
+  - {fileID: 1034060104}
 --- !u!1 &2005550453
 GameObject:
   m_ObjectHideFlags: 0

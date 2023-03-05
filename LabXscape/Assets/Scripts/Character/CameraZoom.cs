@@ -15,10 +15,11 @@ public class CameraZoom : MonoBehaviour
     private float cameraTarget = 0;
 
     public RotateLaser[] laser;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
