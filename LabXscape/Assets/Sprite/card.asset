@@ -86,16 +86,16 @@ MonoBehaviour:
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 2100
-      m_Height: 1500
-      m_HorizontalBearingX: -1050
-      m_HorizontalBearingY: 750
+      m_Width: 4724.5
+      m_Height: 2024
+      m_HorizontalBearingX: -720.1
+      m_HorizontalBearingY: 1752.1
       m_HorizontalAdvance: 2100
     m_GlyphRect:
-      m_X: 0
-      m_Y: 0
-      m_Width: 2100
-      m_Height: 1500
+      m_X: -281
+      m_Y: -68
+      m_Width: 2125
+      m_Height: 1533
     m_Scale: 1
     m_AtlasIndex: 0
     sprite: {fileID: 21300000, guid: d11905838cc1b0547a53c97dee1c76e6, type: 3}
