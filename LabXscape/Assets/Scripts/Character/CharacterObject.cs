@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CharacterObject : MonoBehaviour
 {
-    public GameObject card;
+    public GameObject[] objectUI;
+
+    public List<string> collectedObject = new List<string>();
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,9 +20,12 @@ public class CharacterObject : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Card") {
-            collision.gameObject.SetActive(false);
-            card.SetActive(true);
+        for(int i = 0; i < objectUI.Length; i++) {
+            if (collision.gameObject.tag == objectUI[i].tag) {
+                collision.gameObject.SetActive(false);
+                objectUI[i].SetActive(true);
+                collectedObject.Add(objectUI[i].tag);
+            }
         }
     }
 }
