@@ -16,6 +16,8 @@ public class CameraZoom : MonoBehaviour
 
     public RotateLaser[] laser;
 
+    private float timeDelay = 0f;
+    public float cameraDelayTime = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,11 @@ public class CameraZoom : MonoBehaviour
         bool zoomBack = laser.All(l => l.triggerLaser == true);
         cameraCurrent = Mathf.MoveTowards(cameraCurrent, cameraTarget, zoomSpeed * Time.deltaTime);
         if (zoomBack) {
-            cameraTarget = 0;
+            timeDelay += 1f * Time.deltaTime;
+            if(timeDelay >= cameraDelayTime) {
+                timeDelay= 0f;
+                cameraTarget = 0;
+            }
         }
 
         playerCamera.m_Lens.OrthographicSize = Mathf.Lerp(startZoomSize, targetZoomSize, cameraCurrent);

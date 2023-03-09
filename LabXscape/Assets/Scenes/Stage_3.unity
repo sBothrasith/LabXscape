@@ -325,8 +325,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 1.0087194, y: 7.816597}
       - {x: -11.05492, y: 7.729702}
-      - {x: -11.16052, y: -11.403285}
-      - {x: 20.945318, y: -11.333143}
+      - {x: -10.976452, y: -10.129195}
+      - {x: 21.089529, y: -10.059313}
       - {x: 21.090967, y: 7.7519617}
 --- !u!66 &74989937
 CompositeCollider2D:
@@ -352,19 +352,19 @@ CompositeCollider2D:
         Y: 78165968
       - X: -110549200
         Y: 77297016
-      - X: -111605192
-        Y: -114032848
-      - X: 209453184
-        Y: -113331432
+      - X: -109764520
+        Y: -101291952
+      - X: 210895296
+        Y: -100593128
       - X: 210909664
         Y: 77519616
   m_CompositePaths:
     m_Paths:
-    - - {x: -11.16052, y: -11.403255}
-      - {x: 20.945318, y: -11.333115}
+    - - {x: -10.976452, y: -10.129166}
+      - {x: 21.089529, y: -10.059284}
       - {x: 21.090939, y: 7.7519617}
       - {x: 1.0087196, y: 7.816597}
-      - {x: -11.05492, y: 7.729673}
+      - {x: -11.05492, y: 7.729672}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &74989938
@@ -9179,17 +9179,21 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 787212921}
+    - target: {fileID: 4742281298534741904, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.3399997
+      value: 7.34
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2400003
+      value: 0.24000023
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9236,16 +9240,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601897, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
+      propertyPath: orthographic size
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742281298642601897, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4932313
+      value: 2.7408237
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6031197
+      value: 2.3751197
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
@@ -9545,12 +9553,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 491180992}
-  startZoomSize: 5
+  startZoomSize: 4.5
   targetZoomSize: 8.5
   zoomSpeed: 0.5
   laser:
   - {fileID: 1684393640}
   - {fileID: 1034060104}
+  cameraDelayTime: 2
 --- !u!1 &1853515709
 GameObject:
   m_ObjectHideFlags: 0
