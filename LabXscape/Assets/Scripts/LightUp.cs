@@ -8,11 +8,16 @@ public class LightUp : MonoBehaviour
     private SpriteRenderer render;
     private Renderer ren;
 
+    public GameObject spawnpoint;
+
     public float intensitySpeed;
     private float intensityStart = 0f;
     private float intensityEnd = 2f;
 
     private float intensityCurrent, intensityTarget;
+
+    private float timeDelay = 0f;
+    public float deathTime = 0.3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +44,19 @@ public class LightUp : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             if (ren.material.GetFloat("_Intensity") > 1.0f) {
-                Debug.Log("kill");
+                timeDelay += 1f * Time.deltaTime;
+                Debug.Log(timeDelay);
+                if(timeDelay >= deathTime) {
+                    collision.gameObject.transform.position = spawnpoint.transform.position;
+                    timeDelay = 0f;
+                }
             }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            timeDelay = 0f;
         }
     }
 }

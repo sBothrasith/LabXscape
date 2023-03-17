@@ -1822,7 +1822,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1 &286719345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1 &307358752
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,7 +6394,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &463276232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7959,7 +7965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1 &590900674
 GameObject:
   m_ObjectHideFlags: 0
@@ -8249,7 +8257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &737039698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8375,7 +8385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &775172460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11886,7 +11898,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 20
-      m_TileSpriteIndex: 19
+      m_TileSpriteIndex: 29
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12306,7 +12318,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12766,7 +12778,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 16
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12847,8 +12859,8 @@ Tilemap:
     m_Data: {fileID: -925737062989000210, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 5094527369596327543, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -3557296405824527961, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 4
@@ -12860,13 +12872,13 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 7457840863079421330, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -3583036448568358905, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
+    m_Data: {fileID: 5094527369596327543, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 23
     m_Data: {fileID: -6049733676520268152, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 5375187706050302312, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -7078816066788913172, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
+    m_Data: {fileID: -3583036448568358905, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 149389928328954155, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 3
@@ -12885,8 +12897,8 @@ Tilemap:
     m_Data: {fileID: 6965713992034396385, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 7172879646581752092, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -7078816066788913172, guid: e66797c273ae1dc43bfe92452329f391, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 304
     m_Data:
@@ -13591,6 +13603,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1156129815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1020897181542287410, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
+  m_PrefabInstance: {fileID: 1578674914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!120 &1165024061 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 2842775699284211598, guid: a8123059b19484746a76499002431fe9, type: 3}
@@ -14526,7 +14543,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1001 &1225706637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14647,7 +14666,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &1241245615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14809,7 +14830,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &1324314236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15013,7 +15036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1 &1402764268
 GameObject:
   m_ObjectHideFlags: 0
@@ -15061,7 +15086,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &1402764271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15921,7 +15948,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 528038085}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.01
 --- !u!61 &1477921811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16743,6 +16772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 1020897181542287410, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
+      propertyPath: m_TagString
+      value: Respawn
+      objectReference: {fileID: 0}
     - target: {fileID: 1020897181542287411, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -17082,7 +17115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1001 &1652409372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17457,7 +17492,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1165024061}
+  spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
+  deathTime: 0.3
 --- !u!1001 &1953259596
 PrefabInstance:
   m_ObjectHideFlags: 0
