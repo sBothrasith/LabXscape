@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightUp : MonoBehaviour
 {
-    public LineRenderer laser;
+    public LineRenderer[] laser;
     private SpriteRenderer render;
     private Renderer ren;
 
@@ -18,25 +18,39 @@ public class LightUp : MonoBehaviour
 
     private float timeDelay = 0f;
     public float deathTime = 0.3f;
+    Vector3[] endLaserPos;
+    float[] distance;
+    
+    bool hit = false;
     // Start is called before the first frame update
     void Start()
     {
         render = GetComponent<SpriteRenderer>();
         ren = GetComponent<Renderer>();
+
+        endLaserPos = new Vector3[laser.Length];
+        distance = new float[laser.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
         intensityCurrent = Mathf.MoveTowards(intensityCurrent, intensityTarget, intensitySpeed * Time.deltaTime);
-
-        Vector3 endLaserPos = laser.GetPosition(1);
-        float distance = Vector3.Distance(transform.position, endLaserPos);
-        if(distance < 1.6f) {
-            intensityTarget = 1;
+        for(int i = 0; i < laser.Length; i++) {
+            endLaserPos[i] = laser[i].GetPosition(1);
         }
-        else {
-            intensityTarget = 0;
+        for (int i = 0; i < laser.Length; i++) {
+            distance[i] = Vector3.Distance(transform.position, endLaserPos[i]);
+            if (distance[i] < 1.6f) {
+                intensityTarget = 1;
+                hit = true;
+            }
+            else if (distance[i] > 1.6f && hit) {
+                hit = false;
+            }
+            else if (!hit) {
+                intensityTarget = 0;
+            }
         }
         ren.material.SetFloat("_Intensity", Mathf.Lerp(intensityStart,intensityEnd,intensityCurrent));
     }
