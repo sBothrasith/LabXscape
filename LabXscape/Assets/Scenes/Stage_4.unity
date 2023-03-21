@@ -2045,6 +2045,11 @@ MonoBehaviour:
   spawnpoint: {fileID: 1156129815}
   intensitySpeed: 0.5
   deathTime: 0.3
+--- !u!1 &295525850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1855050663310083444, guid: eeb65b10acfe3a642a05b83433202060, type: 3}
+  m_PrefabInstance: {fileID: 1489369115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &307358752
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,6 +8222,11 @@ LineRenderer:
   m_CorrespondingSourceObject: {fileID: 2842775699284211598, guid: a8123059b19484746a76499002431fe9, type: 3}
   m_PrefabInstance: {fileID: 611581728}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &612964676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1855050663310083444, guid: eeb65b10acfe3a642a05b83433202060, type: 3}
+  m_PrefabInstance: {fileID: 831078888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &635966069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8842,6 +8852,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1855050663310083451, guid: eeb65b10acfe3a642a05b83433202060, type: 3}
   m_PrefabInstance: {fileID: 831078888}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &831078890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612964676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7433e0e3c4188ab49a79b9757ea8fee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 590900674}
+  - {fileID: 1984234503}
+  speed: 1
 --- !u!1001 &833361217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15108,6 +15134,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1855050663310083451, guid: eeb65b10acfe3a642a05b83433202060, type: 3}
   m_PrefabInstance: {fileID: 1489369115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1244844487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295525850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7433e0e3c4188ab49a79b9757ea8fee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1033283309}
+  - {fileID: 218474765}
+  speed: 1
 --- !u!1 &1301778132
 GameObject:
   m_ObjectHideFlags: 0
