@@ -5,7 +5,6 @@ using UnityEngine;
 public class lever : MonoBehaviour
 {
     public Animator leverAnim;
-
     public GameObject movingPlatform;
     private HoriMoving movingPlat;
 
@@ -31,9 +30,22 @@ public class lever : MonoBehaviour
             moveTOA = true;
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Player")) {
+            if (Input.GetKeyDown(KeyCode.F) && canMove) {
+                leverAnim.SetBool("triggerLever", true);
+                canMove = false;
+                if (moveTOA) { 
+                    movingPlat.movingTarget = 1;
+                }
+                else if (!moveTOA) {
+                    movingPlat.movingTarget = 0;
+                }
+            }
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (collision.CompareTag("Player")) {
             if (Input.GetKeyDown(KeyCode.F) && canMove) {
                 leverAnim.SetBool("triggerLever", true);
                 canMove = false;
