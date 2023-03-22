@@ -7,13 +7,18 @@ public class LevelMoveScript : MonoBehaviour
 {
     [SerializeField]int sceneBuildIndex;
     private bool playerConfirm = false;
+    public LevelLoader levelLoader;
+
+    private void Start() {
+        levelLoader = levelLoader.GetComponent<LevelLoader>();
+    }
 
     private void Update()
     {
         if(playerConfirm && Input.GetKeyDown(KeyCode.W))
         {
             print("Loading next scene");
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            levelLoader.StartLoadScene = true;
         }
     }
 
