@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Card
   - ButtonLaser
+  - Slope
+  - Platform
+  - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -13,10 +17,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Slopes
   - Ground
-  - ui
-  - 
+  - Wall
+  - platformMoving
   - 
   - 
   - 
@@ -42,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2924491949
     locked: 0
