@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,15 +17,21 @@ public class PlayerControllerMovement : MonoBehaviour
     public float groundCheckRadius;
     public bool doubleJumped;
     public bool inSlope = false;
-    public bool walking = false;
+    public bool isWalking = false;
 
     
+    public SkeletonAnimation skeletonAnimation;
+    public AnimationReferenceAsset idle, running, jumping;
+    public string currentState;
+    public string previousState;
+    public string currentAnimation = "";
 
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        currentState = "idle";
+        SetCharacterState(currentState);
         SetGravityScale(1.0f);
     }
 
@@ -41,18 +48,58 @@ public class PlayerControllerMovement : MonoBehaviour
         
     }
 
+    public void SetCharacterAnimation(AnimationReferenceAsset animation, bool loop, float timeScale) {
+        if(animation != null) {
+            if (animation.name.Equals(currentAnimation)) {
+                return;
+            }
+            Spine.TrackEntry animationEntry = skeletonAnimation.state.SetAnimation(0, animation, loop);
+            animationEntry.TimeScale = timeScale;
+            animationEntry.Complete += AnimationEntry_Complete;
+            currentAnimation = animation.name;
+        }
+    }
+
+    private void AnimationEntry_Complete(Spine.TrackEntry trackEntry) {
+        if(currentState.Equals("jumping")) {
+            SetCharacterState(previousState);
+        }
+    }
+
+    public void SetCharacterState(string state) {
+        if (state.Equals("idle")) {
+            SetCharacterAnimation(idle, true, 1f);
+        }else if (state.Equals("running")) {
+            SetCharacterAnimation(running, true, 2f);
+        }else if (state.Equals("jumping")) {
+            SetCharacterAnimation(jumping, false, 1f);
+        }
+        currentState= state;
+    }
+
+
     private void PlayerMovement()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
-
+        if(moveInput.x == 0) {
+            if (!currentState.Equals("jumping")) {
+                SetCharacterState("idle");
+            }
+        }
         if (moveInput.x < 0)
         {
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-        }
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (!currentState.Equals("jumping")) {
+                SetCharacterState("running");
+            }
+        }  
         else if (moveInput.x > 0)
         {
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (!currentState.Equals("jumping")) {
+                SetCharacterState("running");
+            }
         }
 
         if (inSlope)
@@ -61,7 +108,7 @@ public class PlayerControllerMovement : MonoBehaviour
         }
         else
         {
-            if (!inSlope && walking)
+            if (!inSlope && isWalking)
             {
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.freezeRotation = true;
@@ -72,17 +119,17 @@ public class PlayerControllerMovement : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.None;
             inSlope = false;
-            walking = true;
+            isWalking = true;
 
         }
 
         if (Input.GetButton("Horizontal") && isGrounded == true)
         {
-            walking = true;
+            isWalking = true;
         }
         else
         {
-            walking = false;
+            isWalking = false;
         }
     }
 
@@ -92,11 +139,19 @@ public class PlayerControllerMovement : MonoBehaviour
         {
             Jump();
             doubleJumped = false;
+            if (!currentState.Equals("jumping")) {
+                previousState = currentState;
+            }
+            SetCharacterState("jumping");
         }
         if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumped)
         {
             DoubleJump();
             doubleJumped = true;
+            if (!currentState.Equals("jumping")) {
+                previousState = currentState;
+            }
+            SetCharacterState("jumping");
         }
 
         if (Input.GetButtonDown("Jump"))
