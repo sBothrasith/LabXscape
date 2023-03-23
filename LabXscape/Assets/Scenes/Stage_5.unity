@@ -4146,7 +4146,7 @@ Transform:
   - {fileID: 738156220}
   - {fileID: 1966172438}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721351951
 GameObject:
@@ -7546,15 +7546,15 @@ PrefabInstance:
       objectReference: {fileID: 1609892237}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4900002
+      value: -5.63
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0599997
+      value: -0.9199998
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10362,11 +10362,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7764836111994504020, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764836111994504020, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
 --- !u!4 &1609892237 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5641476885065896506, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7764836111994504020, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
   m_PrefabInstance: {fileID: 1609892236}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1619823960 stripped

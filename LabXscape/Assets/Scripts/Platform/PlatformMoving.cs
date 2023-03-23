@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformMoving : MonoBehaviour
-{ 
+{
     [SerializeField] private GameObject[] waypoints;
     private int currentPointIndex = 0;
 
@@ -12,6 +12,7 @@ public class PlatformMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Vector2.Distance(waypoints[currentPointIndex].transform.position, transform.position) < .1f){
             currentPointIndex++;
             if (currentPointIndex >= waypoints.Length)
@@ -35,5 +36,6 @@ public class PlatformMoving : MonoBehaviour
     {
         collision.transform.SetParent(null);
     }
+
 
 }

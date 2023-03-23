@@ -7,9 +7,9 @@ TagManager:
   - Card
   - ButtonLaser
   - Slope
-  - Platform
   - Ground
   - Wall
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - Slopes
   - Ground
   - Wall
-  - platformMoving
+  - MovingPlatforms
   - 
   - 
   - 

@@ -14,8 +14,10 @@ public class PlayerControllerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     public bool isGrounded;
     public float groundCheckRadius;
+    public bool doubleJumped;
     public bool inSlope = false;
     public bool walking = false;
+
     
 
     // Start is called before the first frame update
@@ -88,8 +90,15 @@ public class PlayerControllerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            Jump();
+            doubleJumped = false;
         }
+        if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumped)
+        {
+            DoubleJump();
+            doubleJumped = true;
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             SetGravityScale(2.0f);
@@ -98,6 +107,16 @@ public class PlayerControllerMovement : MonoBehaviour
         {
             SetGravityScale(5.0f);
         }
+
+    }
+
+    public void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight); // We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
+    }
+    public void DoubleJump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);// We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
 
     }
 
@@ -114,38 +133,24 @@ public class PlayerControllerMovement : MonoBehaviour
         }
     }
 
-	// This collision use is to ensure that when the character is on a platform we stay on it.
-	void OnCollisionExit2D(Collision2D other)
+	void OnCollisionExit2D(Collision2D coll)
 	{
-		if (other.transform.CompareTag("MovingPlatform"))
-		{
-			rb.interpolation = RigidbodyInterpolation2D.Interpolate; // We activate the interpolate function to avoid the player vibration.
+        if (coll.transform.CompareTag(("Slope")))
+        {
+            inSlope = false;
+        }
+    }
 
-			transform.parent = null; // When the player leaves the platform this function is automatically disabled.
-		}
-
-	}
-
-	// if the player collides with a gem we automatically activate the bool function of each gem that we touch.
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		// INS SLOPE FREEZZE//
-		// this collision warns us that we are in an slope in order to freeze the character motion and not begin to slide down the slope.
+		
 		if (other.transform.CompareTag(("Slope")))
 		{
 			inSlope = true;
 		}
 
-		// MOVING PLATFORM PARENTING // 
-		// This collision warns us that we are in a moving platform and parent the character and the platform to ensure that the character follows platform movement.
-		if (other.transform.CompareTag("MovingPlatform"))
-		{
-			rb.interpolation = RigidbodyInterpolation2D.None;
-			transform.parent = other.transform;
-		}
 	}
 
-	//We use the "onTriggerExit2D" function to indicate the character that has stopped touching the ground, a wall .... And so to stop emitting particles or to call other functions.
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if (other.transform.CompareTag(("Slope")))
@@ -154,14 +159,7 @@ public class PlayerControllerMovement : MonoBehaviour
 			rb.constraints = RigidbodyConstraints2D.None;
 		}
 
-		if (other.transform.CompareTag("MovingPlatform"))
-		{
-			rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-			transform.parent = null;
-		}
-
 	}
-	//We use the "onTriggerStay2D" function to indicate the character that it's still touching the ground, a wall ....
 
 	void OnTriggerStay2D(Collider2D other)
 	{
@@ -169,12 +167,6 @@ public class PlayerControllerMovement : MonoBehaviour
 		{
 			inSlope = true;
 		}
-		//This collision warns us that we are in a moving platform and parent the character and the platform to ensure that the character follows platform movement.
-		if (other.transform.CompareTag("MovingPlatform"))
-		{
-			GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.None;
-			transform.parent = other.transform;
-		}
-
+		
 	}
 }
