@@ -1619,7 +1619,7 @@ GameObject:
   - component: {fileID: 459691666}
   - component: {fileID: 459691667}
   m_Layer: 0
-  m_Name: factory_19
+  m_Name: ButtonJumpOn
   m_TagString: ButtonLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5768,6 +5768,11 @@ MonoBehaviour:
   laserSpeed: 0.5
   laserTarget: 0
   triggerLaser: 1
+--- !u!4 &1059095599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7764836111994504020, guid: 1b6f79f8670ac42409e3824b01ac904c, type: 3}
+  m_PrefabInstance: {fileID: 787212920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1062799306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8529,7 +8534,7 @@ GameObject:
   - component: {fileID: 1527483571}
   - component: {fileID: 1527483574}
   m_Layer: 0
-  m_Name: factory_19 (1)
+  m_Name: ButtonJumpOn (1)
   m_TagString: ButtonLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9246,22 +9251,22 @@ PrefabInstance:
     - target: {fileID: 4742281298534741904, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1790313372}
+      objectReference: {fileID: 1059095599}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.080824
+      value: 4.0099983
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.615121
+      value: 1.2300007
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9297,11 +9302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.0708256
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.3851192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
@@ -9557,11 +9562,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1790313372 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
-  m_PrefabInstance: {fileID: 1728462220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1853515709
 GameObject:
   m_ObjectHideFlags: 0
@@ -10024,7 +10024,7 @@ GameObject:
   - component: {fileID: 1990571261}
   - component: {fileID: 1990571264}
   m_Layer: 0
-  m_Name: factory_19 (2)
+  m_Name: ButtonJumpOn (2)
   m_TagString: ButtonLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
