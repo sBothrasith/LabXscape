@@ -26,26 +26,26 @@ public class PlayerControllerMovement : MonoBehaviour
     public string previousState;
     public string currentAnimation = "";
 
+    public AudioSource runningSound;
     // Start is called before the first frame update
     private void Start()
     {
+        runningSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         currentState = "idle";
         SetCharacterState(currentState);
         SetGravityScale(1.0f);
     }
-
+    
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
     }
     // Update is called once per frame
     private void Update()
     {
         PlayerMovement();
         PlayerJump();
-        
     }
 
     public void SetCharacterAnimation(AnimationReferenceAsset animation, bool loop, float timeScale) {
@@ -89,6 +89,7 @@ public class PlayerControllerMovement : MonoBehaviour
         }
         if (moveInput.x < 0)
         {
+
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             if (!currentState.Equals("jumping")) {
                 SetCharacterState("running");
@@ -125,10 +126,12 @@ public class PlayerControllerMovement : MonoBehaviour
 
         if (Input.GetButton("Horizontal") && isGrounded == true)
         {
+            runningSound.enabled = true;
             isWalking = true;
         }
         else
         {
+            runningSound.enabled = false;
             isWalking = false;
         }
     }
@@ -167,12 +170,13 @@ public class PlayerControllerMovement : MonoBehaviour
 
     public void Jump()
     {
+        FindObjectOfType<AudioManager>().Play("StartJump");
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight); // We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
     }
     public void DoubleJump()
     {
+        FindObjectOfType<AudioManager>().Play("StartJump");
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);// We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
-
     }
 
     private void SetGravityScale(float gravityScale)
