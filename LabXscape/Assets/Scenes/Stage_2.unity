@@ -1751,6 +1751,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8977273418029422118, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: PlayerPause.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1702982099}
+    - target: {fileID: 8977273418029422118, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: PlayerResume.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1702982099}
+    - target: {fileID: 8977273418029422118, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: PlayerPause.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977273418029422118, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: PlayerResume.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273418029422119, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8628,6 +8644,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1832376007897090617, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
   m_PrefabInstance: {fileID: 1702982095}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1702982099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 382570873, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
+  m_PrefabInstance: {fileID: 1702982095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7a41c321d33a540ba18d94ffb666a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735971825
 GameObject:
   m_ObjectHideFlags: 0
