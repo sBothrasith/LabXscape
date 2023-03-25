@@ -9,7 +9,7 @@ public class LightUp : MonoBehaviour
     private Renderer ren;
 
     public GameObject spawnpoint;
-
+    public PlayerControllerMovement player;
     public float intensitySpeed;
     private float intensityStart = 0f;
     private float intensityEnd = 2f;
@@ -20,11 +20,14 @@ public class LightUp : MonoBehaviour
     public float deathTime = 0.3f;
     Vector3[] endLaserPos;
     float[] distance;
-    
+    private bool die = false;
     bool hit = false;
+    private float countdown = 0f;
+    private float deathCountDown = 2f;
     // Start is called before the first frame update
     void Start()
     {
+        player = player.GetComponent<PlayerControllerMovement>();
         render = GetComponent<SpriteRenderer>();
         ren = GetComponent<Renderer>();
 
@@ -53,15 +56,27 @@ public class LightUp : MonoBehaviour
             }
         }
         ren.material.SetFloat("_Intensity", Mathf.Lerp(intensityStart,intensityEnd,intensityCurrent));
+
+        if (die) {
+            countdown += 1 * Time.deltaTime;
+            Die();
+            if(countdown >= deathCountDown) {
+                player.gameObject.transform.position = spawnpoint.transform.position;
+                player.enabled = true;
+                player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                player.SetCharacterState("idle");
+                countdown= 0f;
+                die = false;
+            }
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             if (ren.material.GetFloat("_Intensity") > 1.0f) {
                 timeDelay += 1f * Time.deltaTime;
-                Debug.Log(timeDelay);
                 if(timeDelay >= deathTime) {
-                    collision.gameObject.transform.position = spawnpoint.transform.position;
+                    die = true;
                     timeDelay = 0f;
                 }
             }
@@ -72,5 +87,12 @@ public class LightUp : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) {
             timeDelay = 0f;
         }
+    }
+
+
+    private void Die() {
+        player.SetCharacterState("death");
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+        player.enabled= false;
     }
 }

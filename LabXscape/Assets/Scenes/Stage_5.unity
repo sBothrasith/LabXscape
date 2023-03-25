@@ -8756,6 +8756,7 @@ MonoBehaviour:
   laser:
   - {fileID: 1546763372}
   spawnpoint: {fileID: 272562076}
+  player: {fileID: 1832376007073493145}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!114 &1034483095
@@ -9121,6 +9122,14 @@ PrefabInstance:
     - target: {fileID: 8977273418029422123, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977273418420162276, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1864158029}
+    - target: {fileID: 8977273418420162276, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
@@ -12698,6 +12707,11 @@ MonoBehaviour:
   leverAnim: {fileID: 1785058095}
   movingPlatform: {fileID: 1034483088}
   canMove: 1
+--- !u!1 &1864158029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8977273418029422123, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+  m_PrefabInstance: {fileID: 1131144424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1930413428
 GameObject:
   m_ObjectHideFlags: 0
@@ -12802,6 +12816,7 @@ MonoBehaviour:
   laser:
   - {fileID: 1546763372}
   spawnpoint: {fileID: 272562076}
+  player: {fileID: 1832376007073493145}
   intensitySpeed: 0.8
   deathTime: 0.1
 --- !u!114 &1954897803
@@ -15383,6 +15398,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 382570873, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 11400000, guid: 6833b573fb6c52c4fa40b52a1402c19c, type: 2}
     - target: {fileID: 1832376007897090564, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
       propertyPath: m_Name
       value: PlayerRobot_Spine

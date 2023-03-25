@@ -21,7 +21,7 @@ public class PlayerControllerMovement : MonoBehaviour
 
     
     public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, running, jumping;
+    public AnimationReferenceAsset idle, running, jumping, death;
     public string currentState;
     public string previousState;
     public string currentAnimation = "";
@@ -73,6 +73,8 @@ public class PlayerControllerMovement : MonoBehaviour
             SetCharacterAnimation(running, true, 2f);
         }else if (state.Equals("jumping")) {
             SetCharacterAnimation(jumping, false, 1f);
+        }else if (state.Equals("death")) {
+            SetCharacterAnimation(death, false, 1f);    
         }
         currentState= state;
     }

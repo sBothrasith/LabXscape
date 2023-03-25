@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Play("BGM");
     }
 
     public void Play(string name) {
@@ -40,22 +40,5 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
-    }
-    public void PlayOneShot(string name) {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null) {
-            Debug.LogWarning("No sound named " + name);
-            return;
-        }
-        s.source.PlayOneShot(s.clip);
-    }
-
-    public void Stop(string name) {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null) {
-            Debug.LogWarning("No sound named " + name);
-            return;
-        }
-        s.source.Stop();
     }
 }

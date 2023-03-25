@@ -1913,6 +1913,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1 &272232546
@@ -2127,6 +2128,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1 &295525850 stripped
@@ -4695,9 +4697,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 382570873, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 11400000, guid: 6833b573fb6c52c4fa40b52a1402c19c, type: 2}
     - target: {fileID: 1832376007897090564, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
       propertyPath: m_Name
       value: PlayerRobot_Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832376007897090565, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1832376007897090567, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
       propertyPath: m_SortingOrder
@@ -6856,6 +6866,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &463276232
@@ -8631,6 +8642,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1 &590900674
@@ -9354,6 +9366,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &737039698
@@ -9484,6 +9497,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &775172460
@@ -16236,6 +16250,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1001 &1225706637
@@ -16361,6 +16376,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &1241245615
@@ -16627,6 +16643,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &1324314236
@@ -16835,6 +16852,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1 &1340925719
@@ -17111,6 +17129,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &1402764271
@@ -17975,6 +17994,7 @@ MonoBehaviour:
   - {fileID: 528038085}
   - {fileID: 611581733}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.01
 --- !u!61 &1477921811
@@ -19312,6 +19332,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1001 &1652409372
@@ -19582,7 +19603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746890407524201924, guid: 3028015a4dc41254283f8da5e24ff485, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2746890407524201925, guid: 3028015a4dc41254283f8da5e24ff485, type: 3}
       propertyPath: m_RootOrder
@@ -20134,6 +20155,7 @@ MonoBehaviour:
   - {fileID: 1165024061}
   - {fileID: 52196769}
   spawnpoint: {fileID: 1156129815}
+  player: {fileID: 351990025}
   intensitySpeed: 0.5
   deathTime: 0.3
 --- !u!1 &1930777555
