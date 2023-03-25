@@ -8960,11 +8960,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.03
+      value: -3.1500003
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -0.03999976
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298534741905, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12271,6 +12271,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Size.x
+      value: 2.551333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.4312453
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.050914586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.22062302
+      objectReference: {fileID: 0}
     - target: {fileID: 534392573616480003, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
       propertyPath: m_Name
       value: lever (1)
@@ -15284,6 +15300,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Size.x
+      value: 2.572338
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6493077
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.15383816
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785058098, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2856993
+      objectReference: {fileID: 0}
     - target: {fileID: 534392573616480003, guid: 11cbb68348f097f449ea2206ad935ee2, type: 3}
       propertyPath: m_Name
       value: lever
@@ -15420,11 +15452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1832376007897090617, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.03
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 1832376007897090617, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1832376007897090617, guid: 4c14c79f42cf5874db9ffd2fa967613e, type: 3}
       propertyPath: m_LocalPosition.z
