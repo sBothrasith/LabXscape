@@ -4,31 +4,18 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-
     public GameObject movingPlatform;
-    public GameObject[] interactionComputer;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public bool interactionFirst, interactionSecond, interactionThird;
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void PuzzleInteraction()
-    {
-
+        CheckSolution();
     }
 
     private void CheckSolution()
     {
-        bool checkTrigger = true;
-        if (checkTrigger)
+        if (interactionFirst == true && interactionSecond == true && interactionThird == true)
         {
             movingPlatform.SetActive(true);
         }

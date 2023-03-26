@@ -11,6 +11,9 @@ TagManager:
   - Wall
   - MovingPlatform
   - CrushZone
+  - Stage2PC1
+  - Stage2PC2
+  - Stage2PC3
   layers:
   - Default
   - TransparentFX
