@@ -24,6 +24,7 @@ public class LightUp : MonoBehaviour
     bool hit = false;
     private float countdown = 0f;
     private float deathCountDown = 2f;
+    private bool playDSound = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +57,6 @@ public class LightUp : MonoBehaviour
             }
         }
         ren.material.SetFloat("_Intensity", Mathf.Lerp(intensityStart,intensityEnd,intensityCurrent));
-
         if (die) {
             countdown += 1 * Time.deltaTime;
             Die();
@@ -66,6 +66,7 @@ public class LightUp : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 player.SetCharacterState("idle");
                 countdown= 0f;
+                playDSound = false;
                 die = false;
             }
         }
@@ -76,6 +77,10 @@ public class LightUp : MonoBehaviour
             if (ren.material.GetFloat("_Intensity") > 1.0f) {
                 timeDelay += 1f * Time.deltaTime;
                 if(timeDelay >= deathTime) {
+                    if (!playDSound) {
+                        playDSound = true;
+                        FindObjectOfType<AudioManager>().Play("Death");
+                    }
                     die = true;
                     timeDelay = 0f;
                 }
@@ -88,6 +93,10 @@ public class LightUp : MonoBehaviour
             if (ren.material.GetFloat("_Intensity") > 1.0f) {
                 timeDelay += 1f * Time.deltaTime;
                 if (timeDelay >= deathTime) {
+                    if (!playDSound) {
+                        playDSound = true;
+                        FindObjectOfType<AudioManager>().Play("Death");
+                    }
                     die = true;
                     timeDelay = 0f;
                 }
@@ -107,4 +116,5 @@ public class LightUp : MonoBehaviour
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         player.enabled= false;
     }
+
 }
