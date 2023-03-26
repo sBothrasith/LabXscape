@@ -83,6 +83,18 @@ public class LightUp : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            if (ren.material.GetFloat("_Intensity") > 1.0f) {
+                timeDelay += 1f * Time.deltaTime;
+                if (timeDelay >= deathTime) {
+                    die = true;
+                    timeDelay = 0f;
+                }
+            }
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             timeDelay = 0f;
