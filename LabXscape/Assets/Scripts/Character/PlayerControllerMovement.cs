@@ -19,7 +19,6 @@ public class PlayerControllerMovement : MonoBehaviour
     public bool inSlope = false;
     public bool isWalking = false;
 
-    
     public SkeletonAnimation skeletonAnimation;
     public AnimationReferenceAsset idle, running, jumping, death;
     public string currentState;
@@ -88,10 +87,13 @@ public class PlayerControllerMovement : MonoBehaviour
             if (!currentState.Equals("jumping")) {
                 SetCharacterState("idle");
             }
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.freezeRotation = true;
         }
         if (moveInput.x < 0)
         {
-
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.freezeRotation = true;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             if (!currentState.Equals("jumping")) {
                 SetCharacterState("running");
@@ -99,6 +101,8 @@ public class PlayerControllerMovement : MonoBehaviour
         }  
         else if (moveInput.x > 0)
         {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.freezeRotation = true; rb.freezeRotation = true;
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             if (!currentState.Equals("jumping")) {
                 SetCharacterState("running");
@@ -108,6 +112,7 @@ public class PlayerControllerMovement : MonoBehaviour
         if (inSlope)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.freezeRotation = true;
         }
         else
         {
@@ -140,10 +145,14 @@ public class PlayerControllerMovement : MonoBehaviour
 
     private void PlayerJump()
     {
+        if (isGrounded)
+        {
+            doubleJumped = false;
+        }
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
-            doubleJumped = false;
             if (!currentState.Equals("jumping")) {
                 previousState = currentState;
             }
@@ -173,11 +182,13 @@ public class PlayerControllerMovement : MonoBehaviour
     public void Jump()
     {
         FindObjectOfType<AudioManager>().Play("StartJump");
+        rb.freezeRotation = true;
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight); // We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
     }
     public void DoubleJump()
     {
         FindObjectOfType<AudioManager>().Play("StartJump");
+        rb.freezeRotation = true;
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);// We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
     }
 
@@ -219,7 +230,6 @@ public class PlayerControllerMovement : MonoBehaviour
 			inSlope = false;
 			rb.constraints = RigidbodyConstraints2D.None;
 		}
-
 	}
 
 	void OnTriggerStay2D(Collider2D other)

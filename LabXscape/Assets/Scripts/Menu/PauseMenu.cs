@@ -41,6 +41,11 @@ public class PauseMenu : MonoBehaviour
         PlayerPause.Invoke();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     public void LoadMenu() {
         SceneManager.LoadScene(0);
     }

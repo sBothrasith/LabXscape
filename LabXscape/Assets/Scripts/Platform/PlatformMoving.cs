@@ -9,8 +9,8 @@ public class PlatformMoving : MonoBehaviour
 
     [SerializeField] private float speed = 1f;
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
 
         if (Vector2.Distance(waypoints[currentPointIndex].transform.position, transform.position) < .1f){
@@ -36,6 +36,5 @@ public class PlatformMoving : MonoBehaviour
     {
         collision.transform.SetParent(null);
     }
-
 
 }

@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 382570872}
   - component: {fileID: 382570873}
   - component: {fileID: 1237571646}
+  - component: {fileID: 6632061362020610386}
   m_Layer: 0
   m_Name: PlayerRobot_Spine
   m_TagString: Player
@@ -104,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 1832376007897090564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.03, y: -5, z: 0}
-  m_LocalScale: {x: 0.16031, y: 0.16031, z: 0.16031}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7779974094772822124}
@@ -233,7 +234,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1927242, y: -0.59016466}
+  m_Offset: {x: -0.18776655, y: -0.3458917}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -244,7 +245,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.799349, y: 10.373106}
+  m_Size: {x: 3.4259577, y: 9.946217}
   m_EdgeRadius: 0
 --- !u!58 &382570872
 CircleCollider2D:
@@ -289,6 +290,7 @@ MonoBehaviour:
   idle: {fileID: 11400000, guid: b72d47010e9f94a4e82886f160117a0d, type: 2}
   running: {fileID: 11400000, guid: 9ca51ce03431c134086e953cb745b6e3, type: 2}
   jumping: {fileID: 11400000, guid: 530a6c90a0c8b694f8874be995dde6b8, type: 2}
+  death: {fileID: 0}
   currentState: 
   previousState: 
   currentAnimation: 
@@ -389,6 +391,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!68 &6632061362020610386
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832376007897090564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.2653097, y: 4.3063774}
+  - {x: 1.1608753, y: 4.342486}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &3848111327958634960
 GameObject:
   m_ObjectHideFlags: 0
