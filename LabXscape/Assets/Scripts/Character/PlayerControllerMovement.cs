@@ -26,7 +26,7 @@ public class PlayerControllerMovement : MonoBehaviour
     public string currentAnimation = "";
 
     public AudioSource runningSound;
-    // Start is called before the first frame update
+
     private void Start()
     {
         runningSound = GetComponent<AudioSource>();
@@ -40,7 +40,7 @@ public class PlayerControllerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
-    // Update is called once per frame
+
     private void Update()
     {
         PlayerMovement();
@@ -122,7 +122,7 @@ public class PlayerControllerMovement : MonoBehaviour
                 rb.freezeRotation = true;
             }
         }
-        // To can walk thru the slopes we return to activate the horizontal movement but only when we move the joystick or the arrow keys.
+
         if (Input.GetButton("Horizontal") && inSlope || Input.GetAxis("Horizontal") > 0.5f && inSlope || Input.GetAxis("Horizontal") < -0.5f && inSlope)
         {
             rb.constraints = RigidbodyConstraints2D.None;
@@ -183,13 +183,13 @@ public class PlayerControllerMovement : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("StartJump");
         rb.freezeRotation = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpHeight); // We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight); 
     }
     public void DoubleJump()
     {
         FindObjectOfType<AudioManager>().Play("StartJump");
         rb.freezeRotation = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);// We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
     }
 
     private void SetGravityScale(float gravityScale)
