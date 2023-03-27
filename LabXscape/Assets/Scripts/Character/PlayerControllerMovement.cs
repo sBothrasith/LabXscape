@@ -126,9 +126,9 @@ public class PlayerControllerMovement : MonoBehaviour
         if (Input.GetButton("Horizontal") && inSlope || Input.GetAxis("Horizontal") > 0.5f && inSlope || Input.GetAxis("Horizontal") < -0.5f && inSlope)
         {
             rb.constraints = RigidbodyConstraints2D.None;
+            rb.freezeRotation = true;
             inSlope = false;
             isWalking = true;
-
         }
 
         if (Input.GetButton("Horizontal") && isGrounded == true)

@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 382570872}
   - component: {fileID: 382570873}
   - component: {fileID: 1237571646}
+  - component: {fileID: 564222365203587041}
   m_Layer: 0
   m_Name: PlayerRobot_Spine
   m_TagString: Player
@@ -390,6 +391,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &564222365203587041
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832376007897090564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12331009, y: -0.3922871}
+  m_Size: {x: 2.504403, y: 9.796369}
+  m_Direction: 0
 --- !u!1 &3848111327958634960
 GameObject:
   m_ObjectHideFlags: 0

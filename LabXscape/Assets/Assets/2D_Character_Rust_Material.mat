@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 2D_Character_Rust_Material
   m_Shader: {fileID: 4800000, guid: 1e8a610c9e01c3648bac42585e5fc676, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _STRAIGHT_ALPHA_INPUT
   m_InvalidKeywords:
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
@@ -144,7 +145,7 @@ Material:
     - _StencilReadMask: 255
     - _StencilRef: 1
     - _StencilWriteMask: 255
-    - _StraightAlphaInput: 0
+    - _StraightAlphaInput: 1
     - _Surface: 0
     - _ThresholdEnd: 0.25
     - _Use8Neighbourhood: 1
