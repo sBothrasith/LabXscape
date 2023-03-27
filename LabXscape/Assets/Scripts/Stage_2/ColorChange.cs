@@ -7,42 +7,41 @@ public class ColorChange : MonoBehaviour
 {
     public PuzzleManager puzzle;
 
-    public Light2D light1, light2, light3;
+    public GameObject LightA, LightB, LightC;
+    public Light2D lightChangeA;
+    public Light2D lightChangeB;
+    public Light2D lightChangeC;
 
     Color colorRed = Color.red;
     Color colorGreen = Color.green;
 
     private void Start()
     {
-        light1 = GetComponent<Light2D>();
-        light2 = GetComponent<Light2D>();
-        light3 = GetComponent<Light2D>();
+        lightChangeA = LightA.GetComponent<Light2D>();
+        lightChangeB = LightB.GetComponent<Light2D>();
+        lightChangeC = LightC.GetComponent<Light2D>();
 
     }
     // Update is called once per frame
     void Update()
     {
-        light1.color = colorRed;
-        light2.color = colorRed;
-        light3.color = colorRed;
-        if (puzzle.interactionFirst == true)
+        lightChangeA.color = colorRed;
+        lightChangeB.color = colorRed;
+        lightChangeC.color = colorRed;
+        if (puzzle.lightA_Active == true)
         {
-            light1.color = colorGreen;
+            lightChangeA.color = colorGreen;
         }
-        if (puzzle.interactionSecond == true)
+        if (puzzle.lightA_Active == true && puzzle.lightB_Active == true)
         {
-            light2.color = colorGreen;
+            lightChangeB.color = colorGreen;
         }
-        if (puzzle.interactionThird == true)
+        if (puzzle.lightA_Active == true && puzzle.lightB_Active == true && puzzle.lightC_Active == true)
         {
-            light3.color = colorGreen;
+            lightChangeC.color = colorGreen;
         }
-
-        else
-        {
-            light1.color = colorRed;
-            light2.color = colorRed;
-            light3.color = colorRed;
-        }
+        
     }
+
+            
 }

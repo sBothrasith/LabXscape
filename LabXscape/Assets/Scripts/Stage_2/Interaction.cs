@@ -13,6 +13,10 @@ public class Interaction : MonoBehaviour
         puzzle.interactionFirst = false;
         puzzle.interactionSecond = false;
         puzzle.interactionThird = false;
+
+        puzzle.lightA_Active = false;
+        puzzle.lightB_Active = false;
+        puzzle.lightC_Active = false;
     }
 
     // Update is called once per frame
@@ -21,18 +25,28 @@ public class Interaction : MonoBehaviour
         if (playerIsOnPC1 && Input.GetKeyDown(KeyCode.F))
         {
             puzzle.interactionFirst = true;
+            puzzle.lightA_Active = true;
         }
-        if (playerIsOnPC2 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst)
+
+        else if (playerIsOnPC2 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst)
         {
             puzzle.interactionSecond = true;
+            puzzle.lightB_Active = true;
         }
-        if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst && puzzle.interactionSecond)
+
+        else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst && puzzle.interactionSecond)
         {
             puzzle.interactionThird = true;
+            puzzle.lightC_Active = true;
+        }
+        else
+        {
+            puzzle.interactionFirst = false;
+            puzzle.lightA_Active = false;
         }
 
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Stage2PC1"))

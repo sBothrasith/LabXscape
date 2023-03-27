@@ -1238,9 +1238,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 1181541440}
-  light1: {fileID: 264514889}
-  light2: {fileID: 1324875140}
-  light3: {fileID: 1009706718}
+  LightA: {fileID: 264514885}
+  LightB: {fileID: 1324875137}
+  LightC: {fileID: 1009706714}
+  lightChangeA: {fileID: 264514889}
+  lightChangeB: {fileID: 1324875140}
+  lightChangeC: {fileID: 1009706718}
 --- !u!1 &271533408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,9 +3800,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 1181541440}
-  light1: {fileID: 264514889}
-  light2: {fileID: 1324875140}
-  light3: {fileID: 1009706718}
+  LightA: {fileID: 264514885}
+  LightB: {fileID: 1324875137}
+  LightC: {fileID: 1009706714}
+  lightChangeA: {fileID: 264514889}
+  lightChangeB: {fileID: 1324875140}
+  lightChangeC: {fileID: 1009706718}
 --- !u!1 &1027038837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4579,9 @@ MonoBehaviour:
   interactionFirst: 0
   interactionSecond: 0
   interactionThird: 0
+  lightA_Active: 0
+  lightB_Active: 0
+  lightC_Active: 0
 --- !u!1 &1202196617
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,9 +6339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 1181541440}
-  light1: {fileID: 264514889}
-  light2: {fileID: 1324875140}
-  light3: {fileID: 1009706718}
+  LightA: {fileID: 264514885}
+  LightB: {fileID: 1324875137}
+  LightC: {fileID: 1009706714}
+  lightChangeA: {fileID: 264514889}
+  lightChangeB: {fileID: 1324875140}
+  lightChangeC: {fileID: 1009706718}
 --- !u!1 &1352264274
 GameObject:
   m_ObjectHideFlags: 0
