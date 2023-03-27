@@ -28,15 +28,15 @@ public class ColorChange : MonoBehaviour
         lightChangeA.color = colorRed;
         lightChangeB.color = colorRed;
         lightChangeC.color = colorRed;
-        if (puzzle.lightA_Active == true)
+        if (puzzle.lightA_Active)
         {
             lightChangeA.color = colorGreen;
         }
-        if (puzzle.lightA_Active == true && puzzle.lightB_Active == true)
+        if (puzzle.lightA_Active && puzzle.lightB_Active)
         {
             lightChangeB.color = colorGreen;
         }
-        if (puzzle.lightA_Active == true && puzzle.lightB_Active == true && puzzle.lightC_Active == true)
+        if (puzzle.lightA_Active && puzzle.lightB_Active && puzzle.lightC_Active)
         {
             lightChangeC.color = colorGreen;
         }

@@ -17,7 +17,7 @@ public class PuzzleManager : MonoBehaviour
 
     private void CheckSolution()
     {
-        if (interactionFirst == true && interactionSecond == true && interactionThird == true)
+        if (interactionFirst && interactionSecond && interactionThird)
         {
             movingPlatform.SetActive(true);
         }

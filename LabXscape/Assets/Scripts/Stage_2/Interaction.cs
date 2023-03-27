@@ -5,6 +5,8 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     public PuzzleManager puzzle;
+    public GameObject requireText_C, requireText_A, requireText_T, requireText_wrongOrder;
+
     public bool playerIsOnPC1 = false, playerIsOnPC2 = false, playerIsOnPC3 = false;
     
     // Start is called before the first frame update
@@ -22,27 +24,48 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!playerIsOnPC1)
+        {
+            requireText_C.SetActive(false);
+        }
+
+        if (!playerIsOnPC2)
+        {
+            requireText_A.SetActive(false);
+        }
+
+        if (!playerIsOnPC3)
+        {
+            requireText_T.SetActive(false);
+            requireText_wrongOrder.SetActive(false);
+        }
+
+        // -----------------------------------------------------------
         if (playerIsOnPC1 && Input.GetKeyDown(KeyCode.F))
         {
             puzzle.interactionFirst = true;
             puzzle.lightA_Active = true;
+            requireText_C.SetActive(true);
         }
 
         else if (playerIsOnPC2 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst)
         {
             puzzle.interactionSecond = true;
             puzzle.lightB_Active = true;
+            requireText_A.SetActive(true);
         }
 
         else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst && puzzle.interactionSecond)
         {
             puzzle.interactionThird = true;
             puzzle.lightC_Active = true;
+            requireText_T.SetActive(true);
         }
-        else
+        else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst && !puzzle.interactionSecond)
         {
             puzzle.interactionFirst = false;
             puzzle.lightA_Active = false;
+            requireText_wrongOrder.SetActive(true);
         }
 
     }
