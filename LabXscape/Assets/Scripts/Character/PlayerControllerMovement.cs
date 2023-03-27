@@ -102,7 +102,7 @@ public class PlayerControllerMovement : MonoBehaviour
         else if (moveInput.x > 0)
         {
             rb.constraints = RigidbodyConstraints2D.None;
-            rb.freezeRotation = true; rb.freezeRotation = true;
+            rb.freezeRotation = true;
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             if (!currentState.Equals("jumping")) {
                 SetCharacterState("running");
