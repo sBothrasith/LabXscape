@@ -24,7 +24,7 @@ public class HoriMoving : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         movingCurrent = Mathf.MoveTowards(movingCurrent, movingTarget, movingSpeed * Time.deltaTime);
 
