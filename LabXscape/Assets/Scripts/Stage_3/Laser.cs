@@ -8,6 +8,11 @@ public class Laser : MonoBehaviour
     [SerializeField] private float rayDistance = 100f;
     public Transform laserFirePoint;
     public LineRenderer lineRenderer;
+
+    public GameObject startVFX;
+    public GameObject endVFX;
+
+
     Transform laserTransform;
 
     private void Awake() {
@@ -17,6 +22,9 @@ public class Laser : MonoBehaviour
     void Update()
     {
         ShootLaser();
+
+        startVFX.transform.position = lineRenderer.GetPosition(0);
+        endVFX.transform.position = lineRenderer.GetPosition(1);
 
     }
 

@@ -27,6 +27,14 @@ public class PlayerControllerMovement : MonoBehaviour
 
     public AudioSource runningSound;
 
+    [Header("Particle")]
+    [SerializeField] private ParticleSystem movementParticle;
+
+    [Range(0,0.2f)]
+    [SerializeField] private float dustFormationPeriod;
+    
+    private float particleCounter;
+
     private void Start()
     {
         runningSound = GetComponent<AudioSource>();
@@ -135,6 +143,7 @@ public class PlayerControllerMovement : MonoBehaviour
         {
             runningSound.enabled = true;
             isWalking = true;
+            PlayMovementParticle();
         }
         else
         {
@@ -181,6 +190,7 @@ public class PlayerControllerMovement : MonoBehaviour
 
     public void Jump()
     {
+        PlayJumpSound.canPlayFall = true;
         FindObjectOfType<AudioManager>().Play("StartJump");
         rb.freezeRotation = true;
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight); 
@@ -240,4 +250,13 @@ public class PlayerControllerMovement : MonoBehaviour
 		}
 		
 	}
+
+    private void PlayMovementParticle() {
+        particleCounter += Time.deltaTime;
+
+        if(particleCounter > dustFormationPeriod) {
+            movementParticle.Play();
+            particleCounter = 0;
+        }
+    }
 }
