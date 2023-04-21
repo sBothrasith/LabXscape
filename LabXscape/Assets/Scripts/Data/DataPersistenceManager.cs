@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    [SerializeField] private string fileName;
+    [SerializeField] public string fileName;
 
     private GameData gameData;
     private List<IDataPersistence> dataObjects;
@@ -16,20 +17,34 @@ public class DataPersistenceManager : MonoBehaviour
     private void Awake() {
         if(instance != null) {
             Debug.Log("More than one instance");
+            Destroy(this.gameObject);
+            return;
         }
         instance = this;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        DontDestroyOnLoad(gameObject);
         this.fileHandler = new FileDataHandler(fileName);
-        this.dataObjects = FindAllDataObjects();
+        this.gameData = fileHandler.Load();
+    }
+    private void Start() {
         LoadGame();
     }
-
     public void NewGame() {
         this.gameData = new GameData();
+        Debug.Log(gameData.playerPosition);
+    }
+    private void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        this.dataObjects = FindAllDataObjects();
+        if (SceneManager.GetActiveScene().buildIndex == gameData.currentScene) {
+            LoadGame();
+        }
     }
 
     public void LoadGame() {
@@ -39,7 +54,6 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.Log("No data found. Creating new profile");
             NewGame();
         }
-
         foreach(IDataPersistence dataObj in dataObjects) {
             dataObj.LoadGameData(gameData);
         }
@@ -54,6 +68,7 @@ public class DataPersistenceManager : MonoBehaviour
     }
 
     public void OnApplicationQuit() {
+        this.dataObjects = FindAllDataObjects();
         SaveGame();
     }
 

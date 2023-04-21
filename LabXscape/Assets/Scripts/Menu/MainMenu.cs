@@ -1,14 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    private string dataPath;
+    private void Awake() {
+        dataPath = Application.persistentDataPath;
+    }
+    public void NewGame() {
+        DataPersistenceManager.instance.NewGame();
+        DataPersistenceManager.instance.SaveGame();
+        SceneManager.LoadScene(1);
     }
     
+    public void ContinueGame() {
+        string fullPath = Path.Combine(dataPath, DataPersistenceManager.instance.fileName);
+        Debug.Log(fullPath);
+        if(File.Exists(fullPath)) {
+            try {
+                string dataLoad = "";
+
+                using(FileStream stream = new FileStream(fullPath, FileMode.Open)) {
+                    using(StreamReader reader = new StreamReader(stream)) {
+                        dataLoad = reader.ReadToEnd();
+                    }
+                }
+                GameData loadedData = JsonUtility.FromJson<GameData>(dataLoad);
+                SceneManager.LoadScene(loadedData.currentScene);
+
+            }catch(Exception e) {
+                Debug.LogError("Error when continuing file: " + fullPath + "\n" + e);
+            }
+        }
+    }
+
     public void QuitGame() {
         Application.Quit();
     }

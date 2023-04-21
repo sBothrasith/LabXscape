@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            Debug.Log("ppp");
             if(GamePaused) {
                 Resume();
             }
@@ -47,6 +48,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void LoadMenu() {
+        DataPersistenceManager.instance.SaveGame();
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 

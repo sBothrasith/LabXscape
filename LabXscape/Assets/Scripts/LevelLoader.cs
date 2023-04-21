@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LevelLoader : MonoBehaviour
+public class LevelLoader : MonoBehaviour, IDataPersistence
 {
     public Animator transition;
 
     public float transitionTime = 1f;
-
+    
     public bool StartLoadScene = false;
+    public int currentScene = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class LevelLoader : MonoBehaviour
         if (StartLoadScene) {
             LoadNextLevel();
         }
-        
+        currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void LoadNextLevel() {
@@ -35,6 +36,14 @@ public class LevelLoader : MonoBehaviour
         StartLoadScene = false;
         SceneManager.LoadScene(levelIndex);
 
+    }
+
+    public void LoadGameData(GameData data) {
+        this.currentScene = data.currentScene;
+    }
+
+    public void SaveGameData(GameData data) {
+        data.currentScene = this.currentScene;
     }
 
 }

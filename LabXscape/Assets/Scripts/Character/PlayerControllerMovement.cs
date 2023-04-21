@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerMovement : MonoBehaviour
+public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 {
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
 
     [Range(0.0f, 50.0f)] public float moveSpeed = 8f;
     [Range(0.0f, 50.0f)] public float jumpHeight = 14f;
@@ -258,5 +259,13 @@ public class PlayerControllerMovement : MonoBehaviour
             movementParticle.Play();
             particleCounter = 0;
         }
+    }
+
+    public void LoadGameData(GameData data) {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveGameData(GameData data) {
+         data.playerPosition = this.transform.position;
     }
 }

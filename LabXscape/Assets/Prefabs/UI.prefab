@@ -714,7 +714,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  pauseIcon: {fileID: 0}
+  pauseIcon: {fileID: 1321451523749665093}
   pauseMenuUI: {fileID: 8977273418585771488}
 --- !u!1 &8977273418254701460
 GameObject:
