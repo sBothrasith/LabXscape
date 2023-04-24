@@ -6,6 +6,7 @@ public class Sound
 {
     public string name;
     public AudioClip clip;
+    public AudioSource audioSource;
 
     [Range(0f, 1f)] public float volume;
     [Range(-3f, 1f)] public float pitch;

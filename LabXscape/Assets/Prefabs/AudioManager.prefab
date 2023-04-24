@@ -47,25 +47,36 @@ MonoBehaviour:
   sounds:
   - name: StartJump
     clip: {fileID: 8300000, guid: d020ebcd7c5feee4c8f42e3777a8e0cd, type: 3}
-    volume: 0.5
+    audioSource: {fileID: 0}
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EndJump
     clip: {fileID: 8300000, guid: a958e8f3b00216d4cbf56bf216afdfa3, type: 3}
-    volume: 0.15
+    audioSource: {fileID: 0}
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BGM
     clip: {fileID: 8300000, guid: ce2bdc71de8221046b5109f02c551f46, type: 3}
-    volume: 0.1
+    audioSource: {fileID: 0}
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Death
     clip: {fileID: 8300000, guid: 89b305733e4a2dd4ca01825f78e218bd, type: 3}
-    volume: 0.3
+    audioSource: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Running
+    clip: {fileID: 8300000, guid: 136e7ba1e683dea45be51c677f0f6a35, type: 3}
+    audioSource: {fileID: 0}
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -9,8 +9,8 @@ public class PlayJumpSound : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Ground")) {
-            FindObjectOfType<AudioManager>().Play("EndJump");
             if(canPlayFall) {
+                AudioManager.instance.Play("EndJump");
                 fallParticle.Play();
                 canPlayFall = false;
             }
