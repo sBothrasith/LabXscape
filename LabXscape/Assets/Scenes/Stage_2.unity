@@ -4289,6 +4289,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 4072523274002530421, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273417606419802, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_text
       value: Option
@@ -4296,6 +4300,10 @@ PrefabInstance:
     - target: {fileID: 8977273417624765256, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_text
       value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977273417934773173, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977273418029422116, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Camera
@@ -4401,6 +4409,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8977273418254701460, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273418420162279, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
@@ -4412,6 +4424,10 @@ PrefabInstance:
     - target: {fileID: 8977273418894777594, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Name
       value: Option
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977273418894777594, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}

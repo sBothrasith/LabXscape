@@ -3085,6 +3085,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8863734743522815152, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863734743522815152, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
       propertyPath: levelLoader
       value: 
       objectReference: {fileID: 1554694616}
@@ -9812,7 +9816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.601038
+      value: 3.6034513
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9971,6 +9975,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Resume
       objectReference: {fileID: 0}
+    - target: {fileID: 8977273417934773173, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273418029422118, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: pauseIcon
       value: 
@@ -10079,6 +10087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 8977273418254701460, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273418420162276, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10094,6 +10106,10 @@ PrefabInstance:
     - target: {fileID: 8977273418894777594, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Name
       value: Option
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977273418894777594, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
