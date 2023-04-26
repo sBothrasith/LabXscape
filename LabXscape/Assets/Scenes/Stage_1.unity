@@ -19159,9 +19159,5 @@ PrefabInstance:
       propertyPath: levelLoader
       value: 
       objectReference: {fileID: 1184743032}
-    - target: {fileID: 8863734743522815152, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
-      propertyPath: sceneBuildIndex
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}

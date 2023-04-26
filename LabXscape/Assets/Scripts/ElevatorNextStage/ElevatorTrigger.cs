@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ElevatorTrigger : MonoBehaviour
 {
 
     bool elevatorTrigger = false;
+
+    public TextMeshPro nextText;
 
     private Animator animator;
 
@@ -13,6 +16,7 @@ public class ElevatorTrigger : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        nextText.enabled= false;
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class ElevatorTrigger : MonoBehaviour
         if(collision.CompareTag("Player")){
             elevatorTrigger = true;
             animator.SetBool("ElevatorTrigger", elevatorTrigger);
+            nextText.enabled = true;
         }
     }
 
@@ -35,6 +40,7 @@ public class ElevatorTrigger : MonoBehaviour
         {
             elevatorTrigger = false;
             animator.SetBool("ElevatorTrigger", elevatorTrigger);
+            nextText.enabled = false;
         }
     }
 }
