@@ -17520,6 +17520,14 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetFullScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1811436231028385513, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811436231028385513, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 2598710842224096435, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17532,21 +17540,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_Color.b
+      value: 0.26415092
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_Color.g
+      value: 0.26415092
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_Color.r
+      value: 0.26415092
+      objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[0]
-      value: hi asdasdasdasdasdasdasd
+      value: I was awoken in an unfamiliar room.
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[1]
-      value: fasfa fasfsaf asf asfa af a
+      value: '"Where am I? What am I doing here?", I pondered to myself.'
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[2]
-      value: sdasdf as fasfaf asf asf af a
+      value: Use W A S D to walk around. Space to Jump. F to interact.
       objectReference: {fileID: 0}
     - target: {fileID: 6721049230844187421, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_AnchorMax.x
