@@ -37,7 +37,7 @@ public class Dialogue : MonoBehaviour
                 text.text += c;
                 yield return new WaitForSeconds(textSpeed);
             }
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             text.text = string.Empty;
             index++;
         }
