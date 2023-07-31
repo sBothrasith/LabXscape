@@ -17532,6 +17532,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[0]
+      value: hi asdasdasdasdasdasdasd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[1]
+      value: fasfa fasfsaf asf asfa af a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[2]
+      value: sdasdf as fasfaf asf asf af a
+      objectReference: {fileID: 0}
     - target: {fileID: 6721049230844187421, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

@@ -7,15 +7,15 @@ using System;
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public string dialogueText;
+    public string[] dialogueText;
     public float textSpeed;
 
-
+    private int index;
     // Start is called before the first frame update
     void Start()
     {
         text.text = string.Empty;
-        StartCoroutine(TypeLine());
+        StartText();
     }
 
     // Update is called once per frame
@@ -24,16 +24,24 @@ public class Dialogue : MonoBehaviour
         
     }
 
+    void StartText() {
+        index = 0;
+        StartCoroutine(TypeLine());
+    }
 
     IEnumerator TypeLine() {
         GameObject player = GameObject.FindWithTag("Player");
         player.GetComponent<PlayerControllerMovement>().enabled = false;
-        foreach (char c in dialogueText) {
-            text.text += c;
-            yield return new WaitForSeconds(textSpeed);
+        while(index < dialogueText.Length) {
+            foreach (char c in dialogueText[index]) {
+                text.text += c;
+                yield return new WaitForSeconds(textSpeed);
+            }
+            yield return new WaitForSeconds(1);
+            text.text = string.Empty;
+            index++;
         }
         player.GetComponent<PlayerControllerMovement>().enabled = true;
-        yield return new WaitForSeconds(2);
         this.gameObject.SetActive(false);
     }
 
