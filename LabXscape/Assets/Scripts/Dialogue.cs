@@ -30,19 +30,33 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
+        
         GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponent<PlayerControllerMovement>().enabled = false;
-        while(index < dialogueText.Length) {
-            foreach (char c in dialogueText[index]) {
-                text.text += c;
-                yield return new WaitForSeconds(textSpeed);
+        if(player == null) {
+            while (index < dialogueText.Length) {
+                foreach (char c in dialogueText[index]) {
+                    text.text += c;
+                    yield return new WaitForSeconds(textSpeed);
+                }
+                yield return new WaitForSeconds(2);
+                text.text = string.Empty;
+                index++;
             }
-            yield return new WaitForSeconds(2);
-            text.text = string.Empty;
-            index++;
-        }
-        player.GetComponent<PlayerControllerMovement>().enabled = true;
-        this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+        }else {
+            player.GetComponent<PlayerControllerMovement>().enabled = false;
+            while (index < dialogueText.Length) {
+                foreach (char c in dialogueText[index]) {
+                    text.text += c;
+                    yield return new WaitForSeconds(textSpeed);
+                }
+                yield return new WaitForSeconds(2);
+                text.text = string.Empty;
+                index++;
+            }
+            player.GetComponent<PlayerControllerMovement>().enabled = true;
+            this.gameObject.SetActive(false);
+         }
     }
 
 }
