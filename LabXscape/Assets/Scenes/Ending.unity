@@ -1841,8 +1841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2025013639}
   dialogueText:
-  - asdasdsdsdasdsaasdsa
-  - asdasdasdasdasd
+  - I am finally out of this place.
+  - Oh God! Where is everyone? What happened here?
   textSpeed: 0.1
 --- !u!114 &1867741815
 MonoBehaviour:

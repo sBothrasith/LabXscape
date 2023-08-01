@@ -12253,6 +12253,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4580748016622604551, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[0]
+      value: What is this room?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[1]
+      value: There are those lasers with different colors?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[2]
+      value: Maybe something will happen if I match them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[3]
+      value: It seems I need a card of some sort to get access to the next room.
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273417606419802, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_text
       value: Option

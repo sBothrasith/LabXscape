@@ -6810,6 +6810,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[0]
+      value: It seems that I need to jump from platform to platform to get to the
+        door.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[1]
+      value: It would be a bad idea to step on those platforms when they got heated
+        up by the laser.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[2]
+      value: I should try to not fall while I jump.
+      objectReference: {fileID: 0}
     - target: {fileID: 8977273417606419802, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_text
       value: Option
@@ -7028,10 +7046,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 24.099945, y: 11.250085}
-      - {x: -21.065758, y: 11.382304}
-      - {x: -21.054928, y: -16.757992}
-      - {x: 24.01525, y: -16.72622}
+    - - {x: 21.907673, y: 11.17179}
+      - {x: -19.343262, y: 11.147418}
+      - {x: -19.325212, y: -16.757992}
+      - {x: 22.37105, y: -16.647924}
 --- !u!66 &461939087
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -7052,20 +7070,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 461939086}
     m_ColliderPaths:
-    - - X: 240999456
-        Y: 112500848
-      - X: -210657584
-        Y: 113823040
-      - X: -210549280
+    - - X: 219076736
+        Y: 111717904
+      - X: -193432624
+        Y: 111474184
+      - X: -193252128
         Y: -167579920
-      - X: 240152496
-        Y: -167262192
+      - X: 223710496
+        Y: -166479248
   m_CompositePaths:
     m_Paths:
-    - - {x: -21.054928, y: -16.757963}
-      - {x: 24.01525, y: -16.72619}
-      - {x: 24.099916, y: 11.250085}
-      - {x: -21.065758, y: 11.382275}
+    - - {x: -19.325212, y: -16.757963}
+      - {x: 22.37105, y: -16.647894}
+      - {x: 21.907644, y: 11.17179}
+      - {x: -19.343262, y: 11.147388}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &461939088

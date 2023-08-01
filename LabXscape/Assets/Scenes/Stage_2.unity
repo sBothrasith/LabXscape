@@ -2010,11 +2010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.915543
+      value: 4.4619727
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7322599
+      value: 1.7306799
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
@@ -5079,6 +5079,22 @@ PrefabInstance:
     - target: {fileID: 4580748016622604551, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[0]
+      value: Is this some sort of Data Storage room?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[1]
+      value: Maybe I can find out more about who I am? and Where am I?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[2]
+      value: I should do something with those computers.
       objectReference: {fileID: 0}
     - target: {fileID: 8977273417606419802, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_text
