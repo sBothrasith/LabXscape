@@ -2010,11 +2010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.4619727
+      value: 5.8604937
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7306799
+      value: 1.7321999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
@@ -2493,6 +2493,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1950355622265995633, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511461899047550814, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511461899047550814, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.511
+      objectReference: {fileID: 0}
     - target: {fileID: 3056141624429772393, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -5086,14 +5098,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[0]
-      value: Is this some sort of Data Storage room?
+      value: '"This room seems like a Data Storage Room."'
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[1]
-      value: Maybe I can find out more about who I am? and Where am I?
+      value: '"What is that glowing computer? Is it on?"'
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[2]
+      value: '"I should do something about them. Maybe I can interact."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: dialogueText.Array.data[3]
       value: I should do something with those computers.
       objectReference: {fileID: 0}
     - target: {fileID: 8977273417606419802, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
@@ -12746,8 +12762,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I have just one life, but with eight to spare, I am usually friendly, but
-    I sometimes act like I don't care. What am I?
+  m_text: 'Riddle: I have just one life, but with eight to spare, I am usually friendly,
+    but I sometimes act like I don''t care. What am I?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
