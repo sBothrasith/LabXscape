@@ -8,7 +8,7 @@ public class LaserLever : MonoBehaviour
     public GameObject triggerLaser;
     private float animationTime = 0f;
     private float animationDelay = 1.5f;
-    public bool canMove = true;
+    public bool canMove = false;
     bool playAnim = false;
     bool on = true;
     // Start is called before the first frame update
