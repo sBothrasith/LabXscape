@@ -6,7 +6,7 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     public PuzzleManager puzzle;
-    public GameObject requireText_C, requireText_A, requireText_T, requireText_wrongOrder;
+    public GameObject requireText_C, requireText_A, requireText_T, requireText_wrongOrder, wrongInteraction;
     public CinemachineVirtualCamera playerCamera;
     public bool playerIsOnPC1 = false, playerIsOnPC2 = false, playerIsOnPC3 = false;
     private float cameraCurrent, cameraTarget = 0f;
@@ -31,21 +31,26 @@ public class Interaction : MonoBehaviour
         cameraCurrent = Mathf.MoveTowards(cameraCurrent, cameraTarget, zoomSpeed * Time.deltaTime);
         if (!playerIsOnPC1)
         {
+            wrongInteraction.SetActive(false);
             requireText_C.SetActive(false);
         }
 
         if (!playerIsOnPC2)
         {
+            wrongInteraction.SetActive(false);
             requireText_A.SetActive(false);
         }
 
         if (!playerIsOnPC3)
         {
+            wrongInteraction.SetActive(false);
             requireText_T.SetActive(false);
             requireText_wrongOrder.SetActive(false);
         }
 
-        // -----------------------------------------------------------
+        // ---------------------- Check Interaction Message -------------------------------------
+
+
         if (playerIsOnPC1 && Input.GetKeyDown(KeyCode.F))
         {
             puzzle.interactionFirst = true;
@@ -53,27 +58,42 @@ public class Interaction : MonoBehaviour
             requireText_C.SetActive(true);
         }
 
-        else if (playerIsOnPC2 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst)
+        else if (playerIsOnPC2 && Input.GetKeyDown(KeyCode.F))
         {
-            puzzle.interactionSecond = true;
-            puzzle.lightB_Active = true;
-            requireText_A.SetActive(true);
+            if (puzzle.interactionFirst)
+            {
+                puzzle.interactionSecond = true;
+                puzzle.lightB_Active = true;
+                requireText_A.SetActive(true);
+            }
+            //else
+            //{
+                //wrongInteraction.SetActive(true);
+            //}
         }
 
-        else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst && puzzle.interactionSecond)
+        else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F))
         {
-            puzzle.interactionThird = true;
-            puzzle.lightC_Active = true;
-            requireText_T.SetActive(true);
-            cameraTarget = 1;
+            if(puzzle.interactionFirst && puzzle.interactionSecond)
+            {
+                puzzle.interactionThird = true;
+                puzzle.lightC_Active = true;
+                requireText_T.SetActive(true);
+                cameraTarget = 1;
+            }
+            else if (puzzle.interactionFirst && !puzzle.interactionSecond)
+            {
+                puzzle.interactionFirst = false;
+                puzzle.lightA_Active = false;
+                requireText_wrongOrder.SetActive(true);
+            }
+            //else if(!puzzle.interactionFirst || !puzzle.interactionSecond)
+            //{
+                //wrongInteraction.SetActive(true);
+            //}
         }
-        else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F) && puzzle.interactionFirst && !puzzle.interactionSecond)
-        {
-            puzzle.interactionFirst = false;
-            puzzle.lightA_Active = false;
-            requireText_wrongOrder.SetActive(true);
-        }
-        if(playerCamera.m_Lens.OrthographicSize == targetZoomSize) {
+        // --------------------------------------------------------------------------------------------
+        if (playerCamera.m_Lens.OrthographicSize == targetZoomSize) {
             cameraTarget = 0;
         }
         playerCamera.m_Lens.OrthographicSize = Mathf.Lerp(zoomSize, targetZoomSize, cameraCurrent);
