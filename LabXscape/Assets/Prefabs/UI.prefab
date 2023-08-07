@@ -2479,6 +2479,7 @@ GameObject:
   - component: {fileID: 4346568635501515484}
   - component: {fileID: 4134669987383617520}
   - component: {fileID: 6444553552477238348}
+  - component: {fileID: 7822874189524730159}
   m_Layer: 8
   m_Name: Dialogue
   m_TagString: Untagged
@@ -2558,8 +2559,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1811436231028385513}
-  dialogueText: New text asxfadfasf
+  dialogueText: []
   textSpeed: 0.1
+--- !u!223 &7822874189524730159
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804188066460198127}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &7809689554427710356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 135}
+  m_AnchoredPosition: {x: 0, y: 165}
   m_SizeDelta: {x: 481.08, y: 158.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8977273417934773169
@@ -3801,7 +3823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -83}
+  m_AnchoredPosition: {x: 0, y: -31}
   m_SizeDelta: {x: 481.08, y: 158.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8977273418894777590
