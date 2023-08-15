@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseIcon;
     public GameObject pauseMenuUI;
+
     // Update is called once per frame
     void Update()
     {

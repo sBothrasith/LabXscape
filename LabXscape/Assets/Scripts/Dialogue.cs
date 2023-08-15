@@ -30,8 +30,8 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
-        
         GameObject player = GameObject.FindWithTag("Player");
+        
         if(player == null) {
             while (index < dialogueText.Length) {
                 foreach (char c in dialogueText[index]) {
@@ -46,9 +46,11 @@ public class Dialogue : MonoBehaviour
         }else {
             player.GetComponent<PlayerControllerMovement>().enabled = false;
             while (index < dialogueText.Length) {
+                player.GetComponent<PlayerControllerMovement>().enabled = false;
                 foreach (char c in dialogueText[index]) {
                     text.text += c;
                     yield return new WaitForSeconds(textSpeed);
+                    player.GetComponent<PlayerControllerMovement>().enabled = false;
                 }
                 yield return new WaitForSeconds(2);
                 text.text = string.Empty;
