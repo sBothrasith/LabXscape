@@ -1843,7 +1843,8 @@ MonoBehaviour:
   dialogueText:
   - '"I am finally out of this place."'
   - '"Oh God! Where is everyone? What happened here?"'
-  textSpeed: 0.1
+  textSpeed: 0.05
+  image: {fileID: 1867741815}
 --- !u!114 &1867741815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,7 +2043,7 @@ GameObject:
   - component: {fileID: 1998208471}
   - component: {fileID: 1998208470}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

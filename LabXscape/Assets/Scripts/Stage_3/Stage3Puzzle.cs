@@ -9,9 +9,11 @@ public class Stage3Puzzle : MonoBehaviour
     public bool[] lightTrigger;
 
     public GameObject movingPlatform;
+    public bool success = false;
     void Start()
     {
         lightTrigger = new bool[8];
+        success = false;
     }
 
     // Update is called once per frame
@@ -32,8 +34,8 @@ public class Stage3Puzzle : MonoBehaviour
         bool checkTrigger = lightTrigger.All(l => l == true);
         if (checkTrigger) {
             movingPlatform.SetActive(true);
+            success = true;
         }
-
-
     }
+
 }

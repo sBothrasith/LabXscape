@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -11,6 +12,13 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    public Image image;
+
+    void Awake(){
+        image = GetComponent<Image>();
+
+        HideImage();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +37,20 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
+    void HideImage(){
+        image.enabled = false;
+    }
+
+    void ShowImage(){
+        image.enabled = true;
+    }
+
     IEnumerator TypeLine() {
         GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<PlayerControllerMovement>().enabled = false;
+        
+        yield return new WaitForSeconds(1);
+        ShowImage();
         
         if(player == null) {
             while (index < dialogueText.Length) {
@@ -38,13 +58,12 @@ public class Dialogue : MonoBehaviour
                     text.text += c;
                     yield return new WaitForSeconds(textSpeed);
                 }
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 text.text = string.Empty;
                 index++;
             }
             this.gameObject.SetActive(false);
         }else {
-            player.GetComponent<PlayerControllerMovement>().enabled = false;
             while (index < dialogueText.Length) {
                 player.GetComponent<PlayerControllerMovement>().enabled = false;
                 foreach (char c in dialogueText[index]) {
@@ -52,7 +71,7 @@ public class Dialogue : MonoBehaviour
                     yield return new WaitForSeconds(textSpeed);
                     player.GetComponent<PlayerControllerMovement>().enabled = false;
                 }
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 text.text = string.Empty;
                 index++;
             }
