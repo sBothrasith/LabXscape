@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ public class PuzzleQuestion : MonoBehaviour
     public Stage3Puzzle stage3PuzzleManager;
 
     public bool playerIsNear = false;
+    public bool keyPress = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +21,25 @@ public class PuzzleQuestion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerIsNear && Input.GetKeyDown(KeyCode.F)){
-            puzzleTextQuestion.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            keyPress = true;
         }
-        else if(playerIsNear && Input.GetKeyDown(KeyCode.F) && stage3PuzzleManager.success){
-            puzzleTextSuccess.SetActive(true);
+        if(playerIsNear && keyPress){
+            if(stage3PuzzleManager.success)
+            {
+                puzzleTextSuccess.SetActive(true);
+                puzzleTextQuestion.SetActive(false);
+            }
+            else
+            {
+                puzzleTextQuestion.SetActive(true);
+                puzzleTextSuccess.SetActive(false);
+            }
         }
-        else if(!playerIsNear){
-            puzzleTextSuccess.SetActive(false);
+        else{
             puzzleTextQuestion.SetActive(false);
+            puzzleTextSuccess.SetActive(false);
         }
     }
 
@@ -41,6 +52,7 @@ public class PuzzleQuestion : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             playerIsNear = false;
+            keyPress = false;
         }
     }
 }

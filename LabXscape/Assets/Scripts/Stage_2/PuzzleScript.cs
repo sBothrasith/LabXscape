@@ -7,11 +7,16 @@ public class PuzzleScript : MonoBehaviour
     public GameObject requireText;
 
     public bool playerIsNear = false;
+    public bool keyPress = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (playerIsNear)
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            keyPress = true;
+        }
+        if (playerIsNear && keyPress)
         {
             requireText.SetActive(true);
         }
@@ -34,6 +39,7 @@ public class PuzzleScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerIsNear = false;
+            keyPress = false;
         }
     }
 }
