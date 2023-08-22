@@ -25,6 +25,10 @@ public class PuzzleQuestion : MonoBehaviour
         {
             keyPress = true;
         }
+        else if(Input.GetKeyUp(KeyCode.F)){
+            keyPress = false;
+        }
+
         if(playerIsNear && keyPress){
             if(stage3PuzzleManager.success)
             {
@@ -52,7 +56,6 @@ public class PuzzleQuestion : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             playerIsNear = false;
-            keyPress = false;
         }
     }
 }

@@ -14,7 +14,12 @@ public class Dialogue : MonoBehaviour
     private int index;
     public Image image;
 
+    public bool dialogueActive = false;
+
     void Awake(){
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<PlayerControllerMovement>().enabled = false;
+        
         image = GetComponent<Image>();
 
         HideImage();
@@ -29,7 +34,14 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject player = GameObject.FindWithTag("Player");
+
+        if(dialogueActive){
+            player.GetComponent<PlayerControllerMovement>().enabled = false;
+        }
+        else {
+            player.GetComponent<PlayerControllerMovement>().enabled = true;
+        }
     }
 
     void StartText() {
@@ -47,8 +59,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine() {
         GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponent<PlayerControllerMovement>().enabled = false;
-        
+
         yield return new WaitForSeconds(1);
         ShowImage();
         
@@ -65,16 +76,16 @@ public class Dialogue : MonoBehaviour
             this.gameObject.SetActive(false);
         }else {
             while (index < dialogueText.Length) {
-                player.GetComponent<PlayerControllerMovement>().enabled = false;
+                dialogueActive = true;
                 foreach (char c in dialogueText[index]) {
                     text.text += c;
                     yield return new WaitForSeconds(textSpeed);
-                    player.GetComponent<PlayerControllerMovement>().enabled = false;
                 }
                 yield return new WaitForSeconds(1);
                 text.text = string.Empty;
                 index++;
             }
+            dialogueActive = false;
             player.GetComponent<PlayerControllerMovement>().enabled = true;
             this.gameObject.SetActive(false);
          }

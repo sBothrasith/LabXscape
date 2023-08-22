@@ -9,6 +9,7 @@ public class Interaction : MonoBehaviour
     public GameObject requireText_C, requireText_A, requireText_T, requireText_wrongOrder, wrongInteraction;
     public CinemachineVirtualCamera playerCamera;
     public bool playerIsOnPC1 = false, playerIsOnPC2 = false, playerIsOnPC3 = false;
+    public bool keyPress = false;
     private float cameraCurrent, cameraTarget = 0f;
     public float zoomSpeed;
     public float zoomSize;
@@ -50,15 +51,22 @@ public class Interaction : MonoBehaviour
 
         // ---------------------- Check Interaction Message -------------------------------------
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            keyPress = true;
+        }
+        else if(Input.GetKeyUp(KeyCode.F)){
+            keyPress = false;
+        }
 
-        if (playerIsOnPC1 && Input.GetKeyDown(KeyCode.F))
+        if (playerIsOnPC1  && keyPress)
         {
             puzzle.interactionFirst = true;
             puzzle.lightA_Active = true;
             requireText_C.SetActive(true);
         }
 
-        else if (playerIsOnPC2 && Input.GetKeyDown(KeyCode.F))
+        else if (playerIsOnPC2  && keyPress)
         {
             if (puzzle.interactionFirst)
             {
@@ -66,13 +74,13 @@ public class Interaction : MonoBehaviour
                 puzzle.lightB_Active = true;
                 requireText_A.SetActive(true);
             }
-            //else
-            //{
-                //wrongInteraction.SetActive(true);
-            //}
+            else
+            {
+                wrongInteraction.SetActive(true);
+            }
         }
 
-        else if (playerIsOnPC3 && Input.GetKeyDown(KeyCode.F))
+        else if (playerIsOnPC3  && keyPress)
         {
             if(puzzle.interactionFirst && puzzle.interactionSecond)
             {
@@ -87,10 +95,10 @@ public class Interaction : MonoBehaviour
                 puzzle.lightA_Active = false;
                 requireText_wrongOrder.SetActive(true);
             }
-            //else if(!puzzle.interactionFirst || !puzzle.interactionSecond)
-            //{
-                //wrongInteraction.SetActive(true);
-            //}
+            else if(!puzzle.interactionFirst || !puzzle.interactionSecond)
+            {
+                wrongInteraction.SetActive(true);
+            }
         }
         // --------------------------------------------------------------------------------------------
         if (playerCamera.m_Lens.OrthographicSize == targetZoomSize) {

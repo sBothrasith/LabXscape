@@ -16,6 +16,10 @@ public class PuzzleScript : MonoBehaviour
         {
             keyPress = true;
         }
+        else if(Input.GetKeyUp(KeyCode.F)){
+            keyPress = false;
+        }
+
         if (playerIsNear && keyPress)
         {
             requireText.SetActive(true);
@@ -39,7 +43,6 @@ public class PuzzleScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerIsNear = false;
-            keyPress = false;
         }
     }
 }
