@@ -610,7 +610,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The laser base has charge up 66 power into the incubation tube!
+  m_text: The laser base has charge up 66 power into the incubation tube! Looks like
+    it power up the elevator.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -8520,6 +8521,7 @@ MonoBehaviour:
   puzzleTextSuccess: {fileID: 759539007}
   stage3PuzzleManager: {fileID: 593949770}
   playerIsNear: 0
+  keyPress: 0
 --- !u!114 &1095761818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12348,11 +12350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.9521704
+      value: 6.6833534
       objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6940999
+      value: 1.6935098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
