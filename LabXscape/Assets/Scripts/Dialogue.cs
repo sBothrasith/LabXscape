@@ -89,6 +89,6 @@ public class Dialogue : MonoBehaviour
             player.GetComponent<PlayerControllerMovement>().enabled = true;
             this.gameObject.SetActive(false);
          }
-    }
+}
 
 }
