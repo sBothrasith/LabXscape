@@ -2722,7 +2722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This computer have the letter T on it.\nAhah! It's a CAT!
+  m_text: This computer have the letter "T" on it.\nAhah! It's a CAT!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0ee6f316ba414547b2f836d0bdae9fa, type: 2}
   m_sharedMaterial: {fileID: 4206195861298008131, guid: f0ee6f316ba414547b2f836d0bdae9fa, type: 2}
@@ -11647,7 +11647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This computer have the letter A on it.\nI feel like I'm close!
+  m_text: This computer have the letter "A" on it.\nI feel like I'm close!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0ee6f316ba414547b2f836d0bdae9fa, type: 2}
   m_sharedMaterial: {fileID: 4206195861298008131, guid: f0ee6f316ba414547b2f836d0bdae9fa, type: 2}
@@ -13210,7 +13210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I got the first one right!\nIt's a C, what could it be?
+  m_text: I got the first one right!\nIt's a "C", what could it be?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0ee6f316ba414547b2f836d0bdae9fa, type: 2}
   m_sharedMaterial: {fileID: 4206195861298008131, guid: f0ee6f316ba414547b2f836d0bdae9fa, type: 2}
