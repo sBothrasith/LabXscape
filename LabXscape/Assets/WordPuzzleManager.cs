@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class WordPuzzleManager : MonoBehaviour
 {
     List<string> words = new() {
-        "laser",
         "robot",
-        "metal",
-        "stone",
+        "steel",
         "chain",
-        "platform",
-        "dog"
+        "computer",
+        "platform"
     };
     [Range(1, 3)]
     public int numberOfWordToSolve;
@@ -26,20 +25,20 @@ public class WordPuzzleManager : MonoBehaviour
     private ArrayList letterToSpawn = new();
     private ArrayList scriptableObjectLetter = new();
 
-    private Sprite[] spriteLetterToSpawn;
-    public ShowLetter showLetter;
+    private Letter[] scriptLetterToSpawn;
+    public  GameObject showLetter;
     public Letter[] letter;
     public float objectSize = 2f;
     private List<Vector2> spawnedPoints = new List<Vector2>();
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         randomSpawnArea = randomSpawnArea.GetComponent<PolygonCollider2D>();
         GetRandomWord();
         GenerateLetterForWord();
-        spriteLetterToSpawn = new Sprite[letterToSpawn.Count];
+        scriptLetterToSpawn = new Letter[letterToSpawn.Count];
         FromLetterToScriptableObject();
-        foreach(Sprite l in spriteLetterToSpawn) {
+        foreach(Letter l in scriptLetterToSpawn) {
             SpawnLetter(l, GetRandomPointInCollider(randomSpawnArea));
         }
     }
@@ -78,21 +77,24 @@ public class WordPuzzleManager : MonoBehaviour
             char l = (char)letterToSpawn[i];
             Letter matchLetter = letter.FirstOrDefault(ml => ml.letter == l);
             if(matchLetter != null) {
-                spriteLetterToSpawn[i] = matchLetter.GetSprite();
+                scriptLetterToSpawn[i] = matchLetter.GetObject();
             }
         }
     }
 
-    private void SpawnLetter(Sprite sprite, Vector2 randomPointToSpawn) {
+    private void SpawnLetter(Letter letter, Vector2 randomPointToSpawn) {
         foreach (Vector2 point in spawnedPoints) {
             if (Vector2.Distance(randomPointToSpawn, point) < objectSize) {
-                // Generate a new random point until it is not too close to any existing points
                 do {
                     randomPointToSpawn = GetRandomPointInCollider(randomSpawnArea);
                 } while (Vector2.Distance(randomPointToSpawn, point) < objectSize);
             }
         }
-        Instantiate(showLetter.SetSprite(sprite), new Vector3(randomPointToSpawn.x, randomPointToSpawn.y, startingPoint.position.z), startingPoint.rotation);
+        
+        GameObject letterBox = Instantiate(showLetter, new Vector3(randomPointToSpawn.x, randomPointToSpawn.y, startingPoint.position.z), startingPoint.rotation);
+        ShowLetter sLetter = letterBox.AddComponent<ShowLetter>();
+        sLetter.SetLetter(letter);
+
         spawnedPoints.Add(randomPointToSpawn);
     }
 
@@ -106,4 +108,7 @@ public class WordPuzzleManager : MonoBehaviour
         return randomPoint;
     }
 
+    public ArrayList getWordListToSolve () {
+        return wordListToSolve;
+    }
 }
