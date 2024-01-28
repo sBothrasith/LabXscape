@@ -1,0 +1,8 @@
+Orange Robot - 32x32
+Enemy Robot - 32x32
+Tileset - 16x16
+
+You can found a tileset example here in the same folder
+
+-------------------------------
+ These assets are free to modify and use in commercial projects, but you cannot resell this.
