@@ -20,34 +20,30 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     public bool inSlope = false;
     public bool isWalking = false;
 
-    public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, running, jumping, death;
-    public string currentState;
-    public string previousState;
-    public string currentAnimation = "";
+    public Animator animator;
 
     public AudioSource runningSound;
 
     [Header("Particle")]
     [SerializeField] private ParticleSystem movementParticle;
 
-    [Range(0,0.2f)]
+    [Range(0, 0.2f)]
     [SerializeField] private float dustFormationPeriod;
-    
+
     private float particleCounter;
 
     private void Start()
     {
         runningSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
-        currentState = "idle";
-        SetCharacterState(currentState);
+        animator = GetComponent<Animator>();
         SetGravityScale(1.0f);
     }
-    
+
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        HandleLayers();
     }
 
     private void Update()
@@ -56,46 +52,16 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         PlayerJump();
     }
 
-    public void SetCharacterAnimation(AnimationReferenceAsset animation, bool loop, float timeScale) {
-        if(animation != null) {
-            if (animation.name.Equals(currentAnimation)) {
-                return;
-            }
-            Spine.TrackEntry animationEntry = skeletonAnimation.state.SetAnimation(0, animation, loop);
-            animationEntry.TimeScale = timeScale;
-            animationEntry.Complete += AnimationEntry_Complete;
-            currentAnimation = animation.name;
-        }
-    }
-
-    private void AnimationEntry_Complete(Spine.TrackEntry trackEntry) {
-        if(currentState.Equals("jumping")) {
-            SetCharacterState(previousState);
-        }
-    }
-
-    public void SetCharacterState(string state) {
-        if (state.Equals("idle")) {
-            SetCharacterAnimation(idle, true, 1f);
-        }else if (state.Equals("running")) {
-            SetCharacterAnimation(running, true, 2f);
-        }else if (state.Equals("jumping")) {
-            SetCharacterAnimation(jumping, false, 1f);
-        }else if (state.Equals("death")) {
-            SetCharacterAnimation(death, false, 1f);    
-        }
-        currentState= state;
-    }
-
 
     private void PlayerMovement()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
-        if(moveInput.x == 0) {
-            if (!currentState.Equals("jumping")) {
-                SetCharacterState("idle");
-            }
+
+        animator.SetFloat("Speed", Mathf.Abs(moveInput.x));
+
+        if (moveInput.x == 0)
+        {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             rb.freezeRotation = true;
         }
@@ -104,18 +70,13 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
             rb.constraints = RigidbodyConstraints2D.None;
             rb.freezeRotation = true;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            if (!currentState.Equals("jumping")) {
-                SetCharacterState("running");
-            }
-        }  
+
+        }
         else if (moveInput.x > 0)
         {
             rb.constraints = RigidbodyConstraints2D.None;
             rb.freezeRotation = true;
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            if (!currentState.Equals("jumping")) {
-                SetCharacterState("running");
-            }
         }
 
         if (inSlope)
@@ -155,27 +116,25 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 
     private void PlayerJump()
     {
+        
         if (isGrounded)
         {
+            animator.ResetTrigger("IsJumping");
+            animator.SetBool("IsFalling", false);
             doubleJumped = false;
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            animator.SetTrigger("IsJumping");
             Jump();
-            if (!currentState.Equals("jumping")) {
-                previousState = currentState;
-            }
-            SetCharacterState("jumping");
         }
         if (Input.GetButtonDown("Jump") && !isGrounded && !doubleJumped)
         {
-            DoubleJump();
             doubleJumped = true;
-            if (!currentState.Equals("jumping")) {
-                previousState = currentState;
-            }
-            SetCharacterState("jumping");
+            animator.SetTrigger("IsJumping");
+            DoubleJump();
+
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -187,14 +146,27 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
             SetGravityScale(5.0f);
         }
 
+        if (Input.GetButtonUp("Jump"))
+        {
+            animator.SetBool("IsFalling", true);
+            animator.ResetTrigger("IsJumping");
+        }
+
+        if(rb.velocity.y < 0)
+        {
+            animator.SetBool("IsFalling", true);
+        }
+
     }
 
     public void Jump()
     {
         PlayJumpSound.canPlayFall = true;
+        Debug.Log("Jump");
         FindObjectOfType<AudioManager>().Play("StartJump");
         rb.freezeRotation = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpHeight); 
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+        
     }
     public void DoubleJump()
     {
@@ -203,69 +175,84 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
     }
 
+    private void HandleLayers()
+    {
+        if (!isGrounded)
+        {
+            animator.SetLayerWeight(1, 1);
+        }
+        else
+        {
+            animator.SetLayerWeight(1, 0);
+        }
+    }
     private void SetGravityScale(float gravityScale)
     {
         rb.gravityScale = gravityScale;
     }
 
-	void OnCollisionEnter2D(Collision2D coll)
-	{
+    void OnCollisionEnter2D(Collision2D coll)
+    {
         if (coll.transform.CompareTag(("Slope")))
         {
             inSlope = true;
         }
     }
 
-	void OnCollisionExit2D(Collision2D coll)
-	{
+    void OnCollisionExit2D(Collision2D coll)
+    {
         if (coll.transform.CompareTag(("Slope")))
         {
             inSlope = false;
         }
     }
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		
-		if (other.transform.CompareTag(("Slope")))
-		{
-			inSlope = true;
-		}
+    void OnTriggerEnter2D(Collider2D other)
+    {
 
-	}
+        if (other.transform.CompareTag(("Slope")))
+        {
+            inSlope = true;
+        }
 
-	void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.transform.CompareTag(("Slope")))
-		{
-			inSlope = false;
-			rb.constraints = RigidbodyConstraints2D.None;
-		}
-	}
+    }
 
-	void OnTriggerStay2D(Collider2D other)
-	{
-		if (other.transform.CompareTag(("Slope")))
-		{
-			inSlope = true;
-		}
-		
-	}
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.CompareTag(("Slope")))
+        {
+            inSlope = false;
+            rb.constraints = RigidbodyConstraints2D.None;
+        }
+    }
 
-    private void PlayMovementParticle() {
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.transform.CompareTag(("Slope")))
+        {
+            inSlope = true;
+        }
+
+    }
+
+    private void PlayMovementParticle()
+    {
         particleCounter += Time.deltaTime;
 
-        if(particleCounter > dustFormationPeriod) {
+        if (particleCounter > dustFormationPeriod)
+        {
             movementParticle.Play();
             particleCounter = 0;
         }
     }
 
-    public void LoadGameData(GameData data) {
+    public void LoadGameData(GameData data)
+    {
         this.transform.position = data.playerPosition;
     }
 
-    public void SaveGameData(GameData data) {
-         data.playerPosition = this.transform.position;
+    public void SaveGameData(GameData data)
+    {
+        data.playerPosition = this.transform.position;
     }
 }

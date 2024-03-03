@@ -39,7 +39,6 @@ public class LaserDie : MonoBehaviour
     void Die() {
         if (die) {
             countdown += 1 * Time.deltaTime;
-            player.SetCharacterState("death");
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             player.enabled = false;
@@ -47,7 +46,6 @@ public class LaserDie : MonoBehaviour
                 player.gameObject.transform.position = spawnPoint.transform.position;
                 player.enabled = true;
                 player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-                player.SetCharacterState("idle");
                 countdown = 0f;
                 playDSound = false;
                 die = false;

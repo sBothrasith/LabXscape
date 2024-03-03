@@ -64,7 +64,6 @@ public class LightUp : MonoBehaviour
                 player.gameObject.transform.position = spawnpoint.transform.position;
                 player.enabled = true;
                 player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-                player.SetCharacterState("idle");
                 countdown= 0f;
                 playDSound = false;
                 die = false;
@@ -112,7 +111,6 @@ public class LightUp : MonoBehaviour
 
 
     private void Die() {
-        player.SetCharacterState("death");
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         player.enabled= false;

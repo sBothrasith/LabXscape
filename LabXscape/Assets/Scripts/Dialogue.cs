@@ -7,7 +7,7 @@ using System;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI textComponent;
     public string[] dialogueText;
     public float textSpeed;
 
@@ -17,9 +17,6 @@ public class Dialogue : MonoBehaviour
     public bool dialogueActive = false;
 
     void Awake(){
-        GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponent<PlayerControllerMovement>().enabled = false;
-        
         image = GetComponent<Image>();
 
         HideImage();
@@ -27,24 +24,28 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = string.Empty;
-        StartText();
+        textComponent.text = string.Empty;
+        StartDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-
-        if(dialogueActive){
-            player.GetComponent<PlayerControllerMovement>().enabled = false;
-        }
-        else {
-            player.GetComponent<PlayerControllerMovement>().enabled = true;
-        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (textComponent.text == dialogueText[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = dialogueText[index];
+            }
+        }   
     }
 
-    void StartText() {
+    void StartDialogue() {
         index = 0;
         StartCoroutine(TypeLine());
     }
@@ -58,37 +59,57 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
-        GameObject player = GameObject.FindWithTag("Player");
+        //GameObject player = GameObject.FindWithTag("Player");
 
         yield return new WaitForSeconds(1);
         ShowImage();
         
-        if(player == null) {
-            while (index < dialogueText.Length) {
-                foreach (char c in dialogueText[index]) {
-                    text.text += c;
-                    yield return new WaitForSeconds(textSpeed);
-                }
-                yield return new WaitForSeconds(1);
-                text.text = string.Empty;
-                index++;
-            }
+        foreach (char c in dialogueText[index].ToCharArray()) {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+
+        //if (player == null)
+        //{
+        //    while (index < dialogueText.Length)
+        //    {
+        //        yield return new WaitForSeconds(1);
+        //        textComponent.text = string.Empty;
+        //        index++;
+        //    }
+        //    this.gameObject.SetActive(false);
+        //}
+        //else
+        //{
+        //    while (index < dialogueText.Length)
+        //    {
+        //        dialogueActive = true;
+        //        foreach (char c in dialogueText[index])
+        //        {
+        //            textComponent.text += c;
+        //            yield return new WaitForSeconds(textSpeed);
+        //        }
+        //        yield return new WaitForSeconds(1);
+        //        textComponent.text = string.Empty;
+        //        index++;
+        //    }
+        //    dialogueActive = false;
+        //    this.gameObject.SetActive(false);
+        //}
+    }
+
+    void NextLine()
+    {
+        if (index < dialogueText.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
             this.gameObject.SetActive(false);
-        }else {
-            while (index < dialogueText.Length) {
-                dialogueActive = true;
-                foreach (char c in dialogueText[index]) {
-                    text.text += c;
-                    yield return new WaitForSeconds(textSpeed);
-                }
-                yield return new WaitForSeconds(1);
-                text.text = string.Empty;
-                index++;
-            }
-            dialogueActive = false;
-            player.GetComponent<PlayerControllerMovement>().enabled = true;
-            this.gameObject.SetActive(false);
-         }
-}
+        }
+    }
 
 }

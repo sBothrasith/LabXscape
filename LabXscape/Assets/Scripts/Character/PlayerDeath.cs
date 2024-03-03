@@ -26,7 +26,6 @@ public class PlayerDeath : MonoBehaviour
 
     private void Die()
     {
-        player.SetCharacterState("death");
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
