@@ -39,6 +39,7 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
+                dialogueActive = false;
                 StopAllCoroutines();
                 textComponent.text = dialogueText[index];
             }
@@ -59,8 +60,8 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
-        //GameObject player = GameObject.FindWithTag("Player");
 
+        dialogueActive = true;
         yield return new WaitForSeconds(1);
         ShowImage();
         
@@ -68,34 +69,8 @@ public class Dialogue : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-
-        //if (player == null)
-        //{
-        //    while (index < dialogueText.Length)
-        //    {
-        //        yield return new WaitForSeconds(1);
-        //        textComponent.text = string.Empty;
-        //        index++;
-        //    }
-        //    this.gameObject.SetActive(false);
-        //}
-        //else
-        //{
-        //    while (index < dialogueText.Length)
-        //    {
-        //        dialogueActive = true;
-        //        foreach (char c in dialogueText[index])
-        //        {
-        //            textComponent.text += c;
-        //            yield return new WaitForSeconds(textSpeed);
-        //        }
-        //        yield return new WaitForSeconds(1);
-        //        textComponent.text = string.Empty;
-        //        index++;
-        //    }
-        //    dialogueActive = false;
-        //    this.gameObject.SetActive(false);
-        //}
+        
+        
     }
 
     void NextLine()
@@ -108,6 +83,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            //dialogueActive = false;
             this.gameObject.SetActive(false);
         }
     }

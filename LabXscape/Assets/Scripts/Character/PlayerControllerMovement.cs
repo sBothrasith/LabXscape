@@ -19,6 +19,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     public bool doubleJumped;
     public bool inSlope = false;
     public bool isWalking = false;
+    public Dialogue dialogue;
 
     public Animator animator;
 
@@ -44,17 +45,25 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
         HandleLayers();
+        
     }
 
     private void Update()
     {
         PlayerMovement();
         PlayerJump();
+        
     }
 
 
     private void PlayerMovement()
     {
+        if (dialogue.dialogueActive)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+        
         moveInput.x = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
 
