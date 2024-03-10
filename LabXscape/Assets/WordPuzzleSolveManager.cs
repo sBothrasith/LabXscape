@@ -23,7 +23,6 @@ public class WordPuzzleSolveManager : MonoBehaviour
     }
 
     public bool CollectLetter(Letter l) {
-        Debug.Log(scriptableObjectCollected.Count);
         if (currentWord[scriptableObjectCollected.Count] == l.GetLetter()) {
             scriptableObjectCollected.Add(l);
             letterController.UpdateUILetter();

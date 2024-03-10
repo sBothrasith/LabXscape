@@ -171,7 +171,6 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     public void Jump()
     {
         PlayJumpSound.canPlayFall = true;
-        Debug.Log("Jump");
         FindObjectOfType<AudioManager>().Play("StartJump");
         rb.freezeRotation = true;
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
