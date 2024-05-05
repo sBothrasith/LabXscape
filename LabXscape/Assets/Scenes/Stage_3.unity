@@ -8013,6 +8013,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5139898997595538069, guid: 6282ef33971cb2c4d8791e16e7430887, type: 3}
   m_PrefabInstance: {fileID: 1080199172}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1081378524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4742281298534741904, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
+  m_PrefabInstance: {fileID: 1728462220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1083975365
 GameObject:
   m_ObjectHideFlags: 0
@@ -8490,7 +8501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249208074859514902, guid: d6beea6e7af9ca24fb74a20918e9fd26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.14
+      value: 9.73
       objectReference: {fileID: 0}
     - target: {fileID: 249208074859514902, guid: d6beea6e7af9ca24fb74a20918e9fd26, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8573,9 +8584,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 1.5480824, y: -15.082109}
-      - {x: -1.1952858, y: -14.717571}
-      - {x: -1.5506439, y: -6.321992}
-      - {x: -6.9330225, y: -6.604706}
+      - {x: -0.8327007, y: -14.757858}
+      - {x: -1.026001, y: -13.352229}
+      - {x: -6.9330225, y: -13.320157}
       - {x: -7.5870075, y: -15.104414}
       - {x: -12.837512, y: -15.117233}
       - {x: -12.238086, y: -17.635012}
@@ -12355,6 +12366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 4742281298642601897, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
+      propertyPath: orthographic size
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4742281298642601902, guid: 8216f8317ed9b744f83e732cfac70f5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.8508244
@@ -12697,8 +12712,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectUI:
-  - {fileID: 1419333386}
+  - {fileID: 1610793793}
   collectedObject: []
+--- !u!114 &1838774047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838774036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ee99e5269e35d46885788cdc3ed194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1081378524}
+  startZoomSize: 4.5
+  targetZoomSize: 8
+  zoomSpeed: 1
+  laser:
+  - {fileID: 1684393640}
+  - {fileID: 1034060104}
+  cameraDelayTime: 2
 --- !u!1 &1853515709
 GameObject:
   m_ObjectHideFlags: 0
@@ -14087,7 +14122,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1579.677
+      value: 1421.5046
       objectReference: {fileID: 0}
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_SizeDelta.y
@@ -14095,7 +14130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -18.744
+      value: -11.0862
       objectReference: {fileID: 0}
     - target: {fileID: 1811436231028385513, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_fontSize
@@ -14142,9 +14177,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 923abc339f048cb43901fbb0a8dee9db, type: 3}
+      objectReference: {fileID: 21300000, guid: 301afa6ee52f1fc42a7b9bd80573258a, type: 3}
     - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Color.a
       value: 1

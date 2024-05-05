@@ -9,6 +9,8 @@ public class FileDataHandler
     private string dataPath = Application.persistentDataPath;
     private string dataFileName = "";
 
+    private readonly string encryptionCodeWord = "lab";
+
     public FileDataHandler(string dataFileName) {
         this.dataFileName = dataFileName;
     }
@@ -27,6 +29,8 @@ public class FileDataHandler
                     }
                 }
 
+                //dataLoad = EncryptDecrypt(dataLoad);
+
                 loadedData = JsonUtility.FromJson<GameData>(dataLoad);
 
             }catch(Exception e) {
@@ -44,6 +48,8 @@ public class FileDataHandler
 
             string dataStore = JsonUtility.ToJson(data, true);
 
+            //dataStore = EncryptDecrypt(dataStore);
+
             using(FileStream stream = new FileStream(fullPath, FileMode.Create)) {
                 using(StreamWriter writer = new StreamWriter(stream)) {
                     writer.WriteLine(dataStore);
@@ -52,6 +58,16 @@ public class FileDataHandler
         }catch(Exception e ) {
             Debug.LogError("Error when Saving file: " + fullPath + "\n" + e);
         }
+    }
+
+    private string EncryptDecrypt(string data) {
+        string modifiedData = "";
+
+        for(int i = 0; i < data.Length; i++) {
+            modifiedData += (char)(data[i] ^ encryptionCodeWord[i % encryptionCodeWord.Length]);
+        }
+
+        return modifiedData;
     }
 
 }

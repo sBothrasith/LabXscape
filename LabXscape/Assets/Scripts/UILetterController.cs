@@ -58,6 +58,7 @@ public class UILetterController : MonoBehaviour
         foreach (Transform child in container) {
             Destroy(child.gameObject);
         }
+        gameObject.GetComponent<Image>().enabled = false;
     }
 
     public void ImageLetter (string word) {

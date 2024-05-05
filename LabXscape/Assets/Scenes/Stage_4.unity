@@ -6651,7 +6651,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1556.933
+      value: 1485.0365
       objectReference: {fileID: 0}
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6659,7 +6659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.373
+      value: 28.5752
       objectReference: {fileID: 0}
     - target: {fileID: 1811436231028385513, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_fontSize
@@ -6698,9 +6698,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 923abc339f048cb43901fbb0a8dee9db, type: 3}
+      objectReference: {fileID: 21300000, guid: 301afa6ee52f1fc42a7b9bd80573258a, type: 3}
     - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -17946,16 +17950,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.257231, y: -13.773356}
+    - - {x: 0.8004761, y: -14.241843}
       - {x: -19.311068, y: -13.697166}
       - {x: -19.197382, y: -7.8453693}
       - {x: -22.450499, y: -7.793249}
       - {x: -22.509285, y: -16.07014}
-      - {x: 8.23716, y: -16.252512}
-      - {x: 8.442655, y: -22.013136}
-      - {x: 13.419125, y: -21.963287}
-      - {x: 13.568197, y: -11.8096695}
-      - {x: 8.224793, y: -11.777028}
+      - {x: -1.7962742, y: -16.21347}
+      - {x: 5.5926914, y: -16.31321}
+      - {x: 6.9981527, y: -16.235126}
+      - {x: 7.9534435, y: -16.302399}
+      - {x: 7.7511463, y: -14.2301855}
+      - {x: 7.699135, y: -14.081267}
+      - {x: 5.2577085, y: -13.885221}
 --- !u!4 &1339139812
 Transform:
   m_ObjectHideFlags: 0
