@@ -15,6 +15,7 @@ public class Dialogue : MonoBehaviour
     public Image image;
 
     public bool dialogueActive = false;
+    public int dialogueCount;
 
     void Awake(){
         image = GetComponent<Image>();
@@ -24,6 +25,7 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogueCount = 1;
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -31,24 +33,34 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (dialogueCount >= dialogueText.Length)
+        {
+            dialogueActive = false;
+        }
+        else
+        {
+			dialogueActive = true;
+		}
+		if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == dialogueText[index])
             {
                 NextLine();
-            }
+			}
             else
             {
-                dialogueActive = false;
-                StopAllCoroutines();
+				StopAllCoroutines();
                 textComponent.text = dialogueText[index];
             }
-        }   
+		}   
+
+  
     }
 
     void StartDialogue() {
         index = 0;
-        StartCoroutine(TypeLine());
+        ShowImage();
+		StartCoroutine(TypeLine());
     }
 
     void HideImage(){
@@ -61,17 +73,15 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine() {
 
-        dialogueActive = true;
         yield return new WaitForSeconds(1);
-        ShowImage();
         
         foreach (char c in dialogueText[index].ToCharArray()) {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        
-        
-    }
+        yield return new WaitForSeconds(3);
+		NextLine();
+	}
 
     void NextLine()
     {
@@ -79,9 +89,10 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
+			dialogueCount++;
             StartCoroutine(TypeLine());
-        }
-        else
+		}
+		else
         {
             //dialogueActive = false;
             this.gameObject.SetActive(false);

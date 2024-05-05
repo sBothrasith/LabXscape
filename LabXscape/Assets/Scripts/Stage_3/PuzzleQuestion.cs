@@ -42,7 +42,7 @@ public class PuzzleQuestion : MonoBehaviour
             }
         }
         else{
-            puzzleTextQuestion.SetActive(false);
+            puzzleTextQuestion.SetActive(false);    
             puzzleTextSuccess.SetActive(false);
         }
     }
