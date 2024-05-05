@@ -11,6 +11,8 @@ public class Dialogue : MonoBehaviour
     public string[] dialogueText;
     public float textSpeed;
 
+    public GameObject skipText;
+
     private int index;
     public Image image;
 
@@ -27,6 +29,7 @@ public class Dialogue : MonoBehaviour
     {
         dialogueCount = 1;
         textComponent.text = string.Empty;
+        skipText.SetActive(false);
         StartDialogue();
     }
 
@@ -41,7 +44,13 @@ public class Dialogue : MonoBehaviour
         {
 			dialogueActive = true;
 		}
-		if (Input.GetMouseButtonDown(0))
+
+        if(textComponent.text == dialogueText[index])
+        {
+            skipText.SetActive(true);
+        }
+
+		if (Input.GetKeyDown(KeyCode.Return))
         {
             if (textComponent.text == dialogueText[index])
             {
@@ -79,12 +88,15 @@ public class Dialogue : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        
         yield return new WaitForSeconds(3);
 		NextLine();
 	}
 
     void NextLine()
     {
+        skipText.SetActive(false);
+
         if (index < dialogueText.Length - 1)
         {
             index++;
