@@ -30,7 +30,6 @@ public class DataPersistenceManager : MonoBehaviour
     }
     public void NewGame() {
         this.gameData = new GameData();
-        Debug.Log(gameData.playerPosition);
     }
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,6 +41,9 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         this.dataObjects = FindAllDataObjects();
+        if (gameData == null) {
+            return;
+        }
         if (SceneManager.GetActiveScene().buildIndex == gameData.currentScene) {
             LoadGame();
         }

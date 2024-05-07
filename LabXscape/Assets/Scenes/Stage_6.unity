@@ -15108,7 +15108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8863734743522815152, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8863734743522815152, guid: 3b839c0b1472971468257b2b16067f1e, type: 3}
       propertyPath: levelLoader
@@ -22689,6 +22689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letterController: {fileID: 19924774}
   nextStageDoor: {fileID: 1069870392}
+  solved: 0
 --- !u!114 &1638414398
 MonoBehaviour:
   m_ObjectHideFlags: 0

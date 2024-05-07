@@ -18,7 +18,7 @@ public class FileDataHandler
     public GameData Load() {
         string fullPath = Path.Combine(dataPath, dataFileName);
         GameData loadedData = null;
-        Debug.Log(fullPath);
+
         if(File.Exists(fullPath)) {
             try {
                 string dataLoad = "";
@@ -29,7 +29,7 @@ public class FileDataHandler
                     }
                 }
 
-                //dataLoad = EncryptDecrypt(dataLoad);
+                dataLoad = EncryptDecrypt(dataLoad);
 
                 loadedData = JsonUtility.FromJson<GameData>(dataLoad);
 
@@ -48,11 +48,11 @@ public class FileDataHandler
 
             string dataStore = JsonUtility.ToJson(data, true);
 
-            //dataStore = EncryptDecrypt(dataStore);
+            dataStore = EncryptDecrypt(dataStore);
 
             using(FileStream stream = new FileStream(fullPath, FileMode.Create)) {
                 using(StreamWriter writer = new StreamWriter(stream)) {
-                    writer.WriteLine(dataStore);
+                    writer.Write(dataStore);
                 }
             }
         }catch(Exception e ) {

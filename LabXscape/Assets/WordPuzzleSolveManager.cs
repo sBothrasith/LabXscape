@@ -7,6 +7,7 @@ public class WordPuzzleSolveManager : MonoBehaviour
     private List<Letter> scriptableObjectCollected = new();
     public UILetterController letterController;
     public GameObject nextStageDoor;
+    public bool solved = false;
     private WordPuzzleManager wordPuzzleManager;
 
     private int solvedWord = 0;
@@ -23,6 +24,10 @@ public class WordPuzzleSolveManager : MonoBehaviour
     }
 
     public bool CollectLetter(Letter l) {
+        if (scriptableObjectCollected.Count >= currentWord.Length) {
+            return false;
+        }
+
         if (currentWord[scriptableObjectCollected.Count] == l.GetLetter()) {
             scriptableObjectCollected.Add(l);
             letterController.UpdateUILetter();
@@ -51,6 +56,7 @@ public class WordPuzzleSolveManager : MonoBehaviour
             letterController.UpdateUIContainer();
         } else {
             nextStageDoor.GetComponent<LevelMoveScript>().enabled = true;
+            solved = true;
             letterController.ClearContainer();
         }
     }

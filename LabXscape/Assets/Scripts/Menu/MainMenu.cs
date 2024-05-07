@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     private string dataPath;
+    private readonly string encryptionCodeWord = "lab";
     private void Awake() {
         dataPath = Application.persistentDataPath;
     }
@@ -29,6 +31,9 @@ public class MainMenu : MonoBehaviour
                         dataLoad = reader.ReadToEnd();
                     }
                 }
+
+                dataLoad = EncryptDecrypt(dataLoad);
+
                 GameData loadedData = JsonUtility.FromJson<GameData>(dataLoad);
                 SceneManager.LoadScene(loadedData.currentScene);
 
@@ -40,5 +45,15 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame() {
         Application.Quit();
+    }
+
+    private string EncryptDecrypt(string data) {
+        string modifiedData = "";
+
+        for (int i = 0; i < data.Length; i++) {
+            modifiedData += (char)(data[i] ^ encryptionCodeWord[i % encryptionCodeWord.Length]);
+        }
+
+        return modifiedData;
     }
 }

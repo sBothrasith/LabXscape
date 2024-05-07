@@ -11,6 +11,7 @@ public class LockedDoor : MonoBehaviour
     private ElevatorTrigger elevatorTriggerScript;
     private LevelMoveScript nextLevelScript;
     private Animator doorAnimator;
+    private WordPuzzleSolveManager wordPuzzleSolveManager;
 
     public GameObject requiredText;
     // Start is called before the first frame update
@@ -18,7 +19,8 @@ public class LockedDoor : MonoBehaviour
     {
         elevatorTriggerScript =  GetComponent<ElevatorTrigger>();
         nextLevelScript = GetComponent<LevelMoveScript>();
-        doorAnimator = GetComponent<Animator>();    
+        doorAnimator = GetComponent<Animator>();
+        wordPuzzleSolveManager = FindObjectOfType<WordPuzzleSolveManager>();
     }
 
     // Update is called once per frame
@@ -28,9 +30,12 @@ public class LockedDoor : MonoBehaviour
     }
 
     void DoorUnlock() {
+
         if(playerObject.collectedObject.Contains("Card")) {
             elevatorTriggerScript.enabled = true;
-            nextLevelScript.enabled = true;
+            if (wordPuzzleSolveManager != null && wordPuzzleSolveManager.solved == true) {
+                nextLevelScript.enabled = true;
+            }
             doorAnimator.enabled = true;
         }
         else {
