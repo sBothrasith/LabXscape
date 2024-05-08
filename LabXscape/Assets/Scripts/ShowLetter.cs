@@ -25,7 +25,7 @@ public class ShowLetter : MonoBehaviour
     public void TriggerLetter() {
         if (!collected) {
             WordPuzzleSolveManager solverManager = FindObjectOfType<WordPuzzleSolveManager>();
-            bool shouldCollect = solverManager.CollectLetter(letter);
+            bool shouldCollect = true;
             if (shouldCollect) {
                 collected = true;
                 Destroy(gameObject);
