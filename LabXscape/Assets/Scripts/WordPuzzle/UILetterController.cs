@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,11 @@ public class UILetterController : MonoBehaviour
 
     private WordPuzzleManager wordPuzzleManager;
     private WordPuzzleSolveManager wordPuzzleSolveManager;
+
+    List<(string khmerWord, string englishWord)> khmerToEnglish = new() {
+            ("ែដក", "steel"),
+            ("យន្ត", "robot")
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +56,9 @@ public class UILetterController : MonoBehaviour
 
         for (int i = 0; i < chracterToCollect.Count; i++) {
             if (chracterToCollect[i].collected) {
+                if (PlayerPrefs.GetString("language") == "khmer") {
+                    container.GetChild(i + 1).GetComponentInChildren<TextMeshProUGUI>().font = wordPuzzleManager.fontKhmerAsset;
+                }
                 container.GetChild(i+1).GetComponentInChildren<TextMeshProUGUI>().text= chracterToCollect[i].letter.ToString();
             }
         }
@@ -63,6 +72,11 @@ public class UILetterController : MonoBehaviour
     }
 
     public void ImageLetter (string word) {
+        Debug.Log(word);
+        if (PlayerPrefs.GetString("language") == "khmer") {
+            word = MapKhmerToEnglishImage(word);
+        }
+        Debug.Log(word);
         Sprite image = Resources.Load<Sprite>("HintImage/" + word);
         GameObject hintImage = Instantiate(picturePrefab, container);
         hintImage.GetComponent<Image>().sprite = image;
@@ -81,5 +95,15 @@ public class UILetterController : MonoBehaviour
         }
 
         return result;
+    }
+
+    private string MapKhmerToEnglishImage(string khmerWord) {
+        for (int i = 0; i < khmerToEnglish.Count; i++) {
+            if (khmerToEnglish[i].khmerWord == khmerWord) {
+                return khmerToEnglish[i].englishWord;
+            }
+        }
+
+        return "";
     }
 }

@@ -39,4 +39,8 @@ public class LetterPuzzle : MonoBehaviour
         letter = l;
         GetComponentInChildren<TextMeshPro>().text = l.ToString();
     }
+
+    public void SetFont(TMP_FontAsset font) {
+        GetComponentInChildren<TextMeshPro>().font = font;
+    }
 }

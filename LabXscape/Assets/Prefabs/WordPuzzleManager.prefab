@@ -229,6 +229,7 @@ MonoBehaviour:
   startingPoint: {fileID: 8093770970413339431}
   letterPuzzle: {fileID: 3809156025521423890, guid: 4c73d2e3be1132d48a1543adc6671423, type: 3}
   randomSpawnArea: {fileID: 0}
+  fontKhmerAsset: {fileID: 11400000, guid: d8a4323688fae6b4599dfe06e6d4a9f3, type: 2}
   objectSize: 7
 --- !u!114 &4219819118573810811
 MonoBehaviour:

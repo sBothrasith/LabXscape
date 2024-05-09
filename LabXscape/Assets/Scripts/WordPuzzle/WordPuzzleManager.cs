@@ -1,19 +1,28 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class WordPuzzleManager : MonoBehaviour
 {
-    List<string> words = new() {
-        "ROBOT",
+    List<string> englishWords = new() {
         "STEEL",
+        "ROBOT",
         "CHAIN",
         "COMPUTER",
         "PLATFORM"
     };
+
+    List<string> khmerWords = new() {
+        "ែដក",
+        "យន្ត"
+    };
+
+    List<string> words = new();
+
     [Range(1, 3)]
     public int numberOfWordToSolve;
 
@@ -21,6 +30,7 @@ public class WordPuzzleManager : MonoBehaviour
     public LetterPuzzle letterPuzzle;
 
     public PolygonCollider2D randomSpawnArea;
+    public TMP_FontAsset fontKhmerAsset;
 
     private ArrayList wordListToSolve = new();
     private ArrayList letterToSpawn = new();
@@ -31,6 +41,13 @@ public class WordPuzzleManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (PlayerPrefs.GetString("language") == "khmer") {
+            words = khmerWords;
+        } else {
+            words = englishWords;
+        }
+
+
         randomSpawnArea = randomSpawnArea.GetComponent<PolygonCollider2D>();
         GetRandomWord();
         GenerateLetterForWord();
@@ -72,6 +89,10 @@ public class WordPuzzleManager : MonoBehaviour
         }
         
         LetterPuzzle letterObject = Instantiate(letterPuzzle, new Vector3(randomPointToSpawn.x, randomPointToSpawn.y, startingPoint.position.z), startingPoint.rotation);
+        
+        if (PlayerPrefs.GetString("language") == "khmer") {
+            letterObject.SetFont(fontKhmerAsset);
+        }
         
         letterObject.SetLetter(letter);
 
