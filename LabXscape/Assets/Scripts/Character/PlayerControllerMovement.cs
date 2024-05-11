@@ -125,7 +125,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     private void PlayerJump()
     {
         
-        if (isGrounded)
+        if (isGrounded || inSlope)
         {
             animator.ResetTrigger("IsJumping");
             animator.SetBool("IsFalling", false);
@@ -203,6 +203,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         if (coll.transform.CompareTag(("Slope")))
         {
             inSlope = true;
+            isGrounded = true;
         }
     }
 
@@ -220,6 +221,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         if (other.transform.CompareTag(("Slope")))
         {
             inSlope = true;
+            isGrounded = true;
         }
 
     }
@@ -238,6 +240,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         if (other.transform.CompareTag(("Slope")))
         {
             inSlope = true;
+            isGrounded = true;
         }
 
     }

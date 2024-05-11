@@ -18,7 +18,8 @@ public class WordPuzzleManager : MonoBehaviour
 
     List<string> khmerWords = new() {
         "ែដក",
-        "យន្ត"
+        "យន្ត",
+        "ចង្វាក់"
     };
 
     List<string> words = new();

@@ -19369,6 +19369,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1378414578, guid: fd16ce894616248418c8aa77a1cdf51c, type: 3}
+      propertyPath: fontKhmerAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d8a4323688fae6b4599dfe06e6d4a9f3, type: 2}
+    - target: {fileID: 1378414578, guid: fd16ce894616248418c8aa77a1cdf51c, type: 3}
       propertyPath: randomSpawnArea
       value: 
       objectReference: {fileID: 2074295406}

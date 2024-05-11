@@ -17,7 +17,8 @@ public class UILetterController : MonoBehaviour
 
     List<(string khmerWord, string englishWord)> khmerToEnglish = new() {
             ("ែដក", "steel"),
-            ("យន្ត", "robot")
+            ("យន្ត", "robot"),
+            ("ចង្វាក់", "chain"),
     };
 
     // Start is called before the first frame update
