@@ -17460,7 +17460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[0]
@@ -19383,6 +19383,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093770970601790887, guid: fd16ce894616248418c8aa77a1cdf51c, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093770971147817806, guid: fd16ce894616248418c8aa77a1cdf51c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

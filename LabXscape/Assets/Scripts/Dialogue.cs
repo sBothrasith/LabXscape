@@ -81,15 +81,13 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
-
-        yield return new WaitForSeconds(1);
         
         foreach (char c in dialogueText[index].ToCharArray()) {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
         
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 		NextLine();
 	}
 
