@@ -17,6 +17,7 @@ public class WordPuzzleManager : MonoBehaviour
     };
 
     List<string> khmerWords = new() {
+        "ក្កក្ខក្គក្ឃក្ងក្ចក្ឆក្ជក្ឈក្ញក្ដក្ឋក្ឌក្ឍក្ណក្តក្ថក្ទក្ធក្នក្បក្ផក្ពក្ភក្មក្យក្រក្លក្វក្សក្ហក្ឡក្អ",
         "ែដក",
         "យន្ត",
         "ចង្វាក់"

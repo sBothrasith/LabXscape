@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
+    public TMP_FontAsset khmerFont;
     public TextMeshProUGUI textComponent;
     public string[] dialogueText;
     public float textSpeed;
@@ -20,6 +22,8 @@ public class Dialogue : MonoBehaviour
     public int dialogueCount;
 
     void Awake(){
+        int stageNumber = SceneManager.GetActiveScene().buildIndex;
+        dialogueText = DialogueText.GetDialogueFromStage(stageNumber - 1);
         image = GetComponent<Image>();
 
         HideImage();
@@ -27,6 +31,10 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetString("language") == "khmer") {
+            textComponent.font = khmerFont;
+        }
+
         dialogueCount = 1;
         textComponent.text = string.Empty;
         skipText.SetActive(false);
@@ -81,10 +89,13 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
-        
-        foreach (char c in dialogueText[index].ToCharArray()) {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+        if (PlayerPrefs.GetString("language") == "khmer") {
+            textComponent.text = dialogueText[index];
+        } else {
+            foreach (char c in dialogueText[index].ToCharArray()) {
+                textComponent.text += c;
+                yield return new WaitForSeconds(textSpeed);
+            }
         }
         
         yield return new WaitForSeconds(5);

@@ -58,7 +58,19 @@ public class UILetterController : MonoBehaviour
         for (int i = 0; i < chracterToCollect.Count; i++) {
             if (chracterToCollect[i].collected) {
                 if (PlayerPrefs.GetString("language") == "khmer") {
-                    container.GetChild(i + 1).GetComponentInChildren<TextMeshProUGUI>().font = wordPuzzleManager.fontKhmerAsset;
+                    TextMeshProUGUI textMesh = container.GetChild(i + 1).GetComponentInChildren<TextMeshProUGUI>();
+                    textMesh.font = wordPuzzleManager.fontKhmerAsset;
+                    string l = chracterToCollect[i].letter.ToString();
+                    if (l.Contains("\u17CB")) {
+                        textMesh.margin = new Vector4(98.42f, 11.7f, textMesh.margin.z, textMesh.margin.w);
+                    }
+                    else if (l.Contains("3") || l.Contains("8") || l.Contains("13") || l.Contains("20") || l.Contains("25") || l.Contains("26") || l.Contains("30")) {
+                        textMesh.fontSize = 90;
+                        textMesh.margin = new Vector4(99.01f, -64.2f, textMesh.margin.z, textMesh.margin.w);
+                    }
+                    else if (l.Contains("sprite")) {
+                        textMesh.margin = new Vector4(98.6f, -80f, textMesh.margin.z, textMesh.margin.w);
+                    }
                 }
                 container.GetChild(i+1).GetComponentInChildren<TextMeshProUGUI>().text= chracterToCollect[i].letter.ToString();
             }
@@ -73,11 +85,11 @@ public class UILetterController : MonoBehaviour
     }
 
     public void ImageLetter (string word) {
-        Debug.Log(word);
+
         if (PlayerPrefs.GetString("language") == "khmer") {
             word = MapKhmerToEnglishImage(word);
         }
-        Debug.Log(word);
+
         Sprite image = Resources.Load<Sprite>("HintImage/" + word);
         GameObject hintImage = Instantiate(picturePrefab, container);
         hintImage.GetComponent<Image>().sprite = image;
