@@ -36,11 +36,11 @@ public class CameraZoom : MonoBehaviour
                 cameraTarget = 0;
             }
         }
+		playerCamera.m_Lens.OrthographicSize = Mathf.Lerp(startZoomSize, targetZoomSize, cameraCurrent);
 
-        playerCamera.m_Lens.OrthographicSize = Mathf.Lerp(startZoomSize, targetZoomSize, cameraCurrent);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+	private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "ButtonLaser") {
             cameraTarget = 1;
         }

@@ -7,20 +7,41 @@ using UnityEngine;
 public class Stage3Puzzle : MonoBehaviour
 {
     public bool[] lightTrigger;
+    public GameObject[] Buttons;
 
     public GameObject movingPlatform;
     public bool success = false;
+
     void Start()
     {
         lightTrigger = new bool[8];
         success = false;
+
+        for (int i = 0; i < Buttons.Length; i++)
+        {
+            Buttons[i].SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckSolution();
+
+        if(success)
+        {
+            StartCoroutine(WaitForSecs());
+		}
     }
+
+    IEnumerator WaitForSecs()
+    {
+        yield return new WaitForSeconds(4);
+		for (int i = 0; i < Buttons.Length; i++)
+		{
+			Buttons[i].SetActive(false);
+		}
+	}
 
     public void setLightTrue(int ID) {
         lightTrigger[ID] = true;

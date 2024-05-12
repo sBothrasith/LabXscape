@@ -95,6 +95,7 @@ public class LightUp : MonoBehaviour
                     if (!playDSound) {
                         playDSound = true;
                         FindObjectOfType<AudioManager>().Play("Death");
+                        PlayerDie();
                     }
                     die = true;
                     timeDelay = 0f;
@@ -109,6 +110,10 @@ public class LightUp : MonoBehaviour
         }
     }
 
+    public bool PlayerDie()
+    {
+        return true;
+    }
 
     private void Die() {
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;

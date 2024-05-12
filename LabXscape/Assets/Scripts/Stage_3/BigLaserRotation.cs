@@ -21,6 +21,7 @@ public class BigLaserRotation : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
         buttonCurrent = Mathf.MoveTowards(buttonCurrent, buttonTarget, buttonSpeed * Time.deltaTime);
         if (transform.position == endPos) {
             buttonTarget = 0;
@@ -29,6 +30,7 @@ public class BigLaserRotation : MonoBehaviour {
             }
         }
         transform.position = Vector3.Lerp(startPos, endPos, buttonCurrent);
+
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {

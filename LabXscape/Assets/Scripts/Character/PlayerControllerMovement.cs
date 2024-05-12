@@ -32,12 +32,16 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 
     private float particleCounter;
 
+    LightUp lightDie;
+    EnemyMoving enemyDie;
+
     private void Start()
     {
         runningSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SetGravityScale(1.0f);
+        animator.SetBool("Die", false);
     }
 
     private void FixedUpdate()
@@ -51,6 +55,14 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     {
         PlayerMovement();
         PlayerJump();
+
+        if (lightDie != null || enemyDie != null)
+        {
+			if (lightDie.PlayerDie() || enemyDie.PlayerDie())
+			{
+				animator.SetBool("Die", true);
+			}
+		}
         
     }
 
@@ -203,7 +215,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         if (coll.transform.CompareTag(("Slope")))
         {
             inSlope = true;
-            isGrounded = true;
+            //isGrounded = true;
         }
     }
 
@@ -215,32 +227,12 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-
-        if (other.transform.CompareTag(("Slope")))
-        {
-            inSlope = true;
-            isGrounded = true;
-        }
-
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.transform.CompareTag(("Slope")))
-        {
-            inSlope = false;
-            rb.constraints = RigidbodyConstraints2D.None;
-        }
-    }
-
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.transform.CompareTag(("Slope")))
         {
             inSlope = true;
-            isGrounded = true;
+            //isGrounded = true;
         }
 
     }
