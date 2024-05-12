@@ -9,7 +9,14 @@ public class LevelMoveScript : MonoBehaviour
     private bool playerConfirm = false;
     public LevelLoader levelLoader;
 
-    private void Start() {
+	private const string _Stage_One = "Stage_1";
+
+	public void SkipTutorial()
+	{
+		SceneManager.LoadScene(_Stage_One);
+	}
+
+	private void Start() {
         levelLoader = levelLoader.GetComponent<LevelLoader>();
     }
 

@@ -10,16 +10,14 @@ public class MainMenu : MonoBehaviour
 {
     private string dataPath;
     private readonly string encryptionCodeWord = "lab";
-    private const int _StartStage = 1;
+    private const string _StartStage = "Tutorial";
     private void Awake() {
         dataPath = Application.persistentDataPath;
     }
     public void NewGame() {
-        Debug.Log("NewStart");
         DataPersistenceManager.instance.NewGame();
         DataPersistenceManager.instance.SaveGame();
-        Debug.Log("Hi");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(_StartStage);
     }
     
     public void ContinueGame() {
