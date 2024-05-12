@@ -34,10 +34,12 @@ public class WordPuzzleManager : MonoBehaviour
     public TMP_FontAsset fontKhmerAsset;
 
     private ArrayList wordListToSolve = new();
-    private ArrayList letterToSpawn = new();
+    private Dictionary<string, List<string>> wordletterToSolve = new();
 
     public float objectSize = 2f;
     private List<Vector2> spawnedPoints = new List<Vector2>();
+
+    public static char ConsonantJoiner = '្';
 
     // Start is called before the first frame update
     void Awake()
@@ -53,8 +55,10 @@ public class WordPuzzleManager : MonoBehaviour
         GetRandomWord();
         GenerateLetterForWord();
 
-        foreach(char l in letterToSpawn) {
-            SpawnLetter(l, GetRandomPointInCollider(randomSpawnArea));
+        foreach (List<string> wordLetter in wordletterToSolve.Values) {
+            foreach (string l in wordLetter) {
+                SpawnLetter(l, GetRandomPointInCollider(randomSpawnArea));
+            }
         }
     }
 
@@ -74,13 +78,25 @@ public class WordPuzzleManager : MonoBehaviour
 
     private void GenerateLetterForWord() {
         foreach(string word in wordListToSolve) {
-            foreach(char letter in word) {
-                letterToSpawn.Add(letter);
+            List<string> letter = new List<string>();
+            for(int i = 0; i < word.Length; i++) {
+                if (word[i] == ConsonantJoiner) {
+                    string conLetter = word[i] + word[i+1].ToString();
+                    letter.Add(KhmerFontAdjuster.Adjust(conLetter));
+                    i++;
+                    continue;
+                }
+                letter.Add(word[i].ToString());
             }
+            string wordToStore = word;
+            if (PlayerPrefs.GetString("language") == "khmer") {
+                wordToStore = KhmerFontAdjuster.Adjust(word);
+            }
+            wordletterToSolve[wordToStore] = letter;
         }
     }
 
-    private void SpawnLetter(char letter, Vector2 randomPointToSpawn) {
+    private void SpawnLetter(string letter, Vector2 randomPointToSpawn) {
         foreach (Vector2 point in spawnedPoints) {
             if (Vector2.Distance(randomPointToSpawn, point) < objectSize) {
                 do {
@@ -112,5 +128,9 @@ public class WordPuzzleManager : MonoBehaviour
 
     public ArrayList getWordListToSolve () {
         return wordListToSolve;
+    }
+
+    public Dictionary<string, List<string>> GetLetterListToSolve() {
+        return wordletterToSolve;
     }
 }

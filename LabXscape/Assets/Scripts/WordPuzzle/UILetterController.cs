@@ -40,7 +40,7 @@ public class UILetterController : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        List<(char letter, bool collected)> chracterToCollect = wordPuzzleSolveManager.GetCharacterToCollectList();
+        List<(string letter, bool collected)> chracterToCollect = wordPuzzleSolveManager.GetCharacterToCollectList();
 
         if (chracterToCollect != null && chracterToCollect.Count > 0) {
             string word = GetWordFromChars(chracterToCollect);
@@ -53,7 +53,7 @@ public class UILetterController : MonoBehaviour
     }
 
     public void UpdateUILetter () {
-        List<(char letter, bool collected)> chracterToCollect = wordPuzzleSolveManager.GetCharacterToCollectList();
+        List<(string letter, bool collected)> chracterToCollect = wordPuzzleSolveManager.GetCharacterToCollectList();
 
         for (int i = 0; i < chracterToCollect.Count; i++) {
             if (chracterToCollect[i].collected) {
@@ -88,7 +88,7 @@ public class UILetterController : MonoBehaviour
         puzzleImage.GetComponent<Image>().sprite = sprite;
     }
 
-    private string GetWordFromChars(List<(char letter, bool collected)> word) {
+    private string GetWordFromChars(List<(string letter, bool collected)> word) {
         string result = string.Empty;
 
         foreach (var item in word) {

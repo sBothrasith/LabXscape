@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
 
 public class WordPuzzleSolveManager : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class WordPuzzleSolveManager : MonoBehaviour
     public bool solved = false;
 
     private int solvedWord = 0;
-    private string currentWord;
+    private List<string> currentWord;
     private int currentIndex;
 
     private UILetterController letterController;
     private WordPuzzleManager wordPuzzleManager;
 
-    private List<(char letter, bool collected)> characterToCollectList = new();
+    private List<(string letter, bool collected)> characterToCollectList = new();
 
     private void Awake() {
         wordPuzzleManager = gameObject.GetComponent<WordPuzzleManager>();
@@ -25,7 +26,7 @@ public class WordPuzzleSolveManager : MonoBehaviour
 
     private void Start() {
         currentIndex = 0;
-        currentWord = (string)wordPuzzleManager.getWordListToSolve()[currentIndex];
+        currentWord = wordPuzzleManager.GetLetterListToSolve().ElementAt(currentIndex).Value;
 
         StringToList();
     }
@@ -35,12 +36,12 @@ public class WordPuzzleSolveManager : MonoBehaviour
             return;
         }
 
-        foreach (char c in currentWord) {
-            characterToCollectList.Add((c, false));
+        foreach (string s in currentWord) {
+            characterToCollectList.Add((s, false));
         }
     }
 
-    public bool CollectLetter(char l) {
+    public bool CollectLetter(string l) {
         for (int i = 0; i < characterToCollectList.Count; i++) {
             if (characterToCollectList[i].letter == l && !characterToCollectList[i].collected) {
                 characterToCollectList[i] = (characterToCollectList[i].letter, true);
@@ -53,7 +54,7 @@ public class WordPuzzleSolveManager : MonoBehaviour
         return false;
     }
 
-    public List<(char letter, bool collected)> GetCharacterToCollectList() {
+    public List<(string letter, bool collected)> GetCharacterToCollectList() {
         return characterToCollectList;
     }
 
@@ -62,7 +63,7 @@ public class WordPuzzleSolveManager : MonoBehaviour
         if (solvedWord < wordPuzzleManager.numberOfWordToSolve) {
             characterToCollectList.Clear();
             currentIndex++;
-            currentWord = (string)wordPuzzleManager.getWordListToSolve()[currentIndex];
+            currentWord = wordPuzzleManager.GetLetterListToSolve().ElementAt(currentIndex).Value;
             StringToList();
             letterController.UpdateUIContainer();
         } else {

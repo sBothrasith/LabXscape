@@ -42,418 +42,214 @@ MonoBehaviour:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_0
     m_HashCode: -2049314057
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 1
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_1
     m_HashCode: -2049314058
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 2
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_2
     m_HashCode: -2049314059
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 3
-    m_Scale: 1
+    m_Scale: 0.8
     m_Name: consonants_3
     m_HashCode: -2049314060
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 4
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_4
     m_HashCode: -2049314061
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 5
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_5
     m_HashCode: -2049314062
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 6
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_6
     m_HashCode: -2049314063
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 7
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_7
     m_HashCode: -2049314064
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 8
-    m_Scale: 1
+    m_Scale: 0.9
     m_Name: consonants_8
     m_HashCode: -2049314049
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 9
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_9
     m_HashCode: -2049314050
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 10
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_10
     m_HashCode: 1092112774
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 11
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_11
     m_HashCode: 1092112775
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 12
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_12
     m_HashCode: 1092112772
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 13
-    m_Scale: 1
+    m_Scale: 0.8
     m_Name: consonants_13
     m_HashCode: 1092112773
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 14
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_14
     m_HashCode: 1092112770
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 15
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_15
     m_HashCode: 1092112771
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 16
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_16
     m_HashCode: 1092112768
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 17
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_17
     m_HashCode: 1092112769
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 18
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_18
     m_HashCode: 1092112782
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 19
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_19
     m_HashCode: 1092112783
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 20
-    m_Scale: 1
+    m_Scale: 0.8
     m_Name: consonants_20
     m_HashCode: 1092112805
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 21
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_21
     m_HashCode: 1092112804
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 22
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_22
     m_HashCode: 1092112807
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 23
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_23
     m_HashCode: 1092112806
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 24
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_24
     m_HashCode: 1092112801
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 25
-    m_Scale: 1
+    m_Scale: 0.8
     m_Name: consonants_25
     m_HashCode: 1092112800
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 26
-    m_Scale: 0.67
+    m_Scale: 0.7
     m_Name: consonants_26
     m_HashCode: 1092112803
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 27
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_27
     m_HashCode: 1092112802
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 28
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_28
     m_HashCode: 1092112813
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 29
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_29
     m_HashCode: 1092112812
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 30
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_30
     m_HashCode: 1092112708
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 31
-    m_Scale: 1
+    m_Scale: 0.8
     m_Name: consonants_31
     m_HashCode: 1092112709
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 32
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_32
     m_HashCode: 1092112710
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 33
-    m_Scale: 1
-    m_Name: consonants_33
-    m_HashCode: 1092112711
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 34
-    m_Scale: 1
-    m_Name: consonants_0
-    m_HashCode: -2049314057
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 35
-    m_Scale: 1
-    m_Name: consonants_1
-    m_HashCode: -2049314058
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 36
-    m_Scale: 1
-    m_Name: consonants_2
-    m_HashCode: -2049314059
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 37
-    m_Scale: 1
-    m_Name: consonants_3
-    m_HashCode: -2049314060
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 38
-    m_Scale: 1
-    m_Name: consonants_4
-    m_HashCode: -2049314061
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 39
-    m_Scale: 1
-    m_Name: consonants_5
-    m_HashCode: -2049314062
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 40
-    m_Scale: 1
-    m_Name: consonants_6
-    m_HashCode: -2049314063
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 41
-    m_Scale: 1
-    m_Name: consonants_7
-    m_HashCode: -2049314064
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 42
-    m_Scale: 1
-    m_Name: consonants_8
-    m_HashCode: -2049314049
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 43
-    m_Scale: 1
-    m_Name: consonants_9
-    m_HashCode: -2049314050
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 44
-    m_Scale: 1
-    m_Name: consonants_10
-    m_HashCode: 1092112774
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 45
-    m_Scale: 1
-    m_Name: consonants_11
-    m_HashCode: 1092112775
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 46
-    m_Scale: 1
-    m_Name: consonants_12
-    m_HashCode: 1092112772
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 47
-    m_Scale: 1
-    m_Name: consonants_13
-    m_HashCode: 1092112773
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 48
-    m_Scale: 1
-    m_Name: consonants_14
-    m_HashCode: 1092112770
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 49
-    m_Scale: 1
-    m_Name: consonants_15
-    m_HashCode: 1092112771
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 50
-    m_Scale: 1
-    m_Name: consonants_16
-    m_HashCode: 1092112768
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 51
-    m_Scale: 1
-    m_Name: consonants_17
-    m_HashCode: 1092112769
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 52
-    m_Scale: 1
-    m_Name: consonants_18
-    m_HashCode: 1092112782
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 53
-    m_Scale: 1
-    m_Name: consonants_19
-    m_HashCode: 1092112783
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 54
-    m_Scale: 1
-    m_Name: consonants_20
-    m_HashCode: 1092112805
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 55
-    m_Scale: 1
-    m_Name: consonants_21
-    m_HashCode: 1092112804
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 56
-    m_Scale: 1
-    m_Name: consonants_22
-    m_HashCode: 1092112807
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 57
-    m_Scale: 1
-    m_Name: consonants_23
-    m_HashCode: 1092112806
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 58
-    m_Scale: 1
-    m_Name: consonants_24
-    m_HashCode: 1092112801
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 59
-    m_Scale: 1
-    m_Name: consonants_25
-    m_HashCode: 1092112800
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 60
-    m_Scale: 1
-    m_Name: consonants_26
-    m_HashCode: 1092112803
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 61
-    m_Scale: 1
-    m_Name: consonants_27
-    m_HashCode: 1092112802
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 62
-    m_Scale: 1
-    m_Name: consonants_28
-    m_HashCode: 1092112813
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 63
-    m_Scale: 1
-    m_Name: consonants_29
-    m_HashCode: 1092112812
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 64
-    m_Scale: 1
-    m_Name: consonants_30
-    m_HashCode: 1092112708
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 65
-    m_Scale: 1
-    m_Name: consonants_31
-    m_HashCode: 1092112709
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 66
-    m_Scale: 1
-    m_Name: consonants_32
-    m_HashCode: 1092112710
-  - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 67
-    m_Scale: 1
+    m_Scale: 0.3
     m_Name: consonants_33
     m_HashCode: 1092112711
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 170
-      m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 85
+      m_Width: 157.61
+      m_Height: 166.9
+      m_HorizontalBearingX: -217.02
+      m_HorizontalBearingY: -35.3
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 57
@@ -467,8 +263,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 85
+      m_HorizontalBearingX: -231.1
+      m_HorizontalBearingY: -30
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 223
@@ -480,10 +276,10 @@ MonoBehaviour:
     sprite: {fileID: 986075915, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 2
     m_Metrics:
-      m_Width: 170
-      m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 85
+      m_Width: 150.1
+      m_Height: 157.7
+      m_HorizontalBearingX: -206.7
+      m_HorizontalBearingY: -29
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 389
@@ -495,10 +291,10 @@ MonoBehaviour:
     sprite: {fileID: -1189943736, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 3
     m_Metrics:
-      m_Width: 170
-      m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_Width: 168.2
+      m_Height: 236.1
+      m_HorizontalBearingX: -122.8
+      m_HorizontalBearingY: 150
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 580
@@ -512,8 +308,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -231.03
+      m_HorizontalBearingY: -19.2
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 736
@@ -527,8 +323,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -231.1
+      m_HorizontalBearingY: -10.3
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 912
@@ -542,8 +338,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -241.3
+      m_HorizontalBearingY: -26.6
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 53
@@ -557,8 +353,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -216.9
+      m_HorizontalBearingY: -27.4
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 229
@@ -570,10 +366,10 @@ MonoBehaviour:
     sprite: {fileID: -1566302685, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 8
     m_Metrics:
-      m_Width: 170
-      m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_Width: 118.1
+      m_Height: 163.2
+      m_HorizontalBearingX: -104.4
+      m_HorizontalBearingY: 109
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 402
@@ -587,8 +383,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -110
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -232.95
+      m_HorizontalBearingY: -11
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 532
@@ -602,8 +398,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -234.93
+      m_HorizontalBearingY: -28.4
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 736
@@ -617,8 +413,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -230.4
+      m_HorizontalBearingY: -13.7
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 899
@@ -632,8 +428,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -232.4
+      m_HorizontalBearingY: -28
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 58
@@ -645,10 +441,10 @@ MonoBehaviour:
     sprite: {fileID: -1613244157, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 13
     m_Metrics:
-      m_Width: 170
+      m_Width: 144.6
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -110.64
+      m_HorizontalBearingY: 99.7
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 233
@@ -662,8 +458,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -220.4
+      m_HorizontalBearingY: -14.7
       m_HorizontalAdvance: 170
     m_GlyphRect:
       m_X: 393
@@ -677,8 +473,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -223.8
+      m_HorizontalBearingY: -32.3
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 561
@@ -692,8 +488,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -223.4
+      m_HorizontalBearingY: -20.9
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 732
@@ -707,8 +503,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -224.7
+      m_HorizontalBearingY: -18.1
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 913
@@ -722,8 +518,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -228.4
+      m_HorizontalBearingY: -29.1
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 58
@@ -737,8 +533,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -218.8
+      m_HorizontalBearingY: -15.8
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 224
@@ -750,10 +546,10 @@ MonoBehaviour:
     sprite: {fileID: 1696334012, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 20
     m_Metrics:
-      m_Width: 170
+      m_Width: 118
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -84.9
+      m_HorizontalBearingY: 108.5
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 424
@@ -767,8 +563,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -225.1
+      m_HorizontalBearingY: -26.1
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 565
@@ -782,8 +578,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -233.35
+      m_HorizontalBearingY: -19.3
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 738
@@ -797,8 +593,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -238.8
+      m_HorizontalBearingY: -28
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 891
@@ -812,8 +608,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -233.5
+      m_HorizontalBearingY: -21.4
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 58
@@ -825,10 +621,10 @@ MonoBehaviour:
     sprite: {fileID: -489947830, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 25
     m_Metrics:
-      m_Width: 170
+      m_Width: 88.6
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -64.4
+      m_HorizontalBearingY: 103.1
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 266
@@ -842,8 +638,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 127.8
       m_Height: 117.6
-      m_HorizontalBearingX: -114.09
-      m_HorizontalBearingY: 86
+      m_HorizontalBearingX: -110
+      m_HorizontalBearingY: 76.2
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 356
@@ -857,8 +653,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -231
+      m_HorizontalBearingY: -19.9
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 566
@@ -872,8 +668,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -239.53
+      m_HorizontalBearingY: -18.5
       m_HorizontalAdvance: 170
     m_GlyphRect:
       m_X: 728
@@ -915,10 +711,10 @@ MonoBehaviour:
     sprite: {fileID: 1481531484, guid: e0a1674091e0e244b96098df2fa4ee06, type: 3}
   - m_Index: 31
     m_Metrics:
-      m_Width: 170
+      m_Width: 116.9
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -71.6
+      m_HorizontalBearingY: 110.4
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 265
@@ -932,8 +728,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -130
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -223.2
+      m_HorizontalBearingY: -26.3
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 402
@@ -947,8 +743,8 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 170
       m_Height: 170
-      m_HorizontalBearingX: -125
-      m_HorizontalBearingY: 100
+      m_HorizontalBearingX: -221.9
+      m_HorizontalBearingY: -18.4
       m_HorizontalAdvance: 0
     m_GlyphRect:
       m_X: 561

@@ -7,7 +7,7 @@ public class LetterPuzzle : MonoBehaviour
 {
     private bool collected = false;
     private WordPuzzleSolveManager solverManager;
-    private char letter;
+    private string letter;
 
     void Start()
     {
@@ -35,9 +35,9 @@ public class LetterPuzzle : MonoBehaviour
         }
     }
 
-    public void SetLetter(char l) {
+    public void SetLetter(string l) {
         letter = l;
-        GetComponentInChildren<TextMeshPro>().text = l.ToString();
+        GetComponentInChildren<TextMeshPro>().text = l;
     }
 
     public void SetFont(TMP_FontAsset font) {
