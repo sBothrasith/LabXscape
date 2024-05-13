@@ -5,7 +5,6 @@ using UnityEngine;
 public class PuzzleQuestion : MonoBehaviour
 {
     public GameObject puzzleTextQuestion;
-    public GameObject puzzleTextSuccess;
 
     public Stage3Puzzle stage3PuzzleManager;
 
@@ -32,18 +31,15 @@ public class PuzzleQuestion : MonoBehaviour
         if(playerIsNear && keyPress){
             if(stage3PuzzleManager.success)
             {
-                puzzleTextSuccess.SetActive(true);
                 puzzleTextQuestion.SetActive(false);
             }
             else
             {
                 puzzleTextQuestion.SetActive(true);
-                puzzleTextSuccess.SetActive(false);
             }
         }
         else{
-            puzzleTextQuestion.SetActive(false);    
-            puzzleTextSuccess.SetActive(false);
+            puzzleTextQuestion.SetActive(false); 
         }
     }
 

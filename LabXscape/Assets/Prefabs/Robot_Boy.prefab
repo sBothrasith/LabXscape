@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   jumpHeight: 14
+  slopeCheckDistance: 0.5
   groundCheck: {fileID: 8796464852981936922}
   whatIsGround:
     serializedVersion: 2
@@ -128,7 +129,7 @@ MonoBehaviour:
   isGrounded: 0
   groundCheckRadius: 0.1
   doubleJumped: 0
-  inSlope: 0
+  isOnSlope: 0
   isWalking: 0
   dialogue: {fileID: 0}
   animator: {fileID: 1291221470083803783}

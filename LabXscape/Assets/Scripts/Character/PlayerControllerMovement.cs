@@ -5,18 +5,31 @@ using UnityEngine;
 public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 {
     private Rigidbody2D rb;
-    private Vector2 moveInput;
+    private CapsuleCollider2D cc;
+    private Vector2 newVelocity;
+    private Vector2 colliderSize;
+    private Vector2 slopeNormalPerp;
+    private Vector2 newForce;
+
+    private float moveInput;
+    private float slopeDownAngle;
+    private float slopeDownAngleOld;
+    private float slopeSideAngle;
+
+    private bool isJumping;
+    private bool canJump;
 
 
-    [Range(0.0f, 50.0f)] public float moveSpeed = 8f;
+	[Range(0.0f, 50.0f)] public float moveSpeed = 8f;
     [Range(0.0f, 50.0f)] public float jumpHeight = 14f;
+    [SerializeField] private float slopeCheckDistance;
 
     public Transform groundCheck;
     public LayerMask whatIsGround;
     public bool isGrounded;
     public float groundCheckRadius;
     public bool doubleJumped;
-    public bool inSlope = false;
+    public bool isOnSlope;
     public bool isWalking = false;
     public Dialogue dialogue;
 
@@ -39,87 +52,78 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     {
         runningSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
+        cc = GetComponent<CapsuleCollider2D>();
+        colliderSize = cc.size;
         animator = GetComponent<Animator>();
         SetGravityScale(1.0f);
-        animator.SetBool("Die", false);
     }
 
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        CheckGround();
+        SlopeCheck();
         HandleLayers();
-        
     }
 
     private void Update()
     {
         PlayerMovement();
-        PlayerJump();
-
-        if (lightDie != null || enemyDie != null)
-        {
-			if (lightDie.PlayerDie() || enemyDie.PlayerDie())
-			{
-				animator.SetBool("Die", true);
-			}
-		}
-        
+        PlayerJump();  
     }
 
 
     private void PlayerMovement()
     {
-        if (dialogue.dialogueActive)
+        if(dialogue != null)
         {
-            rb.velocity = Vector2.zero;
-            return;
-        }
+			if (dialogue.dialogueActive)
+			{
+				rb.velocity = Vector2.zero;
+				return;
+			}
+		}   
         
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
+        moveInput = Input.GetAxisRaw("Horizontal");
+        newVelocity.Set(moveInput * moveSpeed, rb.velocity.y);
+        rb.velocity = newVelocity;
 
-        animator.SetFloat("Speed", Mathf.Abs(moveInput.x));
+        if(isGrounded && !isOnSlope && !isJumping)
+        {
+			newVelocity.Set(moveInput * moveSpeed, 0.0f);
+			rb.velocity = newVelocity;
+		}
+        else if (isGrounded && isOnSlope && !isJumping)
+        {
+			newVelocity.Set(moveSpeed * slopeNormalPerp.x * -moveInput, moveSpeed * slopeNormalPerp.y * -moveInput);
+			rb.velocity = newVelocity;
+		}
+        else if (!isGrounded)
+        {
+			newVelocity.Set(moveInput * moveSpeed, rb.velocity.y);
+			rb.velocity = newVelocity;
+		}
 
-        if (moveInput.x == 0)
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
+
+        if (moveInput == 0)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             rb.freezeRotation = true;
         }
-        if (moveInput.x < 0)
+        if (moveInput < 0)
         {
             rb.constraints = RigidbodyConstraints2D.None;
             rb.freezeRotation = true;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
         }
-        else if (moveInput.x > 0)
+        else if (moveInput > 0)
         {
             rb.constraints = RigidbodyConstraints2D.None;
             rb.freezeRotation = true;
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
-        if (inSlope)
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
-            rb.freezeRotation = true;
-        }
-        else
-        {
-            if (!inSlope && isWalking)
-            {
-                rb.constraints = RigidbodyConstraints2D.None;
-                rb.freezeRotation = true;
-            }
-        }
-
-        if (Input.GetButton("Horizontal") && inSlope || Input.GetAxis("Horizontal") > 0.5f && inSlope || Input.GetAxis("Horizontal") < -0.5f && inSlope)
-        {
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.freezeRotation = true;
-            inSlope = false;
-            isWalking = true;
-        }
 
         if (Input.GetButton("Horizontal") && isGrounded == true)
         {
@@ -134,10 +138,76 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
         }
     }
 
-    private void PlayerJump()
+    private void CheckGround()
+    {
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+		if (rb.velocity.y <= 0.0f)
+		{
+			isJumping = false;
+		}
+
+		if (isGrounded && !isJumping)
+		{
+			canJump = true;
+		}
+	}
+
+    private void SlopeCheck()
+    {
+        Vector2 checkPosSlope = transform.position - new Vector3(0.0f, colliderSize.y / 2);
+
+        SlopeCheckHorizontal(checkPosSlope);
+        SlopeCheckVertical(checkPosSlope);
+    }
+
+    private void SlopeCheckHorizontal(Vector2 checkPos)
+    {
+        RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, transform.right, slopeCheckDistance, whatIsGround);
+        RaycastHit2D slopeHitBack = Physics2D.Raycast(checkPos, -transform.right, slopeCheckDistance, whatIsGround);
+
+        if (slopeHitFront)
+        {
+            isOnSlope = true;
+            slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
+        }
+        else if (slopeHitBack)
+        {
+            isOnSlope = true;
+            slopeSideAngle = Vector2.Angle(slopeHitBack.normal, Vector2.up);
+        }
+        else
+        {
+            slopeSideAngle = 0.0f;
+            isOnSlope = false;
+        }
+    }
+
+	private void SlopeCheckVertical(Vector2 checkPos)
+	{
+        RaycastHit2D hit = Physics2D.Raycast(checkPos, Vector2.down, slopeCheckDistance, whatIsGround);
+
+        if (hit)
+        {
+            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+            if(slopeDownAngle != slopeDownAngleOld)
+            {
+                isOnSlope = true;
+            }
+
+            slopeDownAngleOld = slopeDownAngle;
+
+            Debug.DrawLine(hit.point, slopeNormalPerp, Color.red);
+            Debug.DrawLine(hit.point, hit.normal, Color.green);
+            
+        }
+	}
+
+	private void PlayerJump()
     {
         
-        if (isGrounded || inSlope)
+        if (isGrounded || isOnSlope)
         {
             animator.ResetTrigger("IsJumping");
             animator.SetBool("IsFalling", false);
@@ -181,18 +251,27 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 
     public void Jump()
     {
-        PlayJumpSound.canPlayFall = true;
-        FindObjectOfType<AudioManager>().Play("StartJump");
-        rb.freezeRotation = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-        
-    }
+        if(canJump)
+        {
+            isJumping = true;
+			PlayJumpSound.canPlayFall = true;
+			FindObjectOfType<AudioManager>().Play("StartJump");
+			rb.freezeRotation = true;
+			newVelocity.Set(0.0f, 0.0f);
+			rb.velocity = newVelocity;
+			newForce.Set(0.0f, jumpHeight);
+			rb.AddForce(newForce, ForceMode2D.Impulse);
+		}
+	}
     public void DoubleJump()
     {
         FindObjectOfType<AudioManager>().Play("StartJump");
         rb.freezeRotation = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-    }
+		newVelocity.Set(0.0f, 0.0f);
+		rb.velocity = newVelocity;
+		newForce.Set(0.0f, jumpHeight);
+		rb.AddForce(newForce, ForceMode2D.Impulse);
+	}
 
     private void HandleLayers()
     {
@@ -208,33 +287,6 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     private void SetGravityScale(float gravityScale)
     {
         rb.gravityScale = gravityScale;
-    }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.transform.CompareTag(("Slope")))
-        {
-            inSlope = true;
-            //isGrounded = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D coll)
-    {
-        if (coll.transform.CompareTag(("Slope")))
-        {
-            inSlope = false;
-        }
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.transform.CompareTag(("Slope")))
-        {
-            inSlope = true;
-            //isGrounded = true;
-        }
-
     }
 
     private void PlayMovementParticle()

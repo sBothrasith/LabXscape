@@ -13,6 +13,7 @@ public class EnemyMoving : MonoBehaviour
 	private float countdown = 0f;
 	private float deathCountDown = 2f;
 	private bool playDSound = false;
+    private bool playerDead = false;
 
 
 	// Update is called once per frame
@@ -43,8 +44,9 @@ public class EnemyMoving : MonoBehaviour
 				player.gameObject.transform.position = spawnpoint.transform.position;
 				player.enabled = true;
 				player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-				countdown = 0f;
+                countdown = 0f;
 				playDSound = false;
+                playerDead = false;
 			}
 		}
 
@@ -78,7 +80,8 @@ public class EnemyMoving : MonoBehaviour
 
     public bool PlayerDie()
     {
-        return true;
+        playerDead = true;
+        return playerDead;
     }
 
 	private void Die()

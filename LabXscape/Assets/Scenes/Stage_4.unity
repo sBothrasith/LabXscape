@@ -6624,15 +6624,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[0]
-      value: '"There''s a heated platform ahead. I guess it''s dangerous."'
+      value: '"This looks like a security room!"'
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[1]
-      value: '"There seem to also be platform to jump from."'
+      value: '"Let''s move carefully, especially those laser heated pipe."'
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: dialogueText.Array.data[2]
-      value: '"I should try to not fall while I jump."'
+      value: '"I should avoid them to stay alive."'
       objectReference: {fileID: 0}
     - target: {fileID: 8977273417606419802, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_text
@@ -8057,7 +8057,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8310,7 +8310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9428,7 +9428,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9699,7 +9699,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9955,7 +9955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16898,7 +16898,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19605,7 +19605,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19638,6 +19638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020897180614358369, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1020897180614358382, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -19701,6 +19705,10 @@ PrefabInstance:
     - target: {fileID: 1020897181542287410, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020897181542287410, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1020897181542287410, guid: e7cf29aaecd33d242bbaf8a0b909c85c, type: 3}
       propertyPath: m_TagString
@@ -20782,7 +20790,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21194,7 +21202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6351836105082109545, guid: 1c8342a0477e2014bbaf34baaf7ee9dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e7f95f06f57ec1408ab8232316e0070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

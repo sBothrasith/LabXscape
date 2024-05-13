@@ -10,7 +10,6 @@ public class Dialogue : MonoBehaviour
 {
     public TMP_FontAsset khmerFont;
     public TextMeshProUGUI textComponent;
-    public string[] dialogueText;
     public float textSpeed;
 
     public GameObject skipText;
@@ -20,6 +19,8 @@ public class Dialogue : MonoBehaviour
 
     public bool dialogueActive = false;
     public int dialogueCount;
+
+    private string[] dialogueText;
 
     void Awake(){
         int stageNumber = SceneManager.GetActiveScene().buildIndex;

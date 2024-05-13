@@ -18,11 +18,14 @@ public class DialogueText : MonoBehaviour
 
     private static string[] stage1English = {
         "I was awoken in an unfamiliar room.",
-        "\"Where am I? What am I doing here?\"",
-        "\"My body feels different\".",
+        "I can't seem to remember what has happened",
+        "Those scientist are speaking so quietly. I can't hear them at all.",
+        "Ughhhh!",
+        "\"My body feels different.\"",
         "I looked at myself in the reflection.",
-        "\"I'm a robot boy!?\". I was shocked but there's nothing that I can do.",
-        "\"Let's find out what has happen to me.\""
+        "\"I'm a ROBOT?!?\"",
+		"I was shocked but there's nothing that I can do.",
+		"\"Let's find out happened to me.\""
     };
 
     private static string[] stage1Khmer = {
@@ -32,8 +35,9 @@ public class DialogueText : MonoBehaviour
     private static string[] stage2English = {
         "\"This room seems like a Data Storage Room.\"",
         "\"What is that glowing computer? Is it on?\"",
-        "\"I should do something about them. Maybe I can interact.\""
-    };
+		"\"I should do something about them.\"",
+		"\"Maybe collecting more letters will give me a clue!\""
+	};
 
     private static string[] stage2Khmer = {
 
@@ -41,32 +45,33 @@ public class DialogueText : MonoBehaviour
 
     private static string[] stage3English = {
         "\"What is this room?\"",
-        "\"It feels different from all the previous room.\"",
+		"\"It feels different from all the previous room. It's spacious!\"",
         "In the distance, there's a glowing incubation chamber.",
-        "\"There must be something hidden there.\"",
-        "\"There's also number on the platform.\"",
-        "\"I better becareful not to step on those buttons.\""
-    };
+		"\"It's glowing red, something must've happen!\"",
+		"\"The glowing button seems dangerous.\"",
+		"\"I better becareful not to step on them.\""
+	};
 
     private static string[] stage3Khmer = {
 
     };
 
     private static string[] stage4English = {
-        "\"There's a heated platform ahead. I guess it's dangerous.\"",
-        "\"There seem to also be platform to jump from.\"",
-        "\"I should try to not fall while I jump.\""
-    };
+		"\"This looks like a security room!\"",
+		"\"Let's move carefully, especially those laser heated pipe.\"",
+		"\"I should avoid them to stay alive.\""
+	};
 
     private static string[] stage4Khmer = {
 
     };
 
     private static string[] stage5English = {
-        "\"I can see the door right over there.\"",
-        "\"There's a room above me, maybe something is there.\"",
-        "\"I might be able to move those platforms if I trigger those levers.\""
-    };
+		"The room are getting bigger and bigger the more I move through the elevator.",
+		"\"There's a room above me, maybe something is there.\"",
+        "\"I might be able to move those platforms if I trigger those levers.\"",
+		"\"Let's not forget to follow those suspicious pipe.\""
+	};
 
     private static string[] stage5Khmer = {
 

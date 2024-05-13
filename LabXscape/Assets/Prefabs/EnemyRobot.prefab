@@ -403,6 +403,8 @@ MonoBehaviour:
   - {fileID: 6139078460450624523}
   - {fileID: 6139078459980325323}
   speed: 2
+  spawnpoint: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &6657036407580424339
 BoxCollider2D:
   m_ObjectHideFlags: 0

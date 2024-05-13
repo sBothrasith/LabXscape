@@ -1323,17 +1323,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3689548471323401898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8977273418029422119}
-  m_RootOrder: 3
+  m_Father: {fileID: 4580748016622604551}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 502, y: -457}
+  m_AnchoredPosition: {x: 502.67896, y: -108.68799}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3477229003003393462
@@ -2677,6 +2677,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 923382336427857877}
+  - {fileID: 4959838997080199088}
   m_Father: {fileID: 8977273418029422119}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2735,15 +2736,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998476286b304774391b0254e3ebea3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
+  khmerFont: {fileID: 11400000, guid: d8a4323688fae6b4599dfe06e6d4a9f3, type: 2}
+  textComponent: {fileID: 1811436231028385513}
   dialogueText:
-  - I was awoken in an unfamiliar room.
-  - '"Where am I? What am I doing here?"'
-  - '"My body feels different".'
-  - I looked at myself in the reflection.
-  - '"I''m a robot boy!?". I was shocked but there''s nothing that I can do.'
-  - '"Let''s find out what has happen to me."'
-  - Use W A S D to walk around. Space to Jump. F to interact.
+  - '"What is this room?"'
+  - '"It feels different from all the previous room. It''s spacious!"'
+  - In the distance, there's a glowing incubation chamber.
+  - '"It''s glowing Red, something must''ve happen!"'
+  - '"The glowing button seems dangerous."'
+  - '"I better becareful not to step on them."'
   textSpeed: 0.05
   skipText: {fileID: 3689548471323401898}
   image: {fileID: 4134669987383617520}
@@ -3629,7 +3630,6 @@ RectTransform:
   - {fileID: 8977273418585771491}
   - {fileID: 1793195550728527449}
   - {fileID: 4580748016622604551}
-  - {fileID: 4959838997080199088}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

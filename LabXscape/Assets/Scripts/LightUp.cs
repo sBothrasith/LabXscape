@@ -25,6 +25,7 @@ public class LightUp : MonoBehaviour
     private float countdown = 0f;
     private float deathCountDown = 2f;
     private bool playDSound = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +65,7 @@ public class LightUp : MonoBehaviour
                 player.gameObject.transform.position = spawnpoint.transform.position;
                 player.enabled = true;
                 player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-                countdown= 0f;
+				countdown = 0f;
                 playDSound = false;
                 die = false;
             }
@@ -80,8 +81,8 @@ public class LightUp : MonoBehaviour
                         playDSound = true;
                         FindObjectOfType<AudioManager>().Play("Death");
                     }
-                    die = true;
-                    timeDelay = 0f;
+					PlayerDie();
+					timeDelay = 0f;
                 }
             }
         }
@@ -95,9 +96,8 @@ public class LightUp : MonoBehaviour
                     if (!playDSound) {
                         playDSound = true;
                         FindObjectOfType<AudioManager>().Play("Death");
-                        PlayerDie();
                     }
-                    die = true;
+					PlayerDie();
                     timeDelay = 0f;
                 }
             }
@@ -112,13 +112,14 @@ public class LightUp : MonoBehaviour
 
     public bool PlayerDie()
     {
-        return true;
-    }
+		die = true;
+		return die;
+	}
 
     private void Die() {
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        player.enabled= false;
+		player.enabled= false;
     }
 
 }
