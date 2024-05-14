@@ -18,8 +18,8 @@ public class DialogueText : MonoBehaviour
 
     private static string[] stage1English = {
         "I was awoken in an unfamiliar room.",
-        "I can't seem to remember what has happened",
-        "Those scientist are speaking so quietly. I can't hear them at all.",
+        "I can't seem to remember what has happened.",
+        "Those scientists are speaking so quietly. I can't hear them at all.",
         "Ughhhh!",
         "\"My body feels different.\"",
         "I looked at myself in the reflection.",

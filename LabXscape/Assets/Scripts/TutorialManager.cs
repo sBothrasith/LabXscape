@@ -6,9 +6,4 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 { 
 
-	// Update is called once per frame
-	void Update()
-    {
-        
-	}
 }

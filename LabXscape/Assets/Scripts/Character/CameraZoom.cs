@@ -18,11 +18,7 @@ public class CameraZoom : MonoBehaviour
 
     private float timeDelay = 0f;
     public float cameraDelayTime = 2f;
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
+
 
     // Update is called once per frame
     void Update()

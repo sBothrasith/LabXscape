@@ -12,12 +12,15 @@ public class Stage3Puzzle : MonoBehaviour
     public GameObject movingPlatform;
     public bool success = false;
 
+    public GameObject card;
+
     void Start()
     {
         lightTrigger = new bool[8];
         success = false;
+		card.SetActive(false);
 
-        for (int i = 0; i < Buttons.Length; i++)
+		for (int i = 0; i < Buttons.Length; i++)
         {
             Buttons[i].SetActive(true);
         }
@@ -30,13 +33,14 @@ public class Stage3Puzzle : MonoBehaviour
 
         if(success)
         {
-            StartCoroutine(WaitForSecs());
+			card.SetActive(true);
+			StartCoroutine(WaitForSecs());
 		}
     }
 
     IEnumerator WaitForSecs()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1.5f);
 		for (int i = 0; i < Buttons.Length; i++)
 		{
 			Buttons[i].SetActive(false);

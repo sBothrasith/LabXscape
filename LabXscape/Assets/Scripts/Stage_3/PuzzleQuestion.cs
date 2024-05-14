@@ -11,12 +11,6 @@ public class PuzzleQuestion : MonoBehaviour
     public bool playerIsNear = false;
     public bool keyPress = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

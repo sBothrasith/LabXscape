@@ -1,58 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class LaserLever : MonoBehaviour
 {
     public Animator leverAnim;
     public GameObject triggerLaser;
-    private float animationTime = 0f;
-    private float animationDelay = 1.5f;
+    public Light2D leverLight;
     public bool canMove = false;
-    bool playAnim = false;
     bool on = true;
     // Start is called before the first frame update
     void Start() {
         leverAnim = GetComponent<Animator>();
-    }
+        leverLight = GetComponent<Light2D>();
+        PlayAnimation(on);
+        leverLight.color = Color.green;
 
-    // Update is called once per frame
-    void Update() {
+	}
+
+	// Update is called once per frame
+	void Update() {
         if (Input.GetKeyDown(KeyCode.F) && canMove) {
-            canMove = false;
-            PlayAnimation();
             if (on) {
                 triggerLaser.SetActive(false);
                 on = false;
-            }
-            else {
+				leverLight.color = Color.red;
+
+			}
+			else {
                 triggerLaser.SetActive(true);
                 on = true;
-            }
-        }
-        if (playAnim) {
-            animationTime += 1 * Time.deltaTime;
-            if (animationTime >= animationDelay) {
-                leverAnim.SetBool("triggerLever", false);
-                animationTime = 0f;
-                playAnim = false;
-            }
-        }
+				leverLight.color = Color.green;
+
+			}
+			PlayAnimation(on);
+		}
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             canMove = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision) {
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+		{
+			canMove = true;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             canMove = false;
         }
     }
 
-    private void PlayAnimation() {
-        playAnim = true;
-        leverAnim.SetBool("triggerLever", true);
+    private void PlayAnimation(bool trigger) {
+        leverAnim.SetBool("triggerLever", trigger);
     }
 
 }
