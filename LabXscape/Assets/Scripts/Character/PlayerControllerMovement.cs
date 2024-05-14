@@ -23,6 +23,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 	[Range(0.0f, 50.0f)] public float moveSpeed = 8f;
     [Range(0.0f, 50.0f)] public float jumpHeight = 14f;
     [SerializeField] private float slopeCheckDistance;
+    [SerializeField] private float maxSlopeAngle;
 
     public Transform groundCheck;
     public LayerMask whatIsGround;
@@ -68,7 +69,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
     private void Update()
     {
         PlayerMovement();
-        PlayerJump();  
+        PlayerJump();
     }
 
 
@@ -84,8 +85,8 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 		}   
         
         moveInput = Input.GetAxisRaw("Horizontal");
-        newVelocity.Set(moveInput * moveSpeed, rb.velocity.y);
-        rb.velocity = newVelocity;
+        //newVelocity.Set(moveInput * moveSpeed, rb.velocity.y);
+        //rb.velocity = newVelocity;
 
         if(isGrounded && !isOnSlope && !isJumping)
         {
@@ -146,7 +147,7 @@ public class PlayerControllerMovement : MonoBehaviour, IDataPersistence
 			isJumping = false;
 		}
 
-		if (isGrounded && !isJumping)
+		if (isGrounded && !isJumping && slopeDownAngle <= maxSlopeAngle)
 		{
 			canJump = true;
 		}

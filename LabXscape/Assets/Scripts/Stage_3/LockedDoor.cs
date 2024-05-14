@@ -21,6 +21,7 @@ public class LockedDoor : MonoBehaviour
         nextLevelScript = GetComponent<LevelMoveScript>();
         doorAnimator = GetComponent<Animator>();
         wordPuzzleSolveManager = FindObjectOfType<WordPuzzleSolveManager>();
+        requiredText.SetActive(false);
     }
 
     // Update is called once per frame

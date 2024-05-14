@@ -58,7 +58,7 @@ public class LightUp : MonoBehaviour
             }
         }
         ren.material.SetFloat("_Intensity", Mathf.Lerp(intensityStart,intensityEnd,intensityCurrent));
-        if (die) {
+        if (PlayerDie()) {
             countdown += 1 * Time.deltaTime;
             Die();
             if(countdown >= deathCountDown) {
@@ -81,7 +81,7 @@ public class LightUp : MonoBehaviour
                         playDSound = true;
                         FindObjectOfType<AudioManager>().Play("Death");
                     }
-					PlayerDie();
+                    die = true;
 					timeDelay = 0f;
                 }
             }
@@ -97,7 +97,7 @@ public class LightUp : MonoBehaviour
                         playDSound = true;
                         FindObjectOfType<AudioManager>().Play("Death");
                     }
-					PlayerDie();
+                    die = true;
                     timeDelay = 0f;
                 }
             }
@@ -112,7 +112,6 @@ public class LightUp : MonoBehaviour
 
     public bool PlayerDie()
     {
-		die = true;
 		return die;
 	}
 

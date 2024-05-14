@@ -11,7 +11,7 @@ public class EnemyMoving : MonoBehaviour
 	public GameObject spawnpoint;
 	public PlayerControllerMovement player;
 	private float countdown = 0f;
-	private float deathCountDown = 2f;
+	private float deathCountDown = 0.5f;
 	private bool playDSound = false;
     private bool playerDead = false;
 
@@ -62,7 +62,7 @@ public class EnemyMoving : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerDie();
+            playerDead = true;
 			if (!playDSound)
 			{
 				playDSound = true;
@@ -80,7 +80,6 @@ public class EnemyMoving : MonoBehaviour
 
     public bool PlayerDie()
     {
-        playerDead = true;
         return playerDead;
     }
 
