@@ -77,7 +77,20 @@ public class WordPuzzleSolveManager : MonoBehaviour
         bool allCharacterCollected = characterToCollectList.All(item => item.collected);
 
         if (allCharacterCollected) {
-            SolvedWord();
+            StartCoroutine(WaitForNewWord());
         }
+    }
+
+    IEnumerator WaitForNewWord() {
+        StartCoroutine(PlaySuccessParticle());
+        yield return new WaitForSeconds(2.5f);
+        SolvedWord();
+    }
+
+    IEnumerator PlaySuccessParticle() {
+        ParticleSystem winParticle = GameObject.Find("Win Particle").GetComponent< ParticleSystem>();
+        winParticle.Play();
+        yield return new WaitForSeconds(1.5f);
+        winParticle.Stop();
     }
 }

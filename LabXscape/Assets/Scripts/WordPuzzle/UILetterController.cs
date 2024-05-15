@@ -17,8 +17,8 @@ public class UILetterController : MonoBehaviour
 
     List<(string khmerWord, string englishWord)> khmerToEnglish = new() {
             ("ែដក", "steel"),
-            ("យន្ត", "robot"),
-            ("ចង្វាក់", "chain"),
+            ("មនុស្សយន្ត", "robot"),
+            ("ច្រវ៉ាក់", "chain"),
     };
 
     // Start is called before the first frame update
@@ -111,6 +111,7 @@ public class UILetterController : MonoBehaviour
     }
 
     private string MapKhmerToEnglishImage(string khmerWord) {
+        Debug.Log(khmerWord);
         for (int i = 0; i < khmerToEnglish.Count; i++) {
             if (khmerToEnglish[i].khmerWord == khmerWord) {
                 return khmerToEnglish[i].englishWord;

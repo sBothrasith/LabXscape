@@ -30,7 +30,7 @@ public class FileDataHandler
                 }
 
                 dataLoad = EncryptDecrypt(dataLoad);
-
+                Debug.Log(dataLoad);
                 loadedData = JsonUtility.FromJson<GameData>(dataLoad);
 
             }catch(Exception e) {
@@ -47,7 +47,7 @@ public class FileDataHandler
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
 
             string dataStore = JsonUtility.ToJson(data, true);
-
+            Debug.Log(dataStore);
             dataStore = EncryptDecrypt(dataStore);
 
             using(FileStream stream = new FileStream(fullPath, FileMode.Create)) {

@@ -45,40 +45,42 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueCount >= dialogueText.Length)
-        {
-            dialogueActive = false;
-        }
-        else
-        {
-			dialogueActive = true;
-		}
-
-        if(textComponent.text == dialogueText[index])
-        {
-            skipText.SetActive(true);
-        }
-
-		if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (textComponent.text == dialogueText[index])
+        if (dialogueText.Length > 0) {
+            if (dialogueCount >= dialogueText.Length)
             {
-                NextLine();
-			}
+                dialogueActive = false;
+            }
             else
             {
-				StopAllCoroutines();
-                textComponent.text = dialogueText[index];
-            }
-		}   
+			    dialogueActive = true;
+		    }
 
-  
+            if(textComponent.text == dialogueText[index])
+            {
+                skipText.SetActive(true);
+            }
+
+		    if (Input.GetKeyDown(KeyCode.Return))
+            {
+                if (textComponent.text == dialogueText[index])
+                {
+                    NextLine();
+			    }
+                else
+                {
+				    StopAllCoroutines();
+                    textComponent.text = dialogueText[index];
+                }
+		    }   
+        }
     }
 
     void StartDialogue() {
         index = 0;
-        ShowImage();
-		StartCoroutine(TypeLine());
+        if (dialogueText.Length > 0) {
+            ShowImage();
+            StartCoroutine(TypeLine());
+        }
     }
 
     void HideImage(){

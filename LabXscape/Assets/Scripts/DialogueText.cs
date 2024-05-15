@@ -88,6 +88,14 @@ public class DialogueText : MonoBehaviour
 
     };
 
+    private static string[] stage7English = {
+
+    };
+
+    private static string[] stage7Khmer = {
+
+    };
+
     private static string[] stageEndingEnglish = {
         "\"There are nothing in this room.\"",
         "Only one door. I wonder where it leads to."
@@ -101,23 +109,25 @@ public class DialogueText : MonoBehaviour
         if (PlayerPrefs.GetString("language") == "khmer") {
             switch (stage) {
                 case 0:
-                    return stage0Khmer;
+                    return UpdateFontKhmer(stage0Khmer);
                 case 1:
-                    return stage1Khmer;
+                    return UpdateFontKhmer(stage1Khmer);
                 case 2:
-                    return stage2Khmer;
+                    return UpdateFontKhmer(stage2Khmer);
                 case 3:
-                    return stage3Khmer;
+                    return UpdateFontKhmer(stage3Khmer);
                 case 4:
-                    return stage4Khmer;
+                    return UpdateFontKhmer(stage4Khmer);
                 case 5:
-                    return stage5Khmer;
+                    return UpdateFontKhmer(stage5Khmer);
                 case 6:
-                    return stage6Khmer;
+                    return UpdateFontKhmer(stage6Khmer);
                 case 7:
-                    return stageEndingEnglish;
+                    return UpdateFontKhmer(stage7Khmer);
+                case 8:
+                    return UpdateFontKhmer(stageEndingKhmer);
                 default:
-                    return stage1Khmer;
+                    return UpdateFontKhmer(stage1Khmer);
             }
         } else {
             switch (stage) {
@@ -136,7 +146,9 @@ public class DialogueText : MonoBehaviour
                 case 6:
                     return stage6English;
                 case 7:
-                    return stageEndingKhmer;
+                    return stage7English;
+                case 8:
+                    return stageEndingEnglish;
                 default:
                     return stage1English;
             }
