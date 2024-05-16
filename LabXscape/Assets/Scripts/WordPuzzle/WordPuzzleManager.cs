@@ -13,7 +13,8 @@ public class WordPuzzleManager : MonoBehaviour
         "ROBOT",
         "CHAIN",
         "COMPUTER",
-        "PLATFORM"
+        "PLATFORM",
+        "DOOR",
     };
 
     List<string> khmerWords = new() {
@@ -21,7 +22,9 @@ public class WordPuzzleManager : MonoBehaviour
         "មនុស្សយន្ត",
         "ច្រវ៉ាក់",
         "កុំព្យូទ័រ",
-        "ក្តារ"
+        "ក្តារ",
+        "ទ្វា"
+
     };
 
     List<string> words = new();
@@ -109,6 +112,7 @@ public class WordPuzzleManager : MonoBehaviour
         
         LetterPuzzle letterObject = Instantiate(letterPuzzle, new Vector3(randomPointToSpawn.x, randomPointToSpawn.y, startingPoint.position.z), startingPoint.rotation);
         
+        
         if (PlayerPrefs.GetString("language") == "khmer") {
             letterObject.SetFont(fontKhmerAsset);
         }
@@ -116,7 +120,8 @@ public class WordPuzzleManager : MonoBehaviour
         letterObject.SetLetter(letter);
 
         spawnedPoints.Add(randomPointToSpawn);
-    }
+		
+	}
 
     private Vector2 GetRandomPointInCollider(PolygonCollider2D collider) {
         Vector2 randomPoint;

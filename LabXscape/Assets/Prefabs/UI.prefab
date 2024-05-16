@@ -2706,15 +2706,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: 8934f7763af9e41ee8845ae14c5473f1, type: 2}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 923abc339f048cb43901fbb0a8dee9db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 966be606197166640a108ef53355eddf, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2738,13 +2738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   khmerFont: {fileID: 11400000, guid: d8a4323688fae6b4599dfe06e6d4a9f3, type: 2}
   textComponent: {fileID: 1811436231028385513}
-  dialogueText:
-  - '"What is this room?"'
-  - '"It feels different from all the previous room. It''s spacious!"'
-  - In the distance, there's a glowing incubation chamber.
-  - '"It''s glowing Red, something must''ve happen!"'
-  - '"The glowing button seems dangerous."'
-  - '"I better becareful not to step on them."'
   textSpeed: 0.05
   skipText: {fileID: 3689548471323401898}
   image: {fileID: 4134669987383617520}
@@ -3657,7 +3650,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &8977273418029422117
 MonoBehaviour:

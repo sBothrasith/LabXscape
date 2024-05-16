@@ -3721,7 +3721,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 923382336427857877, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 56
+      value: -102
       objectReference: {fileID: 0}
     - target: {fileID: 1811436231028385513, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_fontSize
@@ -3773,26 +3773,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 301afa6ee52f1fc42a7b9bd80573258a, type: 3}
-    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134669987383617520, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
-      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4580748016622604551, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
@@ -3810,6 +3790,10 @@ PrefabInstance:
     - target: {fileID: 4580748016622604551, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.69099
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959838997080199088, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 851
       objectReference: {fileID: 0}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: image

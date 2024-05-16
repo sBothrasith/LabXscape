@@ -97,15 +97,33 @@ public class DialogueText : MonoBehaviour
     };
 
     private static string[] stageEndingEnglish = {
-        "\"There are nothing in this room.\"",
-        "Only one door. I wonder where it leads to."
+        "\"This? This room is empty?!\"",
+        "Have I been running around for naught?",
+        "Wait? I see a door in the distance.",
+        "\"Let's try to get on it!\""
     };
 
     private static string[] stageEndingKhmer = {
 
     };
 
-    public static string[] GetDialogueFromStage (int stage) {
+    private static string[] stageCreditsEnglish =
+    {
+        "Robot boy made it out to the surface at last",
+        "But what awaits him is a ruin from all the war!",
+        "Thus, he walks around in the ruins trying to find his friends",
+        "Alas! He have used up all his battery while climbing the bunker.",
+        "He lays lifeless, waiting for the day he rots away!",
+        "The end...",
+        "Thank you for playing <3"
+    };
+
+	private static string[] stageCreditsKhmer =
+	{
+
+	};
+
+	public static string[] GetDialogueFromStage (int stage) {
         if (PlayerPrefs.GetString("language") == "khmer") {
             switch (stage) {
                 case 0:
@@ -126,6 +144,8 @@ public class DialogueText : MonoBehaviour
                     return UpdateFontKhmer(stage7Khmer);
                 case 8:
                     return UpdateFontKhmer(stageEndingKhmer);
+                case 9:
+                    return UpdateFontKhmer(stageCreditsKhmer);
                 default:
                     return UpdateFontKhmer(stage1Khmer);
             }
@@ -149,6 +169,8 @@ public class DialogueText : MonoBehaviour
                     return stage7English;
                 case 8:
                     return stageEndingEnglish;
+                case 9:
+                    return stageCreditsEnglish;
                 default:
                     return stage1English;
             }
