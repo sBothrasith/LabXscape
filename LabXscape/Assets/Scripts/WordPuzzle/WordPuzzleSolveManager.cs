@@ -58,6 +58,12 @@ public class WordPuzzleSolveManager : MonoBehaviour
         return characterToCollectList;
     }
 
+    public string GetCurrentWord() {
+        string currentWord = (string)wordPuzzleManager.getWordListToSolve()[currentIndex];
+
+        return currentWord;
+    }
+
     public void SolvedWord () {
         solvedWord++;
         if (solvedWord < wordPuzzleManager.numberOfWordToSolve) {
