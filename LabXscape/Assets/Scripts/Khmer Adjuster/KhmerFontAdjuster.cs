@@ -60,7 +60,17 @@ public static class KhmerFontAdjuster
         //{'ឡ', "<sprite=33>"}, // None!
         {'អ', "<sprite=33>"},
     };
-    
+
+    public static Dictionary<char, string> SpecialVowel = new Dictionary<char, string>
+    {
+        {'\u17BE', "<sprite=\"vowel\" index=0>"}, 
+        {'`', "<sprite=\"vowel\" index=1>"},
+        {'\u17C4', "<sprite=\"vowel\" index=2>"},
+        {'\u17C5', "<sprite=\"vowel\" index=3>"},
+        {'\u17BF', "<sprite=\"vowel\" index=4>"},
+        {'\u17C0', "<sprite=\"vowel\" index=5>"},
+    };
+
     // ==============================================
 
     public static string Adjust(string s)
@@ -105,5 +115,28 @@ public static class KhmerFontAdjuster
     public static bool IsEmpty(char c)
     {
         return c == ' ';
+    }
+
+    public static string AdjustVowel(string s) {
+        var length = s.Length;
+        var sb = new StringBuilder(length);
+        for (var i = 0; i < length; i++) {
+            var c = s[i];
+            string text = "";
+            if (s[i] == '\u17B6' && i != length-1 && s[++i] == '\u17C6') {
+                if (SpecialVowel.TryGetValue('`', out text)) {
+                    sb.Append(text);
+                    continue;
+                }
+            }
+            if (SpecialVowel.TryGetValue(c, out text)) {
+                sb.Append(text);
+                continue;
+            }
+
+            sb.Append(c);
+        }
+
+        return sb.ToString();
     }
 }
