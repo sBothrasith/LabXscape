@@ -100,9 +100,10 @@ public class Dialogue : MonoBehaviour
                 yield return new WaitForSeconds(textSpeed);
             }
         }
-        
-        yield return new WaitForSeconds(5);
-		NextLine();
+
+		yield return new WaitForSeconds(3);
+		StartCoroutine(TypeLine());
+		
 	}
 
     void NextLine()
