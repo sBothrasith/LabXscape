@@ -8,10 +8,11 @@ public class TestKhmer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string khmerConsonantCombinations = "ការ​ចំណាយ​ក្នុង​វិស័យ​នេះនឹង​បន្ត​កើន​បន្ថែម​ទៀត​ដើម្បី​បង្កើន​លទ្ធផល​សុខភាព ផ្សារ​​ភ្ជាប់​ជាមួយ​ប្រសិទ្ធិភាព និង​សក្ដិសិទ្ធ​ភាព​នៃ​ការ​ចំណាយ";
-        GetComponent<TextMeshProUGUI>().text = KhmerFontAdjuster.AdjustVowel(KhmerFontAdjuster.Adjust(khmerConsonantCombinations));
+        string khmer = "ការ​ពង្រីក​នេះ​បាន​ផ្តល់​កន្លែង​សម្រាប់​បង្កើន​សកម្មភាព​ស្រាវជ្រាវ និង ការ​ផ្សាំង​សត្វទោច ក៏​ដូចជា ការ​ពង្រីក​វិសាលភាព​នៃ​ការ​ឃ្លាំ​មើល​ព្រៃ​របស់​ ចាហ៊ូ ផងដែរ​";
+        //string khmer = "​កន្លែង​សម្រាប់​បង្កើន​";
+        GetComponent<TextMeshProUGUI>().text = KhmerToKeyboard.ConvertKhmerToKeyboard(khmer);
     }
-
+   
     // Update is called once per frame
     void Update()
     {
