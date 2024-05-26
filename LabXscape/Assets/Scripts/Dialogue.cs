@@ -100,7 +100,7 @@ public class Dialogue : MonoBehaviour
         }
 
         yield return new WaitForSeconds(3);
-		StartCoroutine(TypeLine());
+        NextLine();
 		
 	}
 
