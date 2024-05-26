@@ -29,7 +29,14 @@ public class DialogueText : MonoBehaviour
     };
 
     private static string[] stage1Khmer = {
-
+        "ខ្ញុំបានភ្ញាក់ឡើងនៅក្នុងបន្ទប់ដែលមិនស្គាល់។",
+        "ខ្ញុំហាក់ដូចជាមិនចាំអ្វីដែលបានកើតឡើង។",
+        "អ្នកវិទ្យាសាស្ត្រទាំងនោះកំពុងនិយាយយ៉ាងស្ងៀមស្ងាត់។ ខ្ញុំមិនអាចលឺពួកគេទាល់តែសោះ។",
+        "រាងកាយរបស់ខ្ញុំមានអារម្មណ៍ខុស។",
+        "ខ្ញុំក្រឡេកមើលខ្លួនឯងក្នុងការឆ្លុះបញ្ចាំង។",
+        "ខ្ញុំជាមនុស្សយន្តមែនទេ?!?",
+        "ខ្ញុំមានការភ្ញាក់ផ្អើលប៉ុន្តែមិនមានអ្វីដែលខ្ញុំអាចធ្វើបានទេ។",
+        "តោះ​យើងស្វែងយល់ពីខ្ញុំ។"
     };
 
     private static string[] stage2English = {
@@ -40,7 +47,10 @@ public class DialogueText : MonoBehaviour
 	};
 
     private static string[] stage2Khmer = {
-
+        "បន្ទប់នេះហាក់ដូចជាបន្ទប់ផ្ទុកទិន្នន័យ។",
+        "តើកុំព្យូទ័រភ្លឺនោះគឺជាអ្វី? តើវានៅលើទេ?",
+        "ខ្ញុំគួរតែធ្វើអ្វីមួយ។",
+        "ប្រហែលជាការប្រមូលអក្សរជាច្រើនទៀតនឹងផ្តល់ឱ្យខ្ញុំនូវតម្រុយមួយ"
     };
 
     private static string[] stage3English = {
@@ -53,7 +63,10 @@ public class DialogueText : MonoBehaviour
 	};
 
     private static string[] stage3Khmer = {
-
+        "\"តើនេះជាបន្ទប់អ្វី?\"",
+        "\"វាមានអារម្មណ៍ខុសគ្នាពីបន្ទប់មុនទាំងអស់។ វាធំទូលាយណាស់\"",
+        "\"ប៊ូតុងភ្លឺហាក់ដូចជាមានគ្រោះថ្នាក់។\"",
+        "\"ខ្ញុំគួរតែប្រុងប្រយ័ត្នកុំបោះជំហានទៅលើវា។ \""
     };
 
     private static string[] stage4English = {
@@ -63,7 +76,9 @@ public class DialogueText : MonoBehaviour
 	};
 
     private static string[] stage4Khmer = {
-
+        "\"នេះមើលទៅដូចជាបន្ទប់សុវត្ថិភាព\"",
+        "\"តោះ​យើង​គួរតែធ្វើចលនាដោយប្រុងប្រយ័ត្នជាពិសេសបំពង់ឡាស៊ែរទាំងនោះ។\"",
+        "\"ខ្ញុំគួរតែចៀសវាងពួកវាឱ្យនៅរស់។\""
     };
 
     private static string[] stage5English = {
@@ -74,7 +89,9 @@ public class DialogueText : MonoBehaviour
 	};
 
     private static string[] stage5Khmer = {
-
+        "បន្ទប់កាន់តែធំទៅៗ។",
+        "\"មានបន្ទប់មួយនៅពីលើខ្ញុំប្រហែលជាមានអ្វីមួយនៅទីនោះ។\"",
+        "\"ខ្ញុំប្រហែលជាអាចបំលាស់ទីក្តារទាំងនោះប្រសិនបើខ្ញុំចុចប៊ូតុង។\""
     };
 
     private static string[] stage6English = {
@@ -85,7 +102,9 @@ public class DialogueText : MonoBehaviour
     };
 
     private static string[] stage6Khmer = {
-
+        "\"បន្ទប់នេះហាក់ដូចជាមានពន្លឺកាន់តែច្រើន\"",
+        "\"តើខ្ញុំនៅជិតចេញពីលេនដ្ឋាននេះ?\"",
+        "\"ខ្ញុំមិនចង់ប៉ះឡាស៊ែរទាំងនោះទេពួកគេហាក់ដូចជាមានគ្រោះថ្នាក់។\""
     };
 
     private static string[] stage7English = {
@@ -104,24 +123,30 @@ public class DialogueText : MonoBehaviour
     };
 
     private static string[] stageEndingKhmer = {
-
+        "\"បន្ទប់នេះទទេ?\"",
+        "ខ្ញុំឃើញទ្វារមួយនៅចម្ងាយ។",
+        "\"តោះទៅរកវា។\""
     };
 
-    private static string[] stageCreditsEnglish =
-    {
+    private static string[] stageCreditsEnglish = {
         "Robot boy made it out to the surface at last",
         "But what awaits him is a ruin from all the war!",
-        "Thus, he walks around in the ruins trying to find his friends",
+        "Thus, he walks around in the ruins trying to find others",
         "Alas! He have used up all his battery while climbing the bunker.",
         "He lays lifeless, waiting for the day he rots away!",
         "The end...",
         "Thank you for playing <3"
     };
 
-	private static string[] stageCreditsKhmer =
-	{
-
-	};
+	private static string[] stageCreditsKhmer = {
+        "ក្មេងប្រុសរ៉ូបូតបានចេញទៅលើផ្ទៃលើ",
+        "ប៉ុន្តែអ្វីដែលកំពុងរង់ចាំគាត់គឺជាការបំផ្លិចបំផ្លាញពីសង្គ្រាមទាំងអស់",
+        "ដូច្នេះគាត់ដើរជុំវិញកម្ទេចកម្ទី​ដែលព្យាយាមរកអ្នកដទៃ",
+        "គាត់បានប្រើថ្មរបស់គាត់ទាំងអស់នៅពេលឡើងលានលានដ្ឋាន។",
+        "គាត់ដេកដោយដោយរង់ចាំថ្ងៃដែលគាត់ស្លាប់",
+        "ចប់...",
+        "សូមអរគុណសម្រាប់ការលេង"
+    };
 
 	public static string[] GetDialogueFromStage (int stage) {
         if (PlayerPrefs.GetString("language") == "khmer") {
