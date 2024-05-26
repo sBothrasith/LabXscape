@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -35,6 +36,8 @@ public class KhmerToKeyboard : MonoBehaviour {
         //punctuation
         {'ៗ', "²"}, {'។', "."}
     };
+
+    static string[] checkDiacritics = {":", "‘", ";", "¾", "_", "’", "+"};
 
     static readonly Dictionary<string, string> khmerToKeyboardSubScript = new Dictionary<string, string> {
         //subscript
@@ -74,7 +77,7 @@ public class KhmerToKeyboard : MonoBehaviour {
                     if (result.Length > 0) {
                         string lastChar = result[result.Length - 1].ToString();
                         string last2Char = result.Length > 1 ? result[result.Length - 2].ToString() : "";
-                        if (khmerToKeyboardSubScript.ContainsValue(lastChar) || (khmerToKeyboardSubScript.ContainsValue(last2Char) && last2Char == "R")) {
+                        if (khmerToKeyboardSubScript.ContainsValue(lastChar) || (khmerToKeyboardSubScript.ContainsValue(last2Char) && last2Char == "R") || checkDiacritics.Contains(lastChar)) {
                             string lastTwoChars = result.ToString(result.Length - 2, 2);
                             result.Remove(result.Length - 2, 2);
                             if (keyboardChar.Length == 1) {

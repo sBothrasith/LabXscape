@@ -11,9 +11,9 @@ public class DialogueText : MonoBehaviour
     };
 
     private static string[] stage0Khmer = {
-        "សូមស្វាគមន៍មកកាន់ការបង្រៀន!",
-        "អ្នកអាចរំលងដោយចុច \"Skip\" នៅលើកំពូល។",
-        "អ្នកមិនបានរំលងទេ? ជាការប្រសើរណាស់ តោះ​ចាប់​ផ្ដើម!"
+        "សូមស្វាគមន៍មកកាន់ការបង្រៀន",
+        "អ្នកអាចរំលងដោយចុច \"រំលង\" នៅលើកំពូល។",
+        "អ្នកមិនបានរំលងទេ? ជាការប្រសើរណាស់ តោះ​ចាប់​ផ្ដើម"
     };
 
     private static string[] stage1English = {
@@ -180,7 +180,7 @@ public class DialogueText : MonoBehaviour
     private static string[] UpdateFontKhmer(string[] fontKhmer) {
         string[] updatedFont = new string[fontKhmer.Length];
         for (int i = 0; i < fontKhmer.Length; i++) {
-            updatedFont[i] = KhmerFontAdjuster.Adjust(fontKhmer[i]);
+            updatedFont[i] = KhmerToKeyboard.ConvertKhmerToKeyboard(fontKhmer[i]);
         }
 
         return updatedFont;

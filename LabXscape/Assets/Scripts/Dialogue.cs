@@ -34,6 +34,8 @@ public class Dialogue : MonoBehaviour
     {
         if (PlayerPrefs.GetString("language") == "khmer") {
             textComponent.font = khmerFont;
+            textComponent.fontSize = 100;
+            textComponent.fontStyle = FontStyles.Normal;
         }
 
         dialogueCount = 1;
@@ -92,16 +94,12 @@ public class Dialogue : MonoBehaviour
     }
 
     IEnumerator TypeLine() {
-        if (PlayerPrefs.GetString("language") == "khmer") {
-            textComponent.text = dialogueText[index];
-        } else {
-            foreach (char c in dialogueText[index].ToCharArray()) {
-                textComponent.text += c;
-                yield return new WaitForSeconds(textSpeed);
-            }
+        foreach (char c in dialogueText[index].ToCharArray()) {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
         }
 
-		yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3);
 		StartCoroutine(TypeLine());
 		
 	}

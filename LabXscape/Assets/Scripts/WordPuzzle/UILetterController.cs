@@ -16,35 +16,35 @@ public class UILetterController : MonoBehaviour
     private WordPuzzleSolveManager wordPuzzleSolveManager;
 
     List<(string khmerWord, string englishWord)> khmerToEnglish = new() {
-        //("ែដក", "steel"),
-        //("មនុស្សយន្ត", "robot"),
-        //("្រចវ៉ាក់", "chain"),
-        ////("កុំព្យូទ័រ", "computer),
-        //("ក្តារ", "platform"),
-        //("ទ្វា", "door"),
-        //("ប៊ូតុង", "button"),
-        //("ឡាែស៊រ", "laser"),
-        //("បំពង់", "pipe"),
-        //("ម៉ូនីទ័រ", "monitor"),
-        ////("ជណ្តើរ", "ladder),
-        //("ែខ្ស", "wire"),
-        //("ធុង", "barrel"),
-        ////("ជណ្តើរយន្ត", "elevator"),
+        ("ដែក", "steel"),
+        ("មនុស្សយន្ត", "robot"),
+        ("ច្រវ៉ាក់", "chain"),
+        ("កុំព្យូទ័រ", "computer"),
+        ("ក្តារ", "platform"),
+        ("ទ្វា", "door"),
+        ("ប៊ូតុង", "button"),
+        ("ឡាស៊ែរ", "laser"),
+        ("បំពង់", "pipe"),
+        ("ម៉ូនីទ័រ", "monitor"),
+        ("ជណ្តើរ", "ladder"),
+        ("ខ្សែ", "wire"),
+        ("ធុង", "barrel"),
+        ("ជណ្តើរយន្ត", "elevator"),
         ("របាំង", "barrier"),
-        //("ឥដ្ឋ", "brick"),
-        //("អក្សរ", "letter"),
-        //("សញ្ញា", "sign"),
-        ////("ប្រអប់ឈើ", "woodenbox),
-        //("ធុងសំរាម", "trashbin"),
-        //("រន្ធខ្យល់", "ventilation"),
-        //("មន្ទីរ", "laboratory"),
-        //("ពិល", "flashlight"),
-        //("្រតីវិស័យ", "compass"),
-        //("ែកវយឹត", "binoculars"),
-        ////("ទុយោ", "hose),
-        ////("បន្ទះឈើ", "plank"),
-        ////("បង់រុំ", "bandage"),
-        //("េអប៉ុង", "sponge")
+        ("ឥដ្ឋ", "brick"),
+        ("អក្សរ", "letter"),
+        ("សញ្ញា", "sign"),
+        ("ប្រអប់ឈើ", "woodenbox"),
+        ("ធុងសំរាម", "trashbin"),
+        ("រន្ធខ្យល់", "ventilation"),
+        ("មន្ទីរ", "laboratory"),
+        ("ពិល", "flashlight"),
+        ("ត្រីវិស័យ", "compass"),
+        ("កែវយឹត", "binoculars"),
+        ("ទុយោ", "hose"),
+        ("បន្ទះឈើ", "plank"),
+        ("បង់រុំ", "bandage"),
+        ("អេប៉ុង", "sponge")
     };
 
     // Start is called before the first frame update
@@ -86,17 +86,17 @@ public class UILetterController : MonoBehaviour
                 if (PlayerPrefs.GetString("language") == "khmer") {
                     TextMeshProUGUI textMesh = container.GetChild(i + 1).GetComponentInChildren<TextMeshProUGUI>();
                     textMesh.font = wordPuzzleManager.fontKhmerAsset;
-                    string l = chracterToCollect[i].letter.ToString();
-                    if (l.Contains("\u17CB") || l.Contains("\u17C9") || l.Contains("\u17D0") || l.Contains("\u17CA") || l.Contains("\u17C6") || l.Contains("\u17B7") || l.Contains("\u17B8") || l.Contains("\u17B9")) {
-                        textMesh.margin = new Vector4(98.42f, 11.7f, textMesh.margin.z, textMesh.margin.w);
-                    }
-                    else if (l.Contains("3") || l.Contains("8") || l.Contains("13") || l.Contains("20") || l.Contains("25") || l.Contains("26") || l.Contains("30")) {
-                        textMesh.fontSize = 90;
-                        textMesh.margin = new Vector4(99.01f, -64.2f, textMesh.margin.z, textMesh.margin.w);
-                    }
-                    else if (l.Contains("sprite")) {
-                        textMesh.margin = new Vector4(98.6f, -80f, textMesh.margin.z, textMesh.margin.w);
-                    }
+                    textMesh.fontSize = 200;
+                    //if (l.Contains("\u17CB") || l.Contains("\u17C9") || l.Contains("\u17D0") || l.Contains("\u17CA") || l.Contains("\u17C6") || l.Contains("\u17B7") || l.Contains("\u17B8") || l.Contains("\u17B9")) {
+                    //    textMesh.margin = new Vector4(98.42f, 11.7f, textMesh.margin.z, textMesh.margin.w);
+                    //}
+                    //else if (l.Contains("3") || l.Contains("8") || l.Contains("13") || l.Contains("20") || l.Contains("25") || l.Contains("26") || l.Contains("30")) {
+                    //    textMesh.fontSize = 90;
+                    //    textMesh.margin = new Vector4(99.01f, -64.2f, textMesh.margin.z, textMesh.margin.w);
+                    //}
+                    //else if (l.Contains("sprite")) {
+                    //    textMesh.margin = new Vector4(98.6f, -80f, textMesh.margin.z, textMesh.margin.w);
+                    //}
                 }
                 container.GetChild(i+1).GetComponentInChildren<TextMeshProUGUI>().text= chracterToCollect[i].letter.ToString();
             }

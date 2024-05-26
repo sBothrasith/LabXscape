@@ -41,35 +41,35 @@ public class WordPuzzleManager : MonoBehaviour
     };
 
     List<string> khmerWords = new() {
-        //"ែដក",
-        //"មនុស្សយន្ត",
-        //"្រចវ៉ាក់",
-        ////"កុំព្យូទ័រ",
-        //"ក្តារ",
-        //"ទ្វា",
-        //"ប៊ូតុង",
-        //"ឡាែស៊រ",
-        //"បំពង់",
-        //"ម៉ូនីទ័រ",
-        ////"ជណ្តើរ",
-        //"ែខ្ស",
-        //"ធុង",
-        ////"ជណ្តើរយន្ត",
+        "ដែក",
+        "មនុស្សយន្ត",
+        "ច្រវ៉ាក់",
+        "កុំព្យូទ័រ",
+        "ក្តារ",
+        "ទ្វា",
+        "ប៊ូតុង",
+        "ឡាស៊ែរ",
+        "បំពង់",
+        "ម៉ូនីទ័រ",
+        "ជណ្តើរ",
+        "ខ្សែ",
+        "ធុង",
+        "ជណ្តើរយន្ត",
         "របាំង",
-        //"ឥដ្ឋ",
-        //"អក្សរ",
-        //"សញ្ញា",
-        ////"ប្រអប់ឈើ",
-        //"ធុងសំរាម",
-        //"រន្ធខ្យល់",
-        //"មន្ទីរ",
-        //"ពិល",
-        //"្រតីវិស័យ",
-        //"ែកវយឹត",
-        ////"ទុយោ",
-        ////"បន្ទះឈើ",
-        ////"បង់រុំ",
-        //"េអប៉ុង"
+        "ឥដ្ឋ",
+        "អក្សរ",
+        "សញ្ញា",
+        "ប្រអប់ឈើ",
+        "ធុងសំរាម",
+        "រន្ធខ្យល់",
+        "មន្ទីរ",
+        "ពិល",
+        "ត្រីវិស័យ",
+        "កែវយឹត",
+        "ទុយោ",
+        "បន្ទះឈើ",
+        "បង់រុំ",
+        "អេប៉ុង"
     };
 
     List<string> words = new();
@@ -129,19 +129,22 @@ public class WordPuzzleManager : MonoBehaviour
     private void GenerateLetterForWord() {
         foreach(string word in wordListToSolve) {
             List<string> letter = new List<string>();
-            for(int i = 0; i < word.Length; i++) {
-                if (word[i] == ConsonantJoiner) {
-                    string conLetter = word[i] + word[i+1].ToString();
-                    letter.Add(KhmerFontAdjuster.Adjust(conLetter));
-                    i++;
-                    continue;
-                }
-                letter.Add(word[i].ToString());
-            }
+
             string wordToStore = word;
             if (PlayerPrefs.GetString("language") == "khmer") {
-                wordToStore = KhmerFontAdjuster.Adjust(word);
+                string khmerToKeyboard = KhmerToKeyboard.ConvertKhmerToKeyboard(word);
+
+                for (int i = 0; i < khmerToKeyboard.Length; i++) {
+                    letter.Add(khmerToKeyboard[i].ToString());
+                }
+
+                wordToStore = khmerToKeyboard;
+            } else {
+                for (int i = 0; i < word.Length; i++) {
+                    letter.Add(word[i].ToString());
+                }
             }
+
             wordletterToSolve[wordToStore] = letter;
         }
     }
