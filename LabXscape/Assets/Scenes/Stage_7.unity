@@ -20264,6 +20264,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 3694419271138943344, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
+      propertyPath: m_text
+      value: Level 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4072523274002530421, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: m_IsActive
       value: 0
