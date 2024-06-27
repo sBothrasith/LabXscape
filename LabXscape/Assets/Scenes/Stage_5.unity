@@ -11178,7 +11178,7 @@ PrefabInstance:
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: khmerFont
       value: 
-      objectReference: {fileID: 11400000, guid: d8a4323688fae6b4599dfe06e6d4a9f3, type: 2}
+      objectReference: {fileID: 11400000, guid: 947d6a5969ef9d54b93861582e07f97f, type: 2}
     - target: {fileID: 6444553552477238348, guid: 0330cf4b85f85814bb728feafbf42210, type: 3}
       propertyPath: textSpeed
       value: 0.05
